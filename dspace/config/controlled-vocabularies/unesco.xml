@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node id="UNESCO" label="UNESCO Thesaurus (top level)">
+	<isComposedBy>
+
+		<node id="1" label="Educación">
+			<isComposedBy>
+				<node id="1.05" label="Ciencias de la educación y ambiente educacional" />
+				<node id="1.10" label="Política educacional" />
+				<node id="1.15" label="Planificación de la educación" />
+				<node id="1.20" label="Administración de la educación" />
+				<node id="1.25" label="Gestión de la educación" />
+				<node id="1.30" label="Sistemas y niveles de enseñanza" />
+				<node id="1.35" label="Establecimientos de enseñanza" />
+				<node id="1.40" label="Planes de estudios" />
+				<node id="1.45" label="Materias de enseñanza básica y general" />
+				<node id="1.50" label="Materias de enseñanza técnica y profesional" />
+				<node id="1.55" label="Profesionales de la educación" />
+				<node id="1.60" label="Enseñanza y formación" />
+				<node id="1.65" label="Evaluación de la educación" />
+				<node id="1.70" label="Instalaciones y recursos educativos" />
+			</isComposedBy>
+		</node>
+		<node id="2" label="Ciencia">
+			<isComposedBy>
+				<node id="2.05" label="Enfoque científico" />
+				<node id="2.10" label="Administración de la ciencia y de la investigación" />
+				<node id="2.15" label="Matemáticas y estadística" />
+				<node id="2.20" label="Ciencias físicas" />
+				<node id="2.25" label="Ciencias químicas" />
+				<node id="2.30" label="Ciencias del espacio" />
+				<node id="2.35" label="Ciencias de la tierra" />
+				<node id="2.40" label="Geografía y oceanografía" />
+				<node id="2.45" label="Meteorología" />
+				<node id="2.50" label="Hidrología" />
+				<node id="2.55" label="Ciencias ambientales e ingeniería" />
+				<node id="2.60" label="Polución, catástrofes y seguridad" />
+				<node id="2.65" label="Recursos naturales" />
+				<node id="2.70" label="Biología" />
+				<node id="2.75" label="Ciencias naturales" />
+				<node id="2.80" label="Ciencias médicas" />
+				<node id="2.85" label="Patología" />
+			</isComposedBy>
+		</node>
+		<node id="3" label="Cultura">
+			<isComposedBy>
+				<node id="3.05" label="Cultura" />
+				<node id="3.10" label="Política y planificación de la cultura" />
+				<node id="3.15" label="Filosofía y ética" />
+				<node id="3.20" label="Religión" />
+				<node id="3.25" label="Historia" />
+				<node id="3.30" label="Lingüística" />
+				<node id="3.35" label="Lenguas" />
+				<node id="3.40" label="Literatura" />
+				<node id="3.45" label="Arte" />
+				<node id="3.50" label="Artes visuales" />
+				<node id="3.55" label="Artes escénicas" />
+				<node id="3.60" label="Museos" />
+				<node id="3.65" label="Ocio" />
+			</isComposedBy>
+		</node>
+		<node id="4" label="Ciencias sociales y humanas">
+			<isComposedBy>
+				<node id="4.05" label="Ciencias sociales" />
+				<node id="4.10" label="Psicología" />
+				<node id="4.15" label="Sistemas sociales" />
+				<node id="4.20" label="Problemas sociales" />
+				<node id="4.25" label="Política y bienestar social" />
+				<node id="4.30" label="Cuestiones étnicas" />
+				<node id="4.35" label="Población" />
+				<node id="4.40" label="Familia" />
+				<node id="4.45" label="Establecimientos humanos y uso de la tierra" />
+			</isComposedBy>
+		</node>
+		<node id="5" label="Información y comunicación">
+			<isComposedBy>
+				<node id="5.05" label="Ciencias de la información" />
+				<node id="5.10" label="Investigación y política de la comunicación" />
+				<node id="5.15" label="Gestión de la información" />
+				<node id="5.20" label="Industria de la información" />
+				<node id="5.25" label="Sistemas de información documental" />
+				<node id="5.30" label="Fuentes de información" />
+				<node id="5.35" label="Tratamiento de la información documental" />
+				<node id="5.40" label="Tecnología de la información (programas)" />
+				<node id="5.45" label="Tecnología de la información (equipos)" />
+			</isComposedBy>
+		</node>
+		<node id="6" label="Política, derecho y economía">
+			<isComposedBy>
+				<node id="6.05" label="Sistemas jurídicos" />
+				<node id="6.10" label="Derechos humanos" />
+				<node id="6.15" label="Política y gobierno" />
+				<node id="6.20" label="Relaciones internacionales" />
+				<node id="6.25" label="Economía" />
+				<node id="6.30" label="Desarrollo económico y social" />
+				<node id="6.36" label="Agricultura" />
+				<node id="6.40" label="Industria" />
+				<node id="6.45" label="Ingeniería de minas, civil y militar" />
+				<node id="6.50" label="Ingeniería de la industria y de los transportes" />
+				<node id="6.55" label="Materiales y productos" />
+				<node id="6.60" label="Equipos e instalaciones" />
+				<node id="6.65" label="Servicios" />
+				<node id="6.70" label="Finanzas y comercio" />
+				<node id="6.75" label="Organización y gestión" />
+				<node id="6.80" label="Gestión de personal" />
+				<node id="6.85" label="Trabajo" />
+			</isComposedBy>
+		</node>
+		<node id="" label="7 Países y agrupaciones de países">
+			<isComposedBy>
+				<node id="7.05" label="Africa" />
+				<node id="7.10" label="Américas y Caribe" />
+				<node id="7.15" label="Asia y Pacífico" />
+				<node id="7.20" label="Europa" />
+				<node id="7.25" label="Agrupaciones políticas" />
+				<node id="7.30" label="Agrupaciones económicas" />
+				<node id="7.35" label="Areas geográficas" />
+				<node id="7.40" label="Agrupaciones étnicas y religiosas" />
+				<node id="7.45" label="Agrupaciones lingüísticas" />
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
