@@ -1,0 +1,201 @@
+@import url("../../..//Mirage/lib/css/style.css");
+
+
+/*##################################################################*/
+/*
+Estilos bajado de Mirage
+*/
+
+/*##################################################################*/
+
+#ds-header-wrapper {
+    background-color: white;
+    color: white;
+    min-width: 950px;
+}
+#ds-body {
+    float: right;
+    width: 675px;
+    padding-top: 10px;
+}
+#ds-content {
+    width: 950px;
+    margin: auto;
+    position: relative;
+}
+
+.ie6 #ds-content-wrapper {
+    text-align: center;
+}
+
+#ds-trail-wrapper {
+    background-color: #b6c8d9;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #9cacba;
+    border-bottom: 1px solid #9cacba;
+    min-width: 950px;
+}
+
+
+
+/*##################################################################*/
+/*
+  Estilo generado por lucas
+*/
+/*##################################################################*/
+
+
+
+#ds-header-logo-link {
+	background-image: url(../../images/marca.png);
+	height: 167px;
+	width: 367px;
+	background-repeat: no-repeat;
+}
+#escudo_unt {
+}
+#ds-header-wrapper #ds-header {
+	height: 215px;
+	width: 1113px;
+	background-image: url(../../images/header_back.png);
+}
+#ds-content-wrapper  #ds-body {
+	width: 450px;
+	height: 500px;
+	
+}
+#ds-content-wrapper #ds-body #col_iz {
+	float: left;
+	width: 230px;
+	font-size: 12px;
+}
+.objeto .icon {
+	height: 95px;
+	width: 80px;
+	float: left;
+}
+.objeto .title {
+	float: left;
+	width: 100px;
+	height: 63px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.objeto {
+	width: 219px;
+	height: 95px;
+	font-family: "Times New Roman", Times, serif;
+}
+#ds-content-wrapper #ds-body #col_der {
+	width: 100px;
+	float: left;
+	font-size: 12px;
+}
+#ds-footer-wrappe {
+	height: 150px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	clear: both;
+	margin: 0 0 0 215px;
+}
+#ds-footer-left {
+	padding: 0px 0px 0px 20px;
+}
+#ds-footer-right {
+	width: 45%;
+	float: left;
+}
+#ds-footer-left {
+	width: 45%;
+	float: left;
+}
+#copy {
+	width: 50%;
+	float: left;
+}
+#direccion {
+	width: 45%;
+	float: left;
+}
+#ds-footer-left .imagen {
+	float: left;
+	padding: 10px;
+}
+#direccion .imagen_gps {
+	width: 20px;
+	float: left;
+	height: 50px;
+	margin-right: 10px;
+}
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #1A3B59;
+}
+#ds-options-wrapper {
+	float: left;
+	width: 20%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style: none;
+	padding-left: 20px;
+}
+#ds-options-wrapper ul {
+	list-style-type: none;
+	padding: 5px;
+}
+.menu_navegacion {
+}
+#ds-options-wrapper .menu_navegacion {
+	border: 1px solid #dedede;
+	padding: 5px;
+	line-height: 1.5;
+	width: 150px;
+}
+#ds-options-wrapper h2 {
+	font-size: 14px;
+	color: #1A3B59;
+	margin-bottom: 3px;
+	border-bottom: 1px solid grey;
+}
+#ds-main {
+	background-image: url(../../images/background.png);
+	background-repeat: no-repeat;
+	height: 500px;
+}
+#ds-main #wrapper {
+	margin: 0px 0px 0px 215px;
+}
+#idiomas {
+	position: absolute;
+	width: 200px;
+	height: 50px;
+	left: 800px;
+	top: 90px;
+	font-size: 11px;
+	font-family: "Times New Roman", Times, serif;
+}
+#tercera_columna {
+	width: 24%;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
