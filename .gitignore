@@ -29,3 +29,7 @@ META-INF/
 
 ##Mac noise
 .DS_Store
+
+##Omito los datos relativos a la configuración local de dspace
+install/
+build.properties
