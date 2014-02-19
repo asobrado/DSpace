@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<!--
+  - dcterms-types.xml
+  -
+  - Version:  $Revision$
+  -
+  - Date:     $Date$
+  -
+  - DCTerms registry contributed to eventually replace dublin-core-types.xml
+  - 
+  - <dc-type>
+  -   <schema></schema>
+  -   <element></element>
+  -   
+  -   <scope_note></scope_note>
+  - </dc-type>
+  -->
+
+<!-- start of XML -->
+
+<dspace-dc-types>
+
+  <dspace-header>
+    <title>Metadatos complementarios UNT</title>
+    <contributor.author>alira@sedici.unlp.edu.ar</contributor.author>
+    <contributor.author>asobrado@sedici.unlp.edu.ar</contributor.author>
+    <contributor.author>marisa.degiusti@sedici.unlp.edu.ar</contributor.author>
+  </dspace-header>
+
+  <dc-schema>
+          <name>unt</name>
+          <namespace>http://www.unt.edu.ar/ns/repo_v1</namespace>
+  </dc-schema>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>identifier</element>
+    <qualifier>url</qualifier>
+    <scope_note>Localización electrónica del recurso. </scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>identifier</element>
+    <qualifier>issn</qualifier>
+    <scope_note>Código ISSN de la revista o serie</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>identifier</element>
+    <qualifier>isbn</qualifier>
+    <scope_note>Código ISBN del libro</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>identifier</element>
+    <qualifier>other</qualifier>
+    <scope_note>Otro tipo de identificador formal. Ejemplo: doi, nro de expendiente, etc.</scope_note>
+  </dc-type>
+  
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>date</element>
+    <qualifier>exposure</qualifier>
+    <scope_note>Fecha de exposición de la obra. </scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>creator</element>
+    <qualifier>author</qualifier>
+    <scope_note>Autor o co-autor de la obra</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>creator</element>
+    <qualifier>compilator</qualifier>
+    <scope_note>Compilador del libro</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>creator</element>
+    <qualifier>editor</qualifier>
+    <scope_note>Persona encargada de la tarea de recopilación y edición del libro. No es la editorial.</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>type</element>
+    <scope_note>Clasificación del recurso</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>description</element>
+    <qualifier>origin</qualifier>
+    <scope_note>Insitutción dentro de la UNT desde donde se aporta la obra</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>thesis</element>
+    <qualifier>degree</qualifier>
+    <scope_note>Titulo o grado alcanzado con la tesis</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>thesis</element>
+    <qualifier>grantor</qualifier>
+    <scope_note>Institución que otorga el título alcanzado con esta tesis</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>contributor</element>
+    <qualifier>advisor</qualifier>
+    <scope_note>Director o co-director de la tesis</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>contributor</element>
+    <qualifier>juror</qualifier>
+    <scope_note>Miembro del jurado que evaluó la tesis</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>subject</element>
+    <qualifier>materia</qualifier>
+    <scope_note>Clasificación temática de la obra</scope_note>
+  </dc-type>
+
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>relation</element>
+    <qualifier>event</qualifier>
+    <scope_note>Evento sobre el que se presentó la presente obra</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>relation</element>
+    <qualifier>series</qualifier>
+    <scope_note>Revista o serie documental de la que es parte la presente obra</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>relation</element>
+    <qualifier>volumenAndIssue</qualifier>
+    <scope_note>identificación del volumen y/o tomo y/o número que incluye la presenta orba. Ejemplo "vol. 13, no. 38"</scope_note>
+  </dc-type>
+
+</dspace-dc-types>
