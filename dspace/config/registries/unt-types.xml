@@ -160,4 +160,18 @@
     <scope_note>identificación del volumen y/o tomo y/o número que incluye la presenta orba. Ejemplo "vol. 13, no. 38"</scope_note>
   </dc-type>
 
+  <dc-type>
+	<schema>unt</schema>
+    <element>date</element>
+    <qualifier>embargoed</qualifier>
+    <scope_note>Fecha de fin de embargo</scope_note>
+  </dc-type>
+
+  <dc-type>
+	<schema>unt</schema>
+    <element>description</element>
+    <qualifier>embargo_period</qualifier>
+    <scope_note>Periodo de embargo en días, correderos desde la fecha de depósito</scope_note>
+  </dc-type>
+
 </dspace-dc-types>
