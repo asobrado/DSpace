@@ -92,7 +92,7 @@
 
   <dc-type>
 	<schema>unt</schema>
-    <element>type</element>
+    <element>subtype</element>
     <scope_note>Clasificación del recurso</scope_note>
   </dc-type>
 
