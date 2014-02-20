@@ -387,27 +387,29 @@ dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
 
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
 placeholders for header images -->
-    <xsl:template name="buildTrail">
-        <div id="ds-trail-wrapper">
-            <ul id="ds-trail">
-                <xsl:choose>
-                    <xsl:when test="starts-with($request-uri, 'page/about')">
-                         <xsl:text>About This Repository</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
-                        <li class="ds-trail-link first-link">-</li>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates select="/dri:document/dri:meta/dri:pageMeta/dri:trail"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </ul>
-        </div>
-    </xsl:template>
+     <xsl:template name="buildTrail">
+	<div id="trail">
+		<div id="ds-trail-wrapper">
+			<ul id="ds-trail">
+				<xsl:choose>
+				    <xsl:when test="starts-with($request-uri, 'page/about')">
+				         <xsl:text>About This Repository</xsl:text>
+				    </xsl:when>
+				    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
+				        <li class="ds-trail-link first-link">-</li>
+				    </xsl:when>
+				    <xsl:otherwise>
+				        <xsl:apply-templates select="/dri:document/dri:meta/dri:pageMeta/dri:trail"/>
+				    </xsl:otherwise>
+				</xsl:choose>			
+			</ul>
+		</div>
+	</div>        
+  </xsl:template>
 
     <xsl:template match="dri:trail">
         <!--put an arrow between the parts of the trail-->
-        <xsl:if test="position()>1">
+	<xsl:if test="position()>1">
             <li class="ds-trail-arrow">
                 <xsl:text>&#8594;</xsl:text>
             </li>
@@ -416,10 +418,10 @@ placeholders for header images -->
             <xsl:attribute name="class">
                 <xsl:text>ds-trail-link </xsl:text>
                 <xsl:if test="position()=1">
-                    <xsl:text>first-link </xsl:text>
+                    <xsl:text>ds-trail-link</xsl:text>
                 </xsl:if>
                 <xsl:if test="position()=last()">
-                    <xsl:text>last-link</xsl:text>
+                    <xsl:text>ds-trail-link</xsl:text>
                 </xsl:if>
             </xsl:attribute>
             <!-- Determine whether we are dealing with a link or plain text trail link -->
@@ -438,7 +440,7 @@ placeholders for header images -->
             </xsl:choose>
         </li>
     </xsl:template>
-
+    
     <xsl:template name="cc-license">
         <xsl:param name="metadataURL"/>
         <xsl:variable name="externalMetadataURL">

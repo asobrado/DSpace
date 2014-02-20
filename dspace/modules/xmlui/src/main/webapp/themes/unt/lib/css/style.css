@@ -38,6 +38,42 @@ Estilos bajado de Mirage
 }
 
 
+/*###############################################################3*/
+/**   Estilos del Trail */
+
+#ds-trail-wrapper {
+   
+	margin: 0;
+	padding: 0 220px;
+	width: 940px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-bottom: 2px;
+	background-color: white;
+	border: none;
+}
+
+#ds-trail {
+    line-height: 138.5%;
+    list-style: none outside none;
+    margin: 0;
+    padding: 3px 0;
+}
+
+#ds-trail li {
+    display: inline;
+    margin-right: 5px;
+}
+
+#ds-trail a {
+	text-decoration: none; 
+	color:#7581ae;
+}
+
+/** FIN DE ESTILO DE TRAIL**/
+
+
+
 
 /*##################################################################*/
 /*
