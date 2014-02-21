@@ -16,15 +16,17 @@
   <xsl:template name="buildBody">
 	   <xsl:choose>
 	   		
-            <xsl:when test="(contains(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request' and @qualifier='URI'],''))">
-            		<xsl:if match="/dri:document/dri:body/dri:div[@id='aspect.artifactbrowser.CommunityBrowser.div.comunity-browser']" >
-            			<div id="tercera_columna"><h1>Videos</h1>
-							<img src="themes/unt/images/videos.png" />
-							<div class="imagen">  <img src="themes/unt/images/autoarchivo.png" /></div>
-							AUTOARCHIVO
-							</div>
+            <xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request' and @qualifier='URI']=''">
+            		<xsl:if test="/dri:document/dri:body/dri:div[@id='aspect.artifactbrowser.CommunityBrowser.div.comunity-browser']" >
+				<xsl:apply-templates select="/dri:document/dri:options"/>            		
+				<div id="tercera_columna">
+					<h1>Videos</h1>
+					<img src="themes/unt/images/videos.png" />
+					<div class="imagen">  <img src="themes/unt/images/autoarchivo.png" /></div>
+					AUTOARCHIVO
+				</div>
             			<xsl:call-template name="buildCommunities"/>
-            		</xsl:if>	
+ 			</xsl:if>
 		   </xsl:when>
 		    <xsl:when test="(contains(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request' and @qualifier='URI'],'static'))">
 		   </xsl:when>
@@ -37,8 +39,8 @@
 
 
 <xsl:template name="buildCommunities">
-	   <h1>Comunidades DSpace</h1>
-<div id="col_iz">
+	<h1>Comunidades DSpace</h1>
+	<div id="col_iz">
 	<div class="objeto">
 		<div class="icon"><img src="icono_1_.png" /></div>
 		
