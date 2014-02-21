@@ -106,7 +106,7 @@ html, body{
 	width: 450px;
 	
 }
-#ds-content-wrapper #ds-body #col_iz {
+#col_iz {
 	float: left;
 	width: 230px;
 	font-size: 12px;
@@ -128,7 +128,7 @@ html, body{
 	height: 95px;
 	font-family: "Times New Roman", Times, serif;
 }
-#ds-content-wrapper #ds-body #col_der {
+#col_der {
 	width: 100px;
 	float: left;
 	font-size: 12px;
@@ -221,7 +221,6 @@ h1 {
 	width: 24%;
 	float: right;
 }
-
 
 
 

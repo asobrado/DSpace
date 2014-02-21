@@ -106,12 +106,7 @@ the ds-options div that contains the navigation and action options available to 
 user. The meta element is ignored since its contents are not processed directly, but
 instead referenced from the different points in the document. -->
                                 
-					<div id="tercera_columna"><h1>Videos</h1>
-				<img src="themes/unt/images/videos.png" />
-				<div class="imagen">  <img src="themes/unt/images/autoarchivo.png" /></div>
-				AUTOARCHIVO
-				</div>
-<xsl:apply-templates/>
+					<xsl:call-template name="buildBody"/>
                             </div>
 				
                         </div>
