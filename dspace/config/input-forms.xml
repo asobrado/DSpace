@@ -257,7 +257,16 @@
          <required></required>
          <visibility>workflow</visibility>
        </field>
-       
+       <field>
+         <dc-schema>unt</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>embargo_period</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Periodo de embargo</label>
+         <input-type>date</input-type>
+         <hint>Periodo de embargo</hint>
+        
+       </field>
     <!-- Formulario nuevo fin  -->   
     </page>
 
@@ -682,7 +691,16 @@
          <hint>Ingresar la Editorial</hint>
          <required></required>
        </field>
-       
+       <field>
+         <dc-schema>unt</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>embargo_period</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Periodo de embargo</label>
+         <input-type>date</input-type>
+         <hint>Periodo de embargo</hint>
+        
+       </field>
     <!-- Formulario nuevo fin  -->   
     </page>
 
