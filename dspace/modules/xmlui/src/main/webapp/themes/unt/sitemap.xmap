@@ -124,22 +124,22 @@
                 <!--3 different IncludePageMeta transformers to ensure that the
                 stylesheets end up in the correct order-->
                 <map:transform type="IncludePageMeta">
-                    <map:parameter name="stylesheet.screen#1" value="lib/css/reset.css"/>
-                    <map:parameter name="stylesheet.screen#2" value="lib/css/base.css"/>
-                    <map:parameter name="stylesheet.screen#3" value="lib/css/helper.css"/>
-                    <map:parameter name="stylesheet.screen#4" value="lib/css/jquery-ui-1.8.15.custom.css"/>
+                    <map:parameter name="stylesheet.screen#1" value="../Mirage/lib/css/reset.css"/>
+                    <map:parameter name="stylesheet.screen#2" value="../Mirage/lib/css/base.css"/>
+                    <map:parameter name="stylesheet.screen#3" value="../Mirage/lib/css/helper.css"/>
+                    <map:parameter name="stylesheet.screen#4" value="../Mirage/lib/css/jquery-ui-1.8.15.custom.css"/>
                     <map:parameter name="stylesheet.screen#5" value="lib/css/style.css"/>
-                    <map:parameter name="stylesheet.screen#6" value="lib/css/authority-control.css"/>
+                    <map:parameter name="stylesheet.screen#6" value="../Mirage/lib/css/authority-control.css"/>
                 </map:transform>
 
                 <map:transform type="IncludePageMeta">
-                    <map:parameter name="stylesheet.handheld" value="lib/css/handheld.css"/>
-                    <map:parameter name="stylesheet.print" value="lib/css/print.css"/>
+                    <map:parameter name="stylesheet.handheld" value="../Mirage/lib/css/handheld.css"/>
+                    <map:parameter name="stylesheet.print" value="../Mirage/lib/css/print.css"/>
                 </map:transform>
 
                 <map:transform type="IncludePageMeta">
-                    <map:parameter name="stylesheet.all" value="lib/css/media.css"/>
-                    <map:parameter name="javascript" value="lib/js/jquery-ui-1.8.15.custom.min.js"/>
+                    <map:parameter name="stylesheet.all" value="../Mirage/lib/css/media.css"/>
+                    <map:parameter name="javascript" value="../Mirage/lib/js/jquery-ui-1.8.15.custom.min.js"/>
                     <map:parameter name="theme.path" value="{global:theme-path}"/>
                     <map:parameter name="theme.name" value="{global:theme-name}"/>
                 </map:transform>
