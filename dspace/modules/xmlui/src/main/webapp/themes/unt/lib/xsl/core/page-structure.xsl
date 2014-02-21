@@ -32,7 +32,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns="http://www.w3.org/1999/xhtml"
 exclude-result-prefixes="i18n dri mets xlink xsl dim xhtml mods dc confman">
 
-    <xsl:output indent="yes"/>
+    <xsl:output indent="yes" />
 
     <!--
 Requested Page URI. Some functions may alter behavior of processing depending if URI matches a pattern.
@@ -105,8 +105,10 @@ generates the ds-body div that contains all the content. The options template ge
 the ds-options div that contains the navigation and action options available to the
 user. The meta element is ignored since its contents are not processed directly, but
 instead referenced from the different points in the document. -->
-                                
-					<xsl:call-template name="buildBody"/>
+        						<xsl:apply-templates select="/dri:document/dri:options"/>
+        						<xsl:apply-templates select="/dri:document/dri:body"/>
+        						<xsl:apply-templates select="/dri:document/dri:meta"/>
+        
                             </div>
 				
                         </div>
@@ -281,10 +283,9 @@ maximum-scale = 1.0 retains dimensions instead of zooming in if page width < dev
             <script type="text/javascript">
                 <xsl:attribute name="src">
                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                    <xsl:text>/themes/</xsl:text>
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-                    <xsl:text>/lib/js/modernizr-1.7.min.js</xsl:text>
-                </xsl:attribute>&#160;</script>
+                    <xsl:text>/themes/Mirage/lib/js/modernizr-1.7.min.js</xsl:text>
+                </xsl:attribute>&#160;
+            </script>
 
             <!-- Add the title in -->
             <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
@@ -325,55 +326,12 @@ placeholders for header images -->
     <xsl:template name="buildHeader">
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
-		<div id="ds-header-logo-link"></div>
+				<div id="ds-header-logo-link"><xsl:text> </xsl:text></div>
               <div id="idiomas">
 
 
 			<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
 			</div>
-
-                <xsl:choose>
-                    <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
-                        <div id="ds-user-box">
-                            <p>
-                                <a>
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='url']"/>
-                                    </xsl:attribute>
-                                    <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
-                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='firstName']"/>
-                                    <xsl:text> </xsl:text>
-                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='lastName']"/>
-                                </a>
-                                <xsl:text> | </xsl:text>
-                                <a>
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
-                                    </xsl:attribute>
-                                    <i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>
-                                </a>
-                            </p>
-                        </div>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <div id="ds-user-box">
-                            <p>
-                                <a>
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
-                                    </xsl:attribute>
-                                    <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
-                                </a>
-                            </p>
-                        </div>
-                    </xsl:otherwise>
-                </xsl:choose>
-                
                 <xsl:call-template name="languageSelection" />
                 
             </div>
@@ -598,6 +556,17 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 
             <!-- Check for the custom pages -->
             <xsl:choose>
+	            <xsl:when test="$request-uri = ''">
+<!-- 	            	INTRO -->
+	            	<xsl:call-template name="buildHomeCommunities"/>
+					<div id="tercera_columna">
+						<h1>Videos</h1>
+						<img src="themes/unt/images/videos.png" />
+						<div class="imagen">  <img src="themes/unt/images/autoarchivo.png" /></div>
+						AUTOARCHIVO
+					</div>
+<!-- 					recent -->
+	            </xsl:when>
                 <xsl:when test="starts-with($request-uri, 'page/about')">
                     <div>
                         <h1>About This Repository</h1>

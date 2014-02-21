@@ -18,11 +18,6 @@ Estilos bajado de Mirage
     width: 675px;
     padding-top: 10px;
 }
-#ds-content {
-    width: 950px;
-    margin: auto;
-    position: relative;
-}
 
 .ie6 #ds-content-wrapper {
     text-align: center;
@@ -106,11 +101,6 @@ html, body{
 	width: 450px;
 	
 }
-#col_iz {
-	float: left;
-	width: 230px;
-	font-size: 12px;
-}
 .objeto .icon {
 	height: 95px;
 	width: 80px;
@@ -128,17 +118,22 @@ html, body{
 	height: 95px;
 	font-family: "Times New Roman", Times, serif;
 }
-#col_der {
-	width: 100px;
+
+#right-body {
+float:left;
+padding-left: 10px;
+}
+
+#col_iz,#col_der,#tercera_columna {
 	float: left;
+	width: 230px;
 	font-size: 12px;
 }
-#ds-footer-wrappe {
-	height: 150px;
+#ds-footer-wrapper {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10px;
+	padding-top:10px;
 	clear: both;
-	margin: 0 0 0 215px;
 }
 #ds-footer-left {
 	padding: 0px 0px 0px 20px;
@@ -203,7 +198,7 @@ h1 {
 #ds-main {
 	background-image: url(../../images/background.png);
 	background-repeat: no-repeat;
-	height: 500px;
+/* 	height: 500px; */
 }
 #ds-main #wrapper {
 	margin: 0px 0px 0px 215px;
@@ -217,17 +212,12 @@ h1 {
 	font-size: 11px;
 	font-family: "Times New Roman", Times, serif;
 }
-#tercera_columna {
-	width: 24%;
-	float: right;
+
+
+/* input de busqueda del menu*/
+#ds-search-option input.ds-text-field {
+	width: auto;
 }
-
-
-
-
-
-
-
 
 
 
