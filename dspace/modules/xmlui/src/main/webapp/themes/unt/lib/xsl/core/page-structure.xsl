@@ -326,12 +326,61 @@ placeholders for header images -->
     <xsl:template name="buildHeader">
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
+<<<<<<< Updated upstream
 				<div id="ds-header-logo-link"><xsl:text> </xsl:text></div>
               <div id="idiomas">
 
 
 			<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
 			</div>
+=======
+					<div id="ds-header-logo-link"></div>
+              		<div id="idiomas">
+						<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
+					</div>
+	                <xsl:choose>
+    	                <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
+				        	                <div id="ds-user-box">
+				            	                <p>
+				                	                <a>
+				                                    <xsl:attribute name="href">
+				                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+				dri:metadata[@element='identifier' and @qualifier='url']"/>
+				                                    </xsl:attribute>
+				                                    <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
+				                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+				dri:metadata[@element='identifier' and @qualifier='firstName']"/>
+				                                    <xsl:text> </xsl:text>
+				                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+				dri:metadata[@element='identifier' and @qualifier='lastName']"/>
+				                                </a>
+				                                <xsl:text> | </xsl:text>
+				                                <a>
+				                                    <xsl:attribute name="href">
+				                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+				dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
+				                                    </xsl:attribute>
+				                                    <i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>
+				                                </a>
+				                            </p>
+				                        </div>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <div id="ds-user-box">
+                            <p>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
+dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
+                                </a>
+                            </p>
+                        </div>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
+>>>>>>> Stashed changes
                 <xsl:call-template name="languageSelection" />
                 
             </div>
@@ -513,9 +562,9 @@ placeholders for header images -->
         <div id="ds-footer-wrapper"> 
 					<div id="ds-footer">
 						<div id="ds-footer-left">
-							<div class="imagen"><img src="themes/unt/images/dspace_footer.png" /></div>
-							<div class="imagen"><img src="themes/unt/images/sedici_footer.png" width="164" height="32" /></div>
-							<div class="imagen"><img src="themes/unt/images/facet_footer.png" width="89" height="32" /></div>
+							<img class="imagen" id="dspace_footer"/>
+							<img class="imagen" id="sedici_footer"/>
+							<img class="imagen" id="facet_footer"/>
 						</div>
 				
 				<div id="ds-footer-right">

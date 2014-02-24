@@ -12,55 +12,51 @@
 
     <xsl:output indent="yes"/>
 
-
-	
-
-
-<xsl:template name="buildHomeCommunities">
-	<h1>Comunidades DSpace</h1>
-	<div id="col_iz">
-	<div class="objeto">
-		<div class="icon"><img src="icono_1_.png" /></div>
-		
-		<div class="title">INVESTIGACION</div>
-	</div>
-		
-
-	<div class="objeto">
-		<div class="icon"><img src="icono_2_.png" width="80" height="95" /></div>
-		<div class="title">MEDIATECA</div>
-	</div>
-	<div class="objeto">
-		<div class="icon"><img src="icono_3_.png" /></div>
-		<div class="title">OTRAS OBRAS LITERARIAS </div>
-	</div>
-		<div class="objeto">
-		<div class="icon"><img src="icono_4_.png" /></div>
-		<div class="title">ARCHIVO HISTORICO DIGITAL </div>
-	</div>
-	</div>
-
-<div id="col_der">
-<div class="objeto">
-		<div class="icon"><img src="icono_5_.png" /></div>
-		<div class="title">DOCENCIA</div>
-	</div>
-		
-
-	<div class="objeto">
-		<div class="icon"><img src="icono_6_.png" /></div>
-		<div class="title">TESIS</div>
-	</div>
-	<div class="objeto">
-		<div class="icon"><img src="icono_7_.png" /></div>
-		<div class="title">REVISTAS</div>
-	</div>
-		<div class="objeto">
-		<div class="icon"><img src="icono_8_.png" /></div>
-		<div class="title">INSTITUCIONAL</div>
-	</div>
-
-</div>
-	  
-   </xsl:template>
+	<xsl:template name="buildHomeCommunities">
+				<h1>Comunidades DSpace</h1>
+				<div id="col_iz">
+				<div class="objeto">
+					<div class="icon"><img src="icono_1_.png" /></div>
+					
+					<div class="title">INVESTIGACION</div>
+				</div>
+					
+			
+				<div class="objeto">
+					<div class="icon"><img src="icono_2_.png" width="80" height="95" /></div>
+					<div class="title">MEDIATECA</div>
+				</div>
+				<div class="objeto">
+					<div class="icon"><img src="icono_3_.png" /></div>
+					<div class="title">OTRAS OBRAS LITERARIAS </div>
+				</div>
+					<div class="objeto">
+					<div class="icon"><img src="icono_4_.png" /></div>
+					<div class="title">ARCHIVO HISTORICO DIGITAL </div>
+				</div>
+				</div>
+			
+			<div id="col_der">
+			<div class="objeto">
+					<div class="icon"><img src="icono_5_.png" /></div>
+					<div class="title">DOCENCIA</div>
+				</div>
+					
+			
+				<div class="objeto">
+					<div class="icon"><img src="icono_6_.png" /></div>
+					<div class="title">TESIS</div>
+				</div>
+				<div class="objeto">
+					<div class="icon"><img src="icono_7_.png" /></div>
+					<div class="title">REVISTAS</div>
+				</div>
+					<div class="objeto">
+					<div class="icon"><img src="icono_8_.png" /></div>
+					<div class="title">INSTITUCIONAL</div>
+				</div>
+			
+			</div>
+		  
+	   </xsl:template>
  </xsl:stylesheet>  
