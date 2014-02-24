@@ -326,18 +326,13 @@ placeholders for header images -->
     <xsl:template name="buildHeader">
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
-<<<<<<< Updated upstream
 				<div id="ds-header-logo-link"><xsl:text> </xsl:text></div>
               <div id="idiomas">
 
 
 			<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
 			</div>
-=======
-					<div id="ds-header-logo-link"></div>
-              		<div id="idiomas">
-						<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
-					</div>
+					
 	                <xsl:choose>
     	                <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
 				        	                <div id="ds-user-box">
@@ -380,7 +375,7 @@ dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
                     </xsl:otherwise>
                 </xsl:choose>
                 
->>>>>>> Stashed changes
+
                 <xsl:call-template name="languageSelection" />
                 
             </div>
