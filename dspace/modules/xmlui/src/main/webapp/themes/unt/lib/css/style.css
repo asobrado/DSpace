@@ -254,8 +254,37 @@ h1,h2,h3{
 	margin-top: 5px;
 }
 
+
 h4,h5,h6{
 	line-height: 1.72;
+}
+
+
+#imagen1 {
+background-image:url(../../images/dspace_footer.png);
+background-repeat:no-repeat;
+height:62px;
+width:66px;
+background-position:center;
+
+}
+
+#imagen2{
+background-image:url(../../images/sedici_footer.png);
+background-repeat:no-repeat;
+height:32px;
+width:164px;
+background-position:center;
+
+}
+
+#imagen3{
+background-image:url(../../images/facet_footer.png);
+background-repeat:no-repeat;
+height:32px;
+width:89px;
+background-position:center;
+
 }
 
 
