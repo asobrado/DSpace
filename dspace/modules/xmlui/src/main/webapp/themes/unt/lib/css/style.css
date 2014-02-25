@@ -13,9 +13,10 @@ Estilos bajado de Mirage
     color: #1F3F5E;
     min-width: 950px;
 }
-#ds-body {
+#ds-content-wrapper #ds-body , #ds-body {
     float: right;
-    width: 675px;
+    width:inherit !important;
+    max-width: 675px;
     padding-top: 10px;
 }
 
@@ -248,8 +249,14 @@ background-position:center;
 }
 
 
+h1,h2,h3{
+	line-height: 2;
+	margin-top: 5px;
+}
 
-
+h4,h5,h6{
+	line-height: 1.72;
+}
 
 
 

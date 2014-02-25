@@ -39,4 +39,21 @@
    		</xsl:for-each>
    
    </xsl:template>
+   
+   <!-- Imprime la ruta absoluta al recurso indicado con el parámetro path -->
+   	<xsl:template name="print-path">
+		<xsl:param name="path">/</xsl:param>
+		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
+		<xsl:value-of select="$path" />
+	</xsl:template>
+	
+	<!-- Imprime la ruta absoluta al recurso indicado con el parámetro path -->   
+   <xsl:template name="print-theme-path">
+		<xsl:param name="path">/</xsl:param>
+		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
+		<xsl:text>/</xsl:text>
+		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme' and @qualifier='path']" />
+		<xsl:value-of select="$path" />
+	</xsl:template>
+   
  </xsl:stylesheet>  
