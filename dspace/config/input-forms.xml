@@ -228,7 +228,7 @@
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
          <label>Idioma</label>
-         <input-type>onebox</input-type>
+         <input-type value-pairs-name="common_languages">dropdown</input-type>
          <hint>Ingresar el Idioma</hint>
          <required></required>
          <visibility>workflow</visibility>
@@ -341,7 +341,7 @@
 	        <dc-qualifier>available</dc-qualifier>
 	        <repeatable>false</repeatable>
 	        <label>Fecha de disponibilidad</label>
-	        <input-type>datetime</input-type>
+	        <input-type>date</input-type>
 	        <hint>Fecha de publicación, distribución o exposición. En caso de no haber difundido nunca su obra por ningún medio, indique la fecha de hoy como fecha de publicación.</hint>
 	     	<required></required>
        </field>       
@@ -352,7 +352,7 @@
 	        <dc-qualifier>compilator</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Compilador</label>
-	        <input-type>datetime</input-type>
+	        <input-type>name</input-type>
 	        <hint></hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
@@ -364,7 +364,7 @@
 	        <dc-qualifier>editor</dc-qualifier>
 	        <repeatable>false</repeatable>
 	        <label>Editor</label>
-	        <input-type>datetime</input-type>
+	        <input-type>name</input-type>
 	        <hint></hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
@@ -376,7 +376,7 @@
 	        <dc-qualifier>advisor</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Director de tesis</label>
-	        <input-type>datetime</input-type>
+	        <input-type>name</input-type>
 	        <hint></hint>
 	     	<type-bind>Tesis</type-bind>
        </field>
@@ -386,7 +386,7 @@
 	        <dc-qualifier>juror</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Jurado de tesis</label>
-	        <input-type>datetime</input-type>
+	        <input-type>name</input-type>
 	        <hint></hint>
 	     	<type-bind>Tesis</type-bind>
       	 </field>
@@ -456,7 +456,7 @@
 	        <dc-qualifier></dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Notas</label>
-	        <input-type>onebox</input-type>
+	        <input-type>textarea</input-type>
 	        <hint> An account of the resource.</hint>
 	        <visibility>workflow</visibility>
 	    
@@ -665,7 +665,7 @@
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
          <label>Idioma</label>
-         <input-type>name</input-type>
+         <input-type value-pairs-name="common_languages">dropdown</input-type>
          <hint>Ingresar el Idioma</hint>
          <required></required>
        </field>
@@ -775,7 +775,7 @@
 	        <dc-qualifier>available</dc-qualifier>
 	        <repeatable>false</repeatable>
 	        <label>Fecha de disponibilidad</label>
-	        <input-type>datetime</input-type>
+	        <input-type>date</input-type>
 	        <hint>Fecha de publicación, distribución o exposición. En caso de no haber difundido nunca su obra por ningún medio, indique la fecha de hoy como fecha de publicación.</hint>
 	     	<required></required>
        </field>       
@@ -786,7 +786,7 @@
 	        <dc-qualifier>compilator</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Compilador</label>
-	        <input-type>datetime</input-type>
+	        <input-type>date</input-type>
 	        <hint></hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
@@ -797,7 +797,7 @@
 	        <dc-qualifier>editor</dc-qualifier>
 	        <repeatable>false</repeatable>
 	        <label>Editor</label>
-	        <input-type>datetime</input-type>
+	        <input-type>date</input-type>
 	        <hint></hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
@@ -808,7 +808,7 @@
 	        <dc-qualifier>advisor</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Director de tesis</label>
-	        <input-type>datetime</input-type>
+	        <input-type>date</input-type>
 	        <hint></hint>
 	     	<type-bind>Tesis</type-bind>
        </field>
@@ -818,7 +818,7 @@
 	        <dc-qualifier>juror</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Jurado de tesis</label>
-	        <input-type>datetime</input-type>
+	        <input-type>o</input-type>
 	        <hint></hint>
 	     	<type-bind>Tesis</type-bind>
       	 </field>
@@ -885,7 +885,7 @@
 	        <dc-qualifier></dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Notas</label>
-	        <input-type>onebox</input-type>
+	        <input-type>textarea</input-type>
 	        <hint> An account of the resource.</hint>
 	    
       	 </field>
@@ -1163,42 +1163,35 @@
    <!-- default language order: (from dspace 1.2.1)
         "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
      -->
-   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+   <value-pairs value-pairs-name="common_languages" dc-term="language_iso">
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value></stored-value>
      </pair>
      <pair>
-       <displayed-value>English (United States)</displayed-value>
-       <stored-value>en_US</stored-value>
-      </pair>
-     <pair>
        <displayed-value>English</displayed-value>
-       <stored-value>en</stored-value>
+       <stored-value>eng</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Portugues</displayed-value>
+       <stored-value>por</stored-value>
      </pair>
      <pair>
        <displayed-value>Spanish</displayed-value>
-       <stored-value>es</stored-value>
+       <stored-value>spa</stored-value>
      </pair>
+     
      <pair>
        <displayed-value>German</displayed-value>
-       <stored-value>de</stored-value>
+       <stored-value>ger</stored-value>
      </pair>
      <pair>
        <displayed-value>French</displayed-value>
-       <stored-value>fr</stored-value>
+       <stored-value>fra</stored-value>
      </pair>
      <pair>
        <displayed-value>Italian</displayed-value>
-       <stored-value>it</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Japanese</displayed-value>
-       <stored-value>ja</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Chinese</displayed-value>
-       <stored-value>zh</stored-value>
+       <stored-value>ita</stored-value>
      </pair>
      <pair>
        <displayed-value>(Other)</displayed-value>
