@@ -557,9 +557,11 @@ placeholders for header images -->
         <div id="ds-footer-wrapper"> 
 					<div id="ds-footer">
 						<div id="ds-footer-left">
-							<img class="imagen" id="dspace_footer"/>
-							<img class="imagen" id="sedici_footer"/>
-							<img class="imagen" id="facet_footer"/>
+							<div id="ds-footer-left">
+								<img class="imagen" id="imagen1"/>
+								<img class="imagen" id="imagen2"/>
+								<img class="imagen" id="imagen3"/>
+						</div>
 						</div>
 				
 				<div id="ds-footer-right">
