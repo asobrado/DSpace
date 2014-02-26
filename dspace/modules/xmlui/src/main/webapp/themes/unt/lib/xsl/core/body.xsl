@@ -13,7 +13,7 @@
     <xsl:output indent="yes"/>
 
 	<xsl:template name="buildHomeCommunities">
-				<h1>Comunidades DSpace</h1>
+<!-- 				<h1>Comunidades DSpace</h1> -->
 				<div id="col_iz">
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_1_.png" /></div>
@@ -24,7 +24,7 @@
 			
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_2_.png" width="80" height="95" /></div>
-					<div class="title"><a href="handle/123456789/7">MEDIATEC</a></div>
+					<div class="title"><a href="handle/123456789/7">MEDIATECA</a></div>
 				</div>
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_3_.png" /></div>
@@ -59,4 +59,11 @@
 			</div>
 		  
 	   </xsl:template>
+	   
+	   
+	   <xsl:template match="dri:div[@id='aspect.artifactbrowser.CommunityViewer.div.community-search-browse']">
+	   		<!-- Oculto las cajas de busqueda para la comunidad -->
+	   </xsl:template>
+	   
  </xsl:stylesheet>  
+ 

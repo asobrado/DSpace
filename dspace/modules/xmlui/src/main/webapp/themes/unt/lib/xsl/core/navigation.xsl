@@ -16,19 +16,23 @@
 	<xsl:template match="dri:options">
 		<div id="ds-options-wrapper">
 			<div id="ds-options">
-				<xsl:call-template name="addHelpBox" />
 				<xsl:call-template name="addSearchBox" />
 				<xsl:apply-templates />
-				<xsl:call-template name="addSocialBox" />
+<!-- 				<xsl:call-template name="addSocialBox" /> -->
+				<xsl:call-template name="addHelpBox" />	
 			</div>
 		</div>
 	</xsl:template>
+	<xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account' and @n='account']">
+<!-- 	SILENCIO -->
+	</xsl:template>
+	
 
 	<xsl:template name="addHelpBox">
-		<h1 id="ds-feed-option-head" class="ds-option-set-head">
+		<h1 class="ds-option-set-head">
 			<i18n:text>unt.ayuda.header</i18n:text>
 		</h1>
-		<div id="ds-feed-option" class="ds-option-set">
+		<div id="ds-help-option" class="ds-option-set">
 			<ul>
 				<li><a>
 						<xsl:attribute name="href">
@@ -149,7 +153,7 @@
 						<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container']">
 							<label>
 								<input id="ds-search-form-scope-all" type="radio" name="scope" value="" checked="checked" />
-								<i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
+								<i18n:text>xmlui.dri2xhtml.structural.search-in-all</i18n:text>
 							</label>
 							<br />
 							<label>
@@ -158,16 +162,7 @@
                                         <xsl:value-of select="substring-after(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container'],':')" />
                                     </xsl:attribute>
 								</input>
-								<xsl:choose>
-									<xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='containerType']/text() = 'type:community'">
-										<i18n:text>xmlui.dri2xhtml.structural.search-in-community
-										</i18n:text>
-									</xsl:when>
-									<xsl:otherwise>
-										<i18n:text>xmlui.dri2xhtml.structural.search-in-collection
-										</i18n:text>
-									</xsl:otherwise>
-								</xsl:choose>
+								<i18n:text>xmlui.dri2xhtml.structural.search-in-collection</i18n:text>
 							</label>
 						</xsl:if>
 					</fieldset>
@@ -186,5 +181,41 @@
 
 		</xsl:if>
 	</xsl:template>
+	
+	<xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.browse' and @n='browse']">
+			<h1 class="ds-option-set-head"><xsl:copy-of select="dri:head"/></h1>
+			<div class="ds-option-set"><ul>
+			<xsl:for-each select="dri:list[@id='aspect.browseArtifacts.Navigation.list.global']/dri:item/dri:xref">
+				<li><a>
+					<xsl:attribute name="href"><xsl:value-of select="@target" /></xsl:attribute>
+					<xsl:copy-of select="*"/>
+				</a></li>
+			</xsl:for-each>
+			</ul></div>
+	</xsl:template>
 
+
+<!-- 	<list id="aspect.viewArtifacts.Navigation.list.account" n="account"> -->
+<!-- <head> -->
+<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.my_account</i18n:text> -->
+<!-- </head> -->
+<!-- <item> -->
+<!-- <xref target="/xmlui/logout"> -->
+<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.logout</i18n:text> -->
+<!-- </xref> -->
+<!-- </item> -->
+<!-- <item> -->
+<!-- <xref target="/xmlui/profile"> -->
+<!-- <i18n:translate> -->
+<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.profile</i18n:text> -->
+<!-- <i18n:param>Ariel Lira</i18n:param> -->
+<!-- </i18n:translate> -->
+<!-- </xref> -->
+<!-- </item> -->
+<!-- <item> -->
+<!-- <xref target="/xmlui/submissions"> -->
+<!-- <i18n:text catalogue="default">xmlui.Submission.Navigation.submissions</i18n:text> -->
+<!-- </xref> -->
+<!-- </item> -->
+<!-- </list> -->
 </xsl:stylesheet>

@@ -390,10 +390,16 @@ placeholders for header images -->
 			<ul id="ds-trail">
 				<xsl:choose>
 				    <xsl:when test="starts-with($request-uri, 'page/')">
-				         <xsl:text>Ayuda</xsl:text>
+				        <li class="ds-trail-link first-link"><a>
+				        	<xsl:attribute name="href"><xsl:value-of select="//dri:pageMeta/dri:metadata[@element='contextPath']"/></xsl:attribute>
+				        	<xsl:text>Inicio</xsl:text>
+			        	</a></li>
+				        <li class="ds-trail-arrow"><xsl:text>&#8594;</xsl:text></li>
+				        <li class="ds-trail-link"><xsl:text>Ayuda</xsl:text></li>
+				        
 				    </xsl:when>
-				    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
-				        <li class="ds-trail-link first-link">-</li>
+				    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0 or ($request-uri = '')">
+<!-- 				        <li class="ds-trail-link first-link">-</li> -->
 				    </xsl:when>
 				    <xsl:otherwise>
 				        <xsl:apply-templates select="/dri:document/dri:meta/dri:pageMeta/dri:trail"/>

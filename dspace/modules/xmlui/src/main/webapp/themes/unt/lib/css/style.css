@@ -17,7 +17,7 @@ Estilos bajado de Mirage
     float: right;
     width:inherit !important;
     max-width: 675px;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 .ie6 #ds-content-wrapper {
@@ -261,7 +261,14 @@ background-position:center;
 
 }
 
-
+h1.ds-option-set-head:FIRST-CHILD {
+margin-top: 0;
+}
+	
+div.ds-option-set ul.sublist{
+	margin-left: 0px;
+	padding: 2px;
+}
 
 
 
