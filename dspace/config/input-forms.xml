@@ -472,7 +472,7 @@
 	        <label>Licencia</label>
 	        <input-type>onebox</input-type>
 	        <hint>link a la licencia</hint>
-	    
+	    `	<required></required>
       	 </field>
      </page>
       	
@@ -900,7 +900,7 @@
 	        <label>Licencia</label>
 	        <input-type>onebox</input-type>
 	        <hint>link a la licencia</hint>
-	    
+	    	<required></required>
       	 </field>
      </page>
       	 

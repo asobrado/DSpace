@@ -18,7 +18,7 @@
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_1_.png" /></div>
 					
-					<div class="title"><a href="handle/123456789/1">INVESTIGACION</a></div>
+					<div class="title"><a href="handle/123456789/2">INVESTIGACION</a></div>
 				</div>
 					
 			
@@ -28,18 +28,18 @@
 				</div>
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_3_.png" /></div>
-					<div class="title"><a href="handle/123456789/8">OTRAS OBRAS LITERARIAS </a></div>
+					<div class="title"><a href="handle/123456789/24">OTRAS OBRAS LITERARIAS </a></div>
 				</div>
 					<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_4_.png" /></div>
-					<div class="title"><a href="handle/123456789/6">ARCHIVO HISTORICO DIGITAL</a> </div>
+					<div class="title"><a href="handle/123456789/4">ARCHIVO HISTORICO DIGITAL</a> </div>
 				</div>
 				</div>
 			
 			<div id="col_der">
 			<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_5_.png" /></div>
-					<div class="title"><a href="handle/123456789/2">DOCENCIA</a></div>
+					<div class="title"><a href="handle/123456789/1">DOCENCIA</a></div>
 				</div>
 					
 			
@@ -49,11 +49,11 @@
 				</div>
 				<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_7_.png" /></div>
-					<div class="title"><a href="handle/123456789/4">REVISTAS</a></div>
+					<div class="title"><a href="handle/123456789/5">REVISTAS</a></div>
 				</div>
 					<div class="objeto">
 					<div class="icon"><img src="themes/unt/images/icono_8_.png" /></div>
-					<div class="title"><a href="handle/123456789/5">INSTITUCIONAL</a></div>
+					<div class="title"><a href="handle/123456789/6">INSTITUCIONAL</a></div>
 				</div>
 			
 			</div>
