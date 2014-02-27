@@ -326,7 +326,7 @@
 	     	<type-bind>Tesis,Objeto de conferencia</type-bind>
        </field>
    		<field>
-	    	<dc-schema>unt</dc-schema>
+	    	<dc-schema>dc</dc-schema>
 	        <dc-element>date</dc-element>
 	        <dc-qualifier>issued</dc-qualifier>
 	        <repeatable>false</repeatable>
@@ -760,7 +760,7 @@
 	     	<type-bind>Tesis,Objeto de conferencia</type-bind>
        </field>
    		<field>
-	    	<dc-schema>unt</dc-schema>
+	    	<dc-schema>dc</dc-schema>
 	        <dc-element>date</dc-element>
 	        <dc-qualifier>issued</dc-qualifier>
 	        <repeatable>false</repeatable>
