@@ -123,6 +123,10 @@
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Idioma (ISO)</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palabra clave</message>
 
+<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Tipo</message>
+<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Fecha de publicación</message>
+
+
    <!--  some common other possibilities for Advanced Search Fields -->
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Contribuidor/a</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Creador/a</message>
