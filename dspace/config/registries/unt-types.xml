@@ -174,4 +174,18 @@
     <scope_note>Periodo de embargo en días, correderos desde la fecha de depósito</scope_note>
   </dc-type>
 
+  <dc-type>
+	<schema>unt</schema>
+    <element>description</element>
+    <qualifier>origen</qualifier>
+    <scope_note>Institucion, departamento y/o unidad de origen del material</scope_note>
+  </dc-type>
+  
+  <dc-type>
+	<schema>unt</schema>
+    <element>relation</element>
+    <qualifier>volumeAndIssue</qualifier>
+    <scope_note></scope_note>
+  </dc-type>
+  
 </dspace-dc-types>

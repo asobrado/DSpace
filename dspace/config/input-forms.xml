@@ -283,7 +283,7 @@
        </field>
        <field>
          <dc-schema>unt</dc-schema>
-         <dc-element>itentifier</dc-element>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>issn</dc-qualifier>
          <repeatable>false</repeatable>
          <label>ISSN</label>
@@ -294,7 +294,7 @@
        </field>
 		<field>
 	         <dc-schema>unt</dc-schema>
-	         <dc-element>itentifier</dc-element>
+	         <dc-element>identifier</dc-element>
 	         <dc-qualifier>isbn</dc-qualifier>
 	         <repeatable>false</repeatable>
 	         <label>ISBN</label>
@@ -306,7 +306,7 @@
    
 		<field>
 	         <dc-schema>unt</dc-schema>
-	         <dc-element>itentifier</dc-element>
+	         <dc-element>identifier</dc-element>
 	         <dc-qualifier>other</dc-qualifier>
 	         <repeatable>false</repeatable>
 	         <label>Otros identificadores</label>
@@ -336,7 +336,7 @@
 	     	<required></required>
        </field>
 		<field>
-	    	<dc-schema>unt</dc-schema>
+	    	<dc-schema>dc</dc-schema>
 	        <dc-element>date</dc-element>
 	        <dc-qualifier>available</dc-qualifier>
 	        <repeatable>false</repeatable>
@@ -463,18 +463,7 @@
       	 </field>
      </page>
 
-     <page number="3">
-     	 <field>
-	    	<dc-schema>dcterms</dc-schema>
-	        <dc-element>license</dc-element>
-	        <dc-qualifier></dc-qualifier>
-	        <repeatable>false</repeatable>
-	        <label>Licencia</label>
-	        <input-type>onebox</input-type>
-	        <hint>link a la licencia</hint>
-	    `	<required></required>
-      	 </field>
-     </page>
+   
       	
    </form>
    <form name="traditional">
@@ -717,7 +706,7 @@
        </field>
        <field>
          <dc-schema>unt</dc-schema>
-         <dc-element>itentifier</dc-element>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>issn</dc-qualifier>
          <repeatable>false</repeatable>
          <label>ISSN</label>
@@ -728,7 +717,7 @@
        </field>
 		<field>
 	         <dc-schema>unt</dc-schema>
-	         <dc-element>itentifier</dc-element>
+	         <dc-element>identifier</dc-element>
 	         <dc-qualifier>isbn</dc-qualifier>
 	         <repeatable>false</repeatable>
 	         <label>ISBN</label>
@@ -740,7 +729,7 @@
    
 		<field>
 	         <dc-schema>unt</dc-schema>
-	         <dc-element>itentifier</dc-element>
+	         <dc-element>identifier</dc-element>
 	         <dc-qualifier>other</dc-qualifier>
 	         <repeatable>false</repeatable>
 	         <label>Otros identificadores</label>
@@ -770,7 +759,7 @@
 	     	<required></required>
        </field>
 		<field>
-	    	<dc-schema>unt</dc-schema>
+	    	<dc-schema>dc</dc-schema>
 	        <dc-element>date</dc-element>
 	        <dc-qualifier>available</dc-qualifier>
 	        <repeatable>false</repeatable>
@@ -891,18 +880,6 @@
       	 </field>
      </page>
 
-     <page number="3">
-     	 <field>
-	    	<dc-schema>dcterms</dc-schema>
-	        <dc-element>license</dc-element>
-	        <dc-qualifier></dc-qualifier>
-	        <repeatable>false</repeatable>
-	        <label>Licencia</label>
-	        <input-type>onebox</input-type>
-	        <hint>link a la licencia</hint>
-	    	<required></required>
-      	 </field>
-     </page>
       	 
    </form>
 
