@@ -16,7 +16,7 @@ Estilos bajado de Mirage
 #ds-content-wrapper #ds-body , #ds-body {
     float: right;
     width:inherit !important;
-    max-width: 675px;
+    max-width: 730px;
     padding-top: 0px;
 }
 
@@ -24,57 +24,74 @@ Estilos bajado de Mirage
     text-align: center;
 }
 
-#ds-trail-wrapper {
-    background-color: #b6c8d9;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid #9cacba;
-    border-bottom: 1px solid #9cacba;
-    min-width: 950px;
-}
 
 
 /*###############################################################3*/
 /**   Estilos del Trail */
 
-#ds-trail-wrapper {
-   
-	margin: 0;
-	padding: 0 220px;
-	width: 940px;
+#ds-trail {
+    margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	margin-bottom: 2px;
-	background-color: white;
-	border: none;
+	display: inline-block;
+	width:inherit;
+	max-width: inherit;
+	position: inherit;
 }
 
-#ds-trail {
-    line-height: 138.5%;
-    list-style: none outside none;
-    margin: 0;
-    padding: 3px 0;
-}
 
 #ds-trail li {
-    display: inline;
     margin-right: 5px;
+    list-style: none outside none;
+    vertical-align: middle;
 }
-
+#ds-trail img {
+	vertical-align:bottom;
+}
 #ds-trail a {
 	text-decoration: none; 
 	color:#7581ae;
 }
 
-/** FIN DE ESTILO DE TRAIL**/
+#ds-trail :hover {
+	text-decoration: underline; 
+}
 
+#left-trail{
+	float:left;
+/* 	left:5px; */
+	margin-left: 0px;
+}
 
-
+#right-trail{
+	float:right;
+}
 
 /*##################################################################*/
-/*
-  Estilo generado por lucas
-*/
+/* Estilos del footer */
+
+#ds-footer-wrapper {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding-top:10px;
+	clear: both;
+}
+#ds-footer-right {
+	width: 45%;
+	float: right;
+}
+#ds-footer-left {
+/* 	width: 45%; */
+	float: left;
+	padding: 0px 0px 0px 20px;
+}
+
+#ds-footer-left a{
+	float: left;
+	padding: 10px;
+}
+
+
 /*##################################################################*/
 
 html, body{     
@@ -91,13 +108,14 @@ html, body{
 	width: 367px;
 	background-repeat: no-repeat;
 }
-#escudo_unt {
-}
+
+
 #ds-header-wrapper #ds-header {
-	height: 215px;
+ 	height: 185px; /*215px; */
 	width: 1113px;
 	background-image: url(../../images/header_back.png);
 }
+
 #ds-content-wrapper  #ds-body {
 	width: 700px;
 	
@@ -130,23 +148,7 @@ padding-left: 10px;
 	width: 230px;
 	font-size: 12px;
 }
-#ds-footer-wrapper {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	padding-top:10px;
-	clear: both;
-}
-#ds-footer-left {
-	padding: 0px 0px 0px 20px;
-}
-#ds-footer-right {
-	width: 45%;
-	float: left;
-}
-#ds-footer-left {
-	width: 45%;
-	float: left;
-}
+
 #copy {
 	width: 50%;
 	float: left;
@@ -154,10 +156,6 @@ padding-left: 10px;
 #direccion {
 	width: 45%;
 	float: left;
-}
-#ds-footer-left .imagen {
-	float: left;
-	padding: 10px;
 }
 #direccion .imagen_gps {
 	width: 20px;
@@ -204,29 +202,6 @@ h1 {
 #ds-main #wrapper {
 	margin: 0px 0px 0px 215px;
 }
-#idiomas {
-	width: 200px;
-	height: 50px;
-	top: 70px;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
-	float: left;
-	display: block;
-	left: 150px;
-	position: relative;
-	text-align: right;
-}
-
-#idiomas a{
-text-decoration:none;
-color:black;
-}
-
-#idiomas a:hover{
-text-decoration:underline;
-color:blue;
-}
-
 
 
 /* input de busqueda del menu*/
@@ -248,32 +223,6 @@ h4,h5,h6{
 }
 
 
-#imagen1 {
-background-image:url(../../images/dspace_footer.png);
-background-repeat:no-repeat;
-height:62px;
-width:66px;
-background-position:center;
-
-}
-
-#imagen2{
-background-image:url(../../images/sedici_footer.png);
-background-repeat:no-repeat;
-height:32px;
-width:164px;
-background-position:center;
-
-}
-
-#imagen3{
-background-image:url(../../images/facet_footer.png);
-background-repeat:no-repeat;
-height:32px;
-width:89px;
-background-position:center;
-
-}
 
 h1.ds-option-set-head:FIRST-CHILD {
 margin-top: 0;
@@ -284,3 +233,14 @@ div.ds-option-set ul.sublist{
 	padding: 2px;
 }
 
+
+#ds-user-box {
+right: 0;
+top: 17px;
+position: absolute;
+color: white;
+background: blue;
+border-radius: 4px;
+opacity: 0.2;
+padding: 3px;
+}

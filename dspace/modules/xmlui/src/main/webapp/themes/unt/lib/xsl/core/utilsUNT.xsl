@@ -14,7 +14,7 @@
    
    <!-- Imprime la ruta absoluta al recurso indicado con el parámetro path -->
    	<xsl:template name="print-path">
-		<xsl:param name="path">/</xsl:param>
+   		<xsl:param name="path">/</xsl:param>
 		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
 		<xsl:text>/</xsl:text>
 		<xsl:value-of select="$path" />
@@ -27,6 +27,46 @@
 		<xsl:text>/themes/</xsl:text>
 		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme' and @qualifier='path']" />
 		<xsl:value-of select="$path" />
+	</xsl:template>
+	
+	<xsl:template name="build-anchor">
+		<xsl:param name="a.href">/</xsl:param>
+		<xsl:param name="a.value" select="$a.href"/>
+		<xsl:param name="img.src"></xsl:param>
+		<xsl:param name="img.alt"></xsl:param>
+		<a>
+			<xsl:attribute name="href">
+				<xsl:if test="starts-with($a.href, 'http://')">
+					<xsl:value-of select="$a.href"/>
+				</xsl:if>
+				<xsl:if test="not(starts-with($a.href, 'http://'))">
+					<xsl:call-template name="print-path">
+						<xsl:with-param name="path" select="$a.href"/>
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:attribute>
+			<xsl:if test="$img.src">
+				<xsl:call-template name="build-img">	
+					<xsl:with-param name="img.src" select="$img.src"/>
+					<xsl:with-param name="img.alt" select="$img.alt"/>
+				</xsl:call-template>
+			</xsl:if>
+			<xsl:if test="not($img.src)">
+				<xsl:copy-of select="$a.value"/>
+			</xsl:if>
+		</a>
+	</xsl:template>
+	
+	<xsl:template name="build-img">
+		<xsl:param name="img.src"></xsl:param>
+		<xsl:param name="img.alt">image</xsl:param>
+		<img alt="{$img.alt}">
+			<xsl:attribute name="src">
+				<xsl:call-template name="print-theme-path">
+					<xsl:with-param name="path" select="$img.src"/>
+				</xsl:call-template>
+			</xsl:attribute>
+		</img>
 	</xsl:template>
    
  </xsl:stylesheet>  

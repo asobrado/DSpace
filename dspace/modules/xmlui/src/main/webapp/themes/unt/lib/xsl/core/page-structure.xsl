@@ -81,7 +81,7 @@ overriding the dri:document template.
                         <xsl:call-template name="buildHeader"/>
 
                         <!--The trail is built by applying a template over pageMeta's trail children. -->
-                        <xsl:call-template name="buildTrail"/>
+<!--                         <xsl:call-template name="buildTrail"/> -->
 
                         <!--javascript-disabled warning, will be invisible if javascript is enabled-->
                         <div id="no-js-warning-wrapper" class="hidden">
@@ -327,12 +327,6 @@ placeholders for header images -->
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
 				<div id="ds-header-logo-link"><xsl:text> </xsl:text></div>
-              <div id="idiomas">
-
-
-			<img src="themes/unt/images/en.png" />  <img src="themes/unt/images/esp.png" />
-			</div>
-					
 	                <xsl:choose>
     	                <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
 				        	                <div id="ds-user-box">
@@ -385,9 +379,45 @@ dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
 placeholders for header images -->
      <xsl:template name="buildTrail">
-	<div id="trail">
-		<div id="ds-trail-wrapper">
-			<ul id="ds-trail">
+		<div id="ds-trail">
+			
+			<div id="right-trail">
+			
+				
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">/profile</xsl:with-param>
+					<xsl:with-param name="a.value">
+						Perfil
+					</xsl:with-param>
+				</xsl:call-template>
+				|
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">/submissions</xsl:with-param>
+					<xsl:with-param name="a.value">
+						Mis Envios
+					</xsl:with-param>
+				</xsl:call-template>
+				|
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">/logout</xsl:with-param>
+					<xsl:with-param name="a.value">
+						Logout
+					</xsl:with-param>
+				</xsl:call-template>
+				
+				
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="img.src">/images/esp.png</xsl:with-param>
+					<xsl:with-param name="img.alt">Español</xsl:with-param>
+				</xsl:call-template>
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">/?locale-attribute=en</xsl:with-param>
+					<xsl:with-param name="img.src">/images/eng.png</xsl:with-param>
+					<xsl:with-param name="img.alt">English</xsl:with-param>
+				</xsl:call-template>
+			</div>
+		
+			<ul id="left-trail">
 				<xsl:choose>
 				    <xsl:when test="starts-with($request-uri, 'page/')">
 				        <li class="ds-trail-link first-link"><a>
@@ -396,17 +426,17 @@ placeholders for header images -->
 			        	</a></li>
 				        <li class="ds-trail-arrow"><xsl:text>&#8594;</xsl:text></li>
 				        <li class="ds-trail-link"><xsl:text>Ayuda</xsl:text></li>
-				        
 				    </xsl:when>
 				    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0 or ($request-uri = '')">
-<!-- 				        <li class="ds-trail-link first-link">-</li> -->
+				        <li class="ds-trail-link first-link"></li>
 				    </xsl:when>
 				    <xsl:otherwise>
 				        <xsl:apply-templates select="/dri:document/dri:meta/dri:pageMeta/dri:trail"/>
 				    </xsl:otherwise>
-				</xsl:choose>			
+				</xsl:choose>
+				
 			</ul>
-		</div>
+		
 	</div>        
   </xsl:template>
 
@@ -561,17 +591,29 @@ placeholders for header images -->
     <!-- Like the header, the footer contains various miscellaneous text, links, and image placeholders -->
     <xsl:template name="buildFooter">
         <div id="ds-footer-wrapper"> 
-					<div id="ds-footer">
-						<div id="ds-footer-left">
-							<div id="ds-footer-left">
-								<img class="imagen" id="imagen1"/>
-								<img class="imagen" id="imagen2"/>
-								<img class="imagen" id="imagen3"/>
-						</div>
-						</div>
+			<div id="ds-footer">
+				<div id="ds-footer-left">
+								
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.href">http://www.dspace.org/</xsl:with-param>
+						<xsl:with-param name="img.src">/images/dspace_footer.png</xsl:with-param>
+						<xsl:with-param name="img.alt">DSpace</xsl:with-param>
+					</xsl:call-template>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.href">http://sedici.unlp.edu.ar/</xsl:with-param>
+						<xsl:with-param name="img.src">/images/sedici_footer.png</xsl:with-param>
+						<xsl:with-param name="img.alt">SEDICI</xsl:with-param>
+					</xsl:call-template>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.href">http://www.facet.unt.edu.ar/</xsl:with-param>
+						<xsl:with-param name="img.src">/images/facet_footer.png</xsl:with-param>
+						<xsl:with-param name="img.alt">FACET</xsl:with-param>
+					</xsl:call-template>
+								
+				</div>
 				
 				<div id="ds-footer-right">
-					<div id="copy">PREBI - SEDICI © 2003-2014
+					<div id="copy">RIUNT © 2014
 					Universidad Nacional de La Plata 
 					Todos los derechos reservados conforme a la ley 11.723</div>
 					<div id="direccion">
@@ -579,8 +621,9 @@ placeholders for header images -->
 					Calle 49 y 115 s/n 1er piso - Edificio ex Liceo
 					La Plata, Buenos Aires (C.P. 1900)
 					Tel 0221 423 6696/6677 (int. 141)</div>
-					</div>
+					
 				</div>
+			</div>
 		</div>
     </xsl:template>
 
@@ -598,6 +641,8 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 -->
     <xsl:template match="dri:body">
         <div id="ds-body">
+        <!--The trail is built by applying a template over pageMeta's trail children. -->
+                        <xsl:call-template name="buildTrail"/>
             <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='alert'][@qualifier='message']">
                 <div id="ds-system-wide-alert">
                     <p>
