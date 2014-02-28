@@ -123,10 +123,6 @@
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Idioma (ISO)</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palabra clave</message>
 
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Tipo</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Fecha de publicación</message>
-
-
    <!--  some common other possibilities for Advanced Search Fields -->
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Contribuidor/a</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Creador/a</message>
@@ -2006,6 +2002,34 @@ Puede reemplazar la plantilla que gestiona el caso general dri2xhtml para mejora
 <message key="xmlui.dri2xhtml.METS-1.0.item-date">Fecha</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-publisher">Editor</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-subject">Materia</message>
+
+<!-- Agregado para el nuevo item view -->
+<message key="xmlui.dri2xhtml.METS-1.0.item-subtype">Tipo de documento</message>
+<message key="xmlui.dri2xhtml.METS-1.0.general-info">Información general</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-issued">Fecha de publicación</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-other">Otros Identificadores</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-creator-">Autor</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-abstract">Resumen</message>
+
+<message key="xmlui.dri2xhtml.METS-1.0.no-author">No tiene autor</message>
+
+
+<message key="unt.items.handle.utilizacion_URI">Por favor, utilice este identificador(URI) para citar o enlazar este ítem: </message>
+
+<!-- ######################################################### -->
+
+
+
 
 <message key="xmlui.dri2xhtml.METS-1.0.item-files-head">Ficheros en el ítem</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-files-file">Ficheros</message>

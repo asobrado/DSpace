@@ -2112,6 +2112,33 @@
 	<message key="xmlui.dri2xhtml.METS-1.0.item-publisher">Publisher</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-subject">Subject</message>
 
+
+<!-- Agregado para el nuevo item view -->
+<message key="xmlui.dri2xhtml.METS-1.0.item-subtype">Tipo de documento</message>
+<message key="xmlui.dri2xhtml.METS-1.0.general-info">Información general</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-issued">Fecha de publicación<</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-other">Otros Identificadores</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-available">Disponible en UNT desde</message>
+
+
+<message key="unt.items.handle.utilizacion_URI">Por favor, utilice este identificador(URI) para citar o enlazar este ítem: </message>
+
+<!-- ######################################################### -->
+
+
+
+
+
+
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-head">Files in this item</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-file">Files</message>
 	<message key="xmlui.dri2xhtml.METS-1.0.item-files-name">Name</message>
