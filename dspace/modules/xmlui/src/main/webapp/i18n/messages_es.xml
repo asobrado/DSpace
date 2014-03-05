@@ -2022,6 +2022,15 @@ Puede reemplazar la plantilla que gestiona el caso general dri2xhtml para mejora
 <message key="xmlui.dri2xhtml.METS-1.0.item-abstract">Resumen</message>
 
 <message key="xmlui.dri2xhtml.METS-1.0.no-author">No tiene autor</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-language">Idioma</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-ger">Aleman</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-eng">Ingles</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-por">Portugues</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-spa">Espanol</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-fra">Frances</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-ita">Italiano</message>
+<message key="xmlui.dri2xhtml.METS-1.0.code-value-other">Otro</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-extent">Extensión</message>
 
 
 <message key="unt.items.handle.utilizacion_URI">Por favor, utilice este identificador(URI) para citar o enlazar este ítem: </message>
