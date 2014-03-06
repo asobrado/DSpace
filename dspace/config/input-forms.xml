@@ -257,16 +257,19 @@
          <required></required>
          <visibility>workflow</visibility>
        </field>
-       <field>
-         <dc-schema>unt</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>embargo_period</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Periodo de embargo</label>
-         <input-type>date</input-type>
-         <hint>Periodo de embargo</hint>
-        
-       </field>
+       
+       <!-- Período de embargo -->
+				<field>
+					<dc-schema>unt</dc-schema>
+					<dc-element>description</dc-element>
+					<dc-qualifier>embargo_period</dc-qualifier>
+	   			    <repeatable>false</repeatable>
+         			<label>Período de Embargo</label>
+					<input-type value-pairs-name="embargo_periods">dropdown</input-type>
+					<hint>Seleccione el período de embargo que se aplicará sobre la obra</hint>
+				</field>
+       
+    
     <!-- Formulario nuevo fin  -->   
     </page>
 
@@ -680,16 +683,17 @@
          <hint>Ingresar la Editorial</hint>
          <required></required>
        </field>
-       <field>
-         <dc-schema>unt</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>embargo_period</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Periodo de embargo</label>
-         <input-type>date</input-type>
-         <hint>Periodo de embargo</hint>
-        
-       </field>
+          <!-- Período de embargo -->
+				<field>
+					<dc-schema>unt</dc-schema>
+					<dc-element>description</dc-element>
+					<dc-qualifier>embargo_period</dc-qualifier>
+	   			    <repeatable>false</repeatable>
+         			<label>Período de Embargo</label>
+					<input-type value-pairs-name="embargo_periods">dropdown</input-type>
+					<hint>Seleccione el período de embargo que se aplicará sobre la obra</hint>
+				</field>
+    
     <!-- Formulario nuevo fin  -->   
     </page>
 
@@ -807,7 +811,7 @@
 	        <dc-qualifier>juror</dc-qualifier>
 	        <repeatable>true</repeatable>
 	        <label>Jurado de tesis</label>
-	        <input-type>o</input-type>
+	        <input-type>name</input-type>
 	        <hint></hint>
 	     	<type-bind>Tesis</type-bind>
       	 </field>
@@ -940,7 +944,37 @@
        <stored-value>isbn</stored-value>
      </pair>
    </value-pairs>
-
+<!-- Los valores se guardan en Dias -->
+		<value-pairs value-pairs-name="embargo_periods">
+			<pair>
+				<displayed-value>No aplicar embargo (recomendado)</displayed-value>
+				<stored-value></stored-value>
+			</pair>
+			<pair>
+				<displayed-value>1 Mes</displayed-value>
+				<stored-value>30</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>3 Meses</displayed-value>
+				<stored-value>90</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>6 Meses</displayed-value>
+				<stored-value>180</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>12 meses</displayed-value>
+				<stored-value>365</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>18 Meses</displayed-value>
+				<stored-value>545</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>24 meses</displayed-value>
+				<stored-value>730</stored-value>
+			</pair>
+		</value-pairs>
    <value-pairs value-pairs-name="common_types" dc-term="type">
       		<pair>
             	<displayed-value>- Seleccione un Tipo -</displayed-value>
