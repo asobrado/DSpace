@@ -17,16 +17,31 @@
 		<div id="ds-options-wrapper">
 			<div id="ds-options">
 				<xsl:call-template name="addSearchBox" />
+				
 				<xsl:apply-templates />
 <!-- 				<xsl:call-template name="addSocialBox" /> -->
 				<xsl:call-template name="addHelpBox" />	
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account' and @n='account']">
-<!-- 	SILENCIO -->
+	
+	<xsl:template match="dri:list[@n='discovery']" >
+		<xsl:if test="$request-uri != ''">
+			<xsl:apply-templates  select="dri:head"/>
+			<div id="aspect_discovery_Navigation_list_discovery" class="ds-option-set">
+			<ul class="ds-options-list">
+			<xsl:for-each select="dri:list">
+				<li><xsl:apply-templates select="."/></li>
+			</xsl:for-each>
+	 		</ul>
+			</div>
+		</xsl:if>
 	</xsl:template>
 	
+	<xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account' and @n='account']">
+				
+<!-- 	SILENCIO -->
+	</xsl:template>
 
 	<xsl:template name="addHelpBox">
 		<h1 class="ds-option-set-head">

@@ -277,6 +277,8 @@ h1 {
 	background-image: url(../../images/background.png);
 	background-repeat: no-repeat;
 /* 	height: 500px; */
+	max-width: 1328px;
+	margin: auto;
 }
 #ds-main #wrapper {
 	margin: 0px 0px 0px 215px;

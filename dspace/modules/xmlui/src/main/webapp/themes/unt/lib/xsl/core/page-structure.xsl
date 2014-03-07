@@ -148,6 +148,7 @@ placeholders for header images -->
 	 </xsl:template>
 	 <xsl:template name="languageSelection">
 				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">/?locale-attribute=es</xsl:with-param>
 					<xsl:with-param name="img.src">/images/esp.png</xsl:with-param>
 					<xsl:with-param name="img.alt">Español</xsl:with-param>
 				</xsl:call-template>
