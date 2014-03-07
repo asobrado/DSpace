@@ -2366,4 +2366,8 @@ Cuando se usa QDC para los elementos de DSpace se recomienda el uso de crosswalk
 	<message key="unt.ayuda.DerechosDeAutor">Derechos de autor</message>
 	<message key="unt.ayuda.Licencias">Licencias de uso</message>
 
+	<message key="unt.footer.copyright">RIUNT © 2014
+					Universidad Nacional de Tucuman 
+					Todos los derechos reservados conforme a la ley 11.723</message>
+	<message key="unt.footer.address">Calle 49 y 115 s/n 1er piso - Edificio ex Liceo La Plata, Buenos Aires (C.P. 1900) Tel 0221 423 6696/6677 (int. 141)</message>
 </catalogue>

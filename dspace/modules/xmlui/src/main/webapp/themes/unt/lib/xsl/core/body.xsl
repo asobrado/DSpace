@@ -12,53 +12,6 @@
 
     <xsl:output indent="yes"/>
 
-	<xsl:template name="buildHomeCommunities">
-<!-- 				<h1>Comunidades DSpace</h1> -->
-				<div id="col_iz">
-				<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_1_.png" /></div>
-					
-					<div class="title"><a href="handle/123456789/2">INVESTIGACION</a></div>
-				</div>
-					
-			
-				<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_2_.png" width="80" height="95" /></div>
-					<div class="title"><a href="handle/123456789/7">MEDIATECA</a></div>
-				</div>
-				<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_3_.png" /></div>
-					<div class="title"><a href="handle/123456789/24">OTRAS OBRAS LITERARIAS </a></div>
-				</div>
-					<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_4_.png" /></div>
-					<div class="title"><a href="handle/123456789/4">ARCHIVO HISTORICO DIGITAL</a> </div>
-				</div>
-				</div>
-			
-			<div id="col_der">
-			<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_5_.png" /></div>
-					<div class="title"><a href="handle/123456789/1">DOCENCIA</a></div>
-				</div>
-					
-			
-				<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_6_.png" /></div>
-					<div class="title"><a href="handle/123456789/3">TESIS</a></div>
-				</div>
-				<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_7_.png" /></div>
-					<div class="title"><a href="handle/123456789/5">REVISTAS</a></div>
-				</div>
-					<div class="objeto">
-					<div class="icon"><img src="themes/unt/images/icono_8_.png" /></div>
-					<div class="title"><a href="handle/123456789/6">INSTITUCIONAL</a></div>
-				</div>
-			
-			</div>
-		  
-	   </xsl:template>
 	   
 	   
 	

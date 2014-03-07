@@ -2,17 +2,32 @@
 
 
 /*##################################################################*/
-/*
-Estilos bajado de Mirage
-*/
 
+a,a:VISITED,:ACTIVE{
+color: #607890;
+text-decoration: none; 
+}
+
+a:HOVER {
+	color: #036;
+	text-decoration: none; 
+}
+
+ul, li{
+	margin:0;
+	list-style: none outside none;
+}
+html, body{     
+    height: 100%; 
+	padding:0;
+	margin:0;
+}
+BODY{
+	background-color: red;
+}
 /*##################################################################*/
 
-#ds-header-wrapper {
-    background-color:  white;  
-    color: #1F3F5E;
-    min-width: 950px;
-}
+
 #ds-content-wrapper #ds-body , #ds-body {
     float: right;
     width:inherit !important;
@@ -42,21 +57,14 @@ Estilos bajado de Mirage
 
 #ds-trail li {
     margin-right: 5px;
-    list-style: none outside none;
     vertical-align: middle;
 }
 #ds-trail img {
 	vertical-align:bottom;
 }
 #ds-trail a {
-	text-decoration: none; 
-	color:#7581ae;
+/* 	color:#7581ae; */
 }
-
-#ds-trail :hover {
-	text-decoration: underline; 
-}
-
 #left-trail{
 	float:left;
 /* 	left:5px; */
@@ -91,78 +99,149 @@ Estilos bajado de Mirage
 	padding: 10px;
 }
 
+#ds-footer-right > div{
+	width:170px;
+	float: right;
+	padding: 10px;
+}
 
+#ds-footer-right .direccion{
+	background-image: url('../../images/puntito.png');
+	background-position: 0px;
+	background-repeat: no-repeat;
+	padding-left: 34px;
+}
 /*##################################################################*/
 
-html, body{     
-    height: 100%; 
-	padding:0;
-	margin:0;
+
+#ds-header-wrapper {
+    background-color:  white;  
+    color: #1F3F5E;
+    min-width: 950px;
 }
 
-
-
-#ds-header-logo-link {
-	background-image: url(../../images/marca.png);
-	height: 167px;
-	width: 367px;
-	background-repeat: no-repeat;
-}
-
-
-#ds-header-wrapper #ds-header {
+#ds-header {
  	height: 185px; /*215px; */
 	width: 1113px;
 	background-image: url(../../images/header_back.png);
 }
 
-#ds-content-wrapper  #ds-body {
-	width: 700px;
-	
+#ds-header-logo-link {
+/* 	background-image: url(../../images/marca.png); */
+	height: 167px;
+	width: 367px;
+/* 	background-repeat: no-repeat; */
 }
-.objeto .icon {
+
+#header-bar {
+	float:right;
+	right: 30px;
+	botom: 17px;
+	position: inherit;
+	font-size: 13px;
+}
+
+#header-bar ul {
+	margin: 0px;
+	display: inline;
+}
+#header-bar li {
+	display: inline;
+    list-style: none outside none;
+    vertical-align: middle;
+}
+#header-bar img {
+	vertical-align:bottom;
+}
+
+
+/*##################################################################*/
+
+.ds-list-head{
+	clear: both;
+}
+
+.ds-logo-wrapper{
+	float: left;
+}
+
+.discover-container-contents{
+	float: right;
+}
+
+
+#launcher{
+	max-width: 420px;
+	float: left;
+	display: table;
+}
+#launcher li{
+	float: left;
+	margin: 0 16px 12px 0;
+	width: 193px;
 	height: 95px;
-	width: 80px;
-	float: left;
+	display: table-cell;
 }
-.objeto .title {
-	float: left;
-	width: 100px;
-	height: 63px;
-	padding-top: 20px;
-	padding-left: 20px;
+#launcher li * {
+	vertical-align: middle;
 }
-.objeto {
-	width: 219px;
+
+#launcher img {
+	padding-right: 5px;
+	width: 85px;
 	height: 95px;
-	font-family: "Times New Roman", Times, serif;
 }
 
-#right-body {
-float:left;
-padding-left: 10px;
+#launcher div.icon-title {
+	display: inline-block;
+	width: 99px;
+
 }
 
-#col_iz,#col_der,#tercera_columna {
-	float: left;
-	width: 230px;
-	font-size: 12px;
+#launcher-right{
+	float: right;
+	min-width: 276px;
 }
 
-#copy {
-	width: 50%;
+#launcher-right > * {
+	width: 276px;
 	float: left;
+	clear: both;
 }
-#direccion {
-	width: 45%;
+.ds-logo-wrapper{
 	float: left;
-}
-#direccion .imagen_gps {
-	width: 20px;
-	float: left;
-	height: 50px;
 	margin-right: 10px;
 }
+
+
+/*##################################################################*/
+
+#ds-content-wrapper  #ds-body {
+	width: 700px;
+}
+/* .objeto .icon { */
+/* 	height: 95px; */
+/* 	width: 80px; */
+/* 	float: left; */
+/* } */
+/* .objeto .title { */
+/* 	float: left; */
+/* 	width: 100px; */
+/* 	height: 63px; */
+/* 	padding-top: 20px; */
+/* 	padding-left: 20px; */
+/* } */
+/* .objeto { */
+/* 	width: 219px; */
+/* 	height: 95px; */
+/* 	font-family: "Times New Roman", Times, serif; */
+/* } */
+
+#right-body {
+	float:left;
+	padding-left: 10px;
+}
+
 h1 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18px;
@@ -234,13 +313,7 @@ div.ds-option-set ul.sublist{
 }
 
 
-#ds-user-box {
-right: 0;
-top: 17px;
-position: absolute;
-color: white;
-background: blue;
-border-radius: 4px;
-opacity: 0.2;
-padding: 3px;
+/* NO borrar, es para detectar errores de css*/
+BODY{
+	background-color: white;
 }

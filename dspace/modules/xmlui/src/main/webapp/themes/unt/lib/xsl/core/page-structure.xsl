@@ -71,253 +71,41 @@ overriding the dri:document template.
                 &lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt;&lt;body&gt;&lt;!--&lt;![endif]--&gt;</xsl:text>
 
             <xsl:choose>
-              <xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='framing'][@qualifier='popup']">
-                <xsl:apply-templates select="dri:body/*"/>
-              </xsl:when>
-                  <xsl:otherwise>
-                    <div id="ds-main">
+				<xsl:when test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='framing'][@qualifier='popup']">
+					<xsl:apply-templates select="dri:body/*"/>
+				</xsl:when>
+				<xsl:otherwise>
+                	<div id="ds-main">
                         <div id="wrapper">
-                        <!--The header div, complete with title, subtitle and other junk-->
-                        <xsl:call-template name="buildHeader"/>
-
-                        <!--The trail is built by applying a template over pageMeta's trail children. -->
-<!--                         <xsl:call-template name="buildTrail"/> -->
-
-                        <!--javascript-disabled warning, will be invisible if javascript is enabled-->
-                        <div id="no-js-warning-wrapper" class="hidden">
-                            <div id="no-js-warning">
-                                <div class="notice failure">
-                                    <xsl:text>JavaScript is disabled for your browser. Some features of this site may not work without it.</xsl:text>
-                                </div>
-                            </div>
-                        </div>
-
-
-			
-
-                        <!--ds-content is a groups ds-body and the navigation together and used to put the clearfix on, center, etc.
-ds-content-wrapper is necessary for IE6 to allow it to center the page content-->
-                        <div id="ds-content-wrapper">
-                            <div id="ds-content" class="clearfix">
-                                <!--
-Goes over the document tag's children elements: body, options, meta. The body template
-generates the ds-body div that contains all the content. The options template generates
-the ds-options div that contains the navigation and action options available to the
-user. The meta element is ignored since its contents are not processed directly, but
-instead referenced from the different points in the document. -->
-        						<xsl:apply-templates select="/dri:document/dri:options"/>
-        						<xsl:apply-templates select="/dri:document/dri:body"/>
-        						<xsl:apply-templates select="/dri:document/dri:meta"/>
-        
-                            </div>
-				
-                        </div>
-<xsl:call-template name="buildFooter"/>
-
-                        <!--
-The footer div, dropping whatever extra information is needed on the page. It will
-most likely be something similar in structure to the currently given example. -->
-                       
-
-                    </div> 
+	                        <!--The header div, complete with title, subtitle and other junk-->
+	                        <xsl:call-template name="buildHeader"/>
+	
+	                        <!--javascript-disabled warning, will be invisible if javascript is enabled-->
+	                        <div id="no-js-warning-wrapper" class="hidden">
+	                            <div id="no-js-warning">
+	                                <div class="notice failure">
+	                                    <xsl:text>JavaScript is disabled for your browser. Some features of this site may not work without it.</xsl:text>
+	                                </div>
+	                            </div>
+							</div>
+							
+							<div id="ds-content-wrapper">
+	                            <div id="ds-content" class="clearfix">
+	        						<xsl:apply-templates select="/dri:document/dri:options"/>
+	        						<xsl:apply-templates select="/dri:document/dri:body"/>
+	        						<xsl:apply-templates select="/dri:document/dri:meta"/>
+	  							</div>
+	                        </div>
+							<xsl:call-template name="buildFooter"/>
+						</div> 
 					</div>
                 </xsl:otherwise>
             </xsl:choose>
-                <!-- Javascript at the bottom for fast page loading -->
-              <xsl:call-template name="addJavascript"/>
 
+            <!-- Javascript at the bottom for fast page loading -->
+			<xsl:call-template name="addJavascript"/>
             <xsl:text disable-output-escaping="yes">&lt;/body&gt;</xsl:text>
         </html>
-    </xsl:template>
-
-        <!-- The HTML head element contains references to CSS as well as embedded JavaScript code. Most of this
-information is either user-provided bits of post-processing (as in the case of the JavaScript), or
-references to stylesheets pulled directly from the pageMeta element. -->
-    <xsl:template name="buildHead">
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-            <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-            <!-- Mobile Viewport Fix
-j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
-device-width : Occupy full width of the screen in its current orientation
-initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
-maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
--->
-            <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
-
-            <link rel="shortcut icon">
-                <xsl:attribute name="href">
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                    <xsl:text>/themes/</xsl:text>
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-                    <xsl:text>/images/favicon.ico</xsl:text>
-                </xsl:attribute>
-            </link>
-            <link rel="apple-touch-icon">
-                <xsl:attribute name="href">
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                    <xsl:text>/themes/</xsl:text>
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-                    <xsl:text>/images/apple-touch-icon.png</xsl:text>
-                </xsl:attribute>
-            </link>
-
-            <meta name="Generator">
-              <xsl:attribute name="content">
-                <xsl:text>DSpace</xsl:text>
-                <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='dspace'][@qualifier='version']">
-                  <xsl:text> </xsl:text>
-                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='dspace'][@qualifier='version']"/>
-                </xsl:if>
-              </xsl:attribute>
-            </meta>
-            <!-- Add stylesheets -->
-            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='stylesheet']">
-                <link rel="stylesheet" type="text/css">
-                    <xsl:attribute name="media">
-                        <xsl:value-of select="@qualifier"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="href">
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                        <xsl:text>/themes/</xsl:text>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-                        <xsl:text>/</xsl:text>
-                        <xsl:value-of select="."/>
-                    </xsl:attribute>
-                </link>
-            </xsl:for-each>
-
-            <!-- Add syndication feeds -->
-            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
-                <link rel="alternate" type="application">
-                    <xsl:attribute name="type">
-                        <xsl:text>application/</xsl:text>
-                        <xsl:value-of select="@qualifier"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="href">
-                        <xsl:value-of select="."/>
-                    </xsl:attribute>
-                </link>
-            </xsl:for-each>
-
-            <!-- Add OpenSearch auto-discovery link -->
-            <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='shortName']">
-                <link rel="search" type="application/opensearchdescription+xml">
-                    <xsl:attribute name="href">
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='scheme']"/>
-                        <xsl:text>://</xsl:text>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='serverName']"/>
-                        <xsl:text>:</xsl:text>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='serverPort']"/>
-                        <xsl:value-of select="$context-path"/>
-                        <xsl:text>/</xsl:text>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='autolink']"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="title" >
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='shortName']"/>
-                    </xsl:attribute>
-                </link>
-            </xsl:if>
-
-            <!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
-            <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
-                        <script type="text/javascript">
-                                //Clear default text of empty text areas on focus
-                                function tFocus(element)
-                                {
-                                        if (element.value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){element.value='';}
-                                }
-                                //Clear default text of empty text areas on submit
-                                function tSubmit(form)
-                                {
-                                        var defaultedElements = document.getElementsByTagName("textarea");
-                                        for (var i=0; i != defaultedElements.length; i++){
-                                                if (defaultedElements[i].value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){
-                                                        defaultedElements[i].value='';}}
-                                }
-                                //Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
-                                function disableEnterKey(e)
-                                {
-                                     var key;
-
-                                     if(window.event)
-                                          key = window.event.keyCode; //Internet Explorer
-                                     else
-                                          key = e.which; //Firefox and Netscape
-
-                                     if(key == 13) //if "Enter" pressed, then disable!
-                                          return false;
-                                     else
-                                          return true;
-                                }
-
-                                function FnArray()
-                                {
-                                    this.funcs = new Array;
-                                }
-
-                                FnArray.prototype.add = function(f)
-                                {
-                                    if( typeof f!= "function" )
-                                    {
-                                        f = new Function(f);
-                                    }
-                                    this.funcs[this.funcs.length] = f;
-                                };
-
-                                FnArray.prototype.execute = function()
-                                {
-                                    for( var i=0; i <xsl:text disable-output-escaping="yes">&lt;</xsl:text> this.funcs.length; i++ )
-                                    {
-                                        this.funcs[i]();
-                                    }
-                                };
-
-                                var runAfterJSImports = new FnArray();
-            </script>
-
-            <!-- Modernizr enables HTML5 elements & feature detects -->
-            <script type="text/javascript">
-                <xsl:attribute name="src">
-                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                    <xsl:text>/themes/Mirage/lib/js/modernizr-1.7.min.js</xsl:text>
-                </xsl:attribute>&#160;
-            </script>
-
-            <!-- Add the title in -->
-            <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
-            <title>
-                <xsl:choose>
-                        <xsl:when test="starts-with($request-uri, 'page/')">
-                                <xsl:text>RIUNET: Ayuda</xsl:text>
-                        </xsl:when>
-                        <xsl:when test="not($page_title)">
-                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-                        </xsl:when>
-                        <xsl:when test="$page_title = ''">
-                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
-                        </xsl:when>
-                        <xsl:otherwise>
-                                <xsl:copy-of select="$page_title/node()" />
-                        </xsl:otherwise>
-                </xsl:choose>
-            </title>
-
-            <!-- Head metadata in item pages -->
-            <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']">
-                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']"
-                              disable-output-escaping="yes"/>
-            </xsl:if>
-
-            <!-- Add all Google Scholar Metadata values -->
-            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
-                <meta name="{@element}" content="{.}"></meta>
-            </xsl:for-each>
-
-        </head>
     </xsl:template>
 
 
@@ -326,86 +114,39 @@ placeholders for header images -->
     <xsl:template name="buildHeader">
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
-				<div id="ds-header-logo-link"><xsl:text> </xsl:text></div>
-	                <xsl:choose>
-    	                <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
-				        	                <div id="ds-user-box">
-				            	                <p>
-				                	                <a>
-				                                    <xsl:attribute name="href">
-				                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-				dri:metadata[@element='identifier' and @qualifier='url']"/>
-				                                    </xsl:attribute>
-				                                    <i18n:text>xmlui.dri2xhtml.structural.profile</i18n:text>
-				                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-				dri:metadata[@element='identifier' and @qualifier='firstName']"/>
-				                                    <xsl:text> </xsl:text>
-				                                    <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-				dri:metadata[@element='identifier' and @qualifier='lastName']"/>
-				                                </a>
-				                                <xsl:text> | </xsl:text>
-				                                <a>
-				                                    <xsl:attribute name="href">
-				                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-				dri:metadata[@element='identifier' and @qualifier='logoutURL']"/>
-				                                    </xsl:attribute>
-				                                    <i18n:text>xmlui.dri2xhtml.structural.logout</i18n:text>
-				                                </a>
-				                            </p>
-				                        </div>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <div id="ds-user-box">
-                            <p>
-                                <a>
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
-dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
-                                    </xsl:attribute>
-                                    <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
-                                </a>
-                            </p>
-                        </div>
-                    </xsl:otherwise>
-                </xsl:choose>
-                
-
-                <xsl:call-template name="languageSelection" />
-                
-            </div>
-        </div>
+				<div id="ds-header-logo-link">
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="img.src">/images/marca.png</xsl:with-param>
+						<xsl:with-param name="img.alt">RIUNT</xsl:with-param>
+						<xsl:with-param name="a.href">/</xsl:with-param>
+					</xsl:call-template>
+				</div>
+			    <div id="header-bar">
+	            	<xsl:call-template name="buildUserBox" />
+    	            <xsl:call-template name="languageSelection" />
+        		</div>
+       		</div>
+		</div>
     </xsl:template>
-
-    <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
-placeholders for header images -->
-     <xsl:template name="buildTrail">
-		<div id="ds-trail">
-			
-			<div id="right-trail">
-			
-				
+    <xsl:template name="buildUserBox">
+		<ul >
+			<xsl:for-each select="/dri:document/dri:options/dri:list[@n='account']/dri:item	">
+				<xsl:sort select="position()" data-type="number" order="descending"/>
+        
+				<li>
 				<xsl:call-template name="build-anchor">
-					<xsl:with-param name="a.href">/profile</xsl:with-param>
+					<xsl:with-param name="a.href">
+						<xsl:value-of select="dri:xref/@target"/>
+					</xsl:with-param>
 					<xsl:with-param name="a.value">
-						Perfil
+						<xsl:copy-of select="dri:xref/*"/>
 					</xsl:with-param>
 				</xsl:call-template>
-				|
-				<xsl:call-template name="build-anchor">
-					<xsl:with-param name="a.href">/submissions</xsl:with-param>
-					<xsl:with-param name="a.value">
-						Mis Envios
-					</xsl:with-param>
-				</xsl:call-template>
-				|
-				<xsl:call-template name="build-anchor">
-					<xsl:with-param name="a.href">/logout</xsl:with-param>
-					<xsl:with-param name="a.value">
-						Logout
-					</xsl:with-param>
-				</xsl:call-template>
-				
-				
+				</li>
+			</xsl:for-each>
+		</ul>
+	 </xsl:template>
+	 <xsl:template name="languageSelection">
 				<xsl:call-template name="build-anchor">
 					<xsl:with-param name="img.src">/images/esp.png</xsl:with-param>
 					<xsl:with-param name="img.alt">Español</xsl:with-param>
@@ -415,6 +156,16 @@ placeholders for header images -->
 					<xsl:with-param name="img.src">/images/eng.png</xsl:with-param>
 					<xsl:with-param name="img.alt">English</xsl:with-param>
 				</xsl:call-template>
+	 </xsl:template>
+	 
+	 
+    <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
+placeholders for header images -->
+     <xsl:template name="buildTrail">
+		<div id="ds-trail">
+			
+			<div id="right-trail">
+				<xsl:text> </xsl:text>	
 			</div>
 		
 			<ul id="left-trail">
@@ -613,14 +364,14 @@ placeholders for header images -->
 				</div>
 				
 				<div id="ds-footer-right">
-					<div id="copy">RIUNT © 2014
-					Universidad Nacional de La Plata 
-					Todos los derechos reservados conforme a la ley 11.723</div>
-					<div id="direccion">
-					<div class="imagen_gps"><img src="themes/unt/images/puntito.png" /></div>
-					Calle 49 y 115 s/n 1er piso - Edificio ex Liceo
-					La Plata, Buenos Aires (C.P. 1900)
-					Tel 0221 423 6696/6677 (int. 141)</div>
+					<div>
+						<i18n:text>unt.footer.copyright</i18n:text>
+					</div>
+					<div class="direccion">
+						<a href="https://plus.google.com/102293151160073378994/about?gl=ar">
+							<i18n:text>unt.footer.address</i18n:text>
+						</a>
+					</div>
 					
 				</div>
 			</div>
@@ -654,14 +405,7 @@ templates of the body's child elements (which consists entirely of dri:div tags)
             <!-- Check for the custom pages -->
             <xsl:choose>
 	            <xsl:when test="$request-uri = ''">
-<!-- 	            	INTRO -->
-	            	<xsl:call-template name="buildHomeCommunities"/>
-					<div id="tercera_columna">
-						<h1>Videos</h1>
-						<img src="themes/unt/images/videos.png" />
-						<div class="imagen">  <img src="themes/unt/images/autoarchivo.png" /></div>
-						AUTOARCHIVO
-					</div>
+	            	<xsl:call-template name="buildHomeBody"/>
 	            </xsl:when>
 	            <xsl:when test="starts-with($request-uri, 'page/')">
                     <div class="static-page">
@@ -809,6 +553,44 @@ from ideal as well-->
            </xsl:text></script>
         </xsl:if>
     </xsl:template>
+    
+    
+	<xsl:template name="buildHomeBody">
+<!-- 	<h1>Comunidades DSpace</h1> -->
+		<ul id="launcher">
+			<xsl:for-each select="/dri:document/dri:body/dri:div[@n='comunity-browser']/dri:referenceSet/dri:reference">
+				<xsl:variable name="community_document" select="document(concat('cocoon:/', @url))"/>
+	        	<xsl:variable name="community_title" select="$community_document/mets:METS/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='title' and @mdschema='dc']"/>
+				<xsl:variable name="community_logo" select="$community_document/mets:METS/mets:fileSec/mets:fileGrp[@USE='LOGO']"/>
+				
+				<xsl:if test="not(starts-with($community_title,'.' ))">
+					<li>
+						<xsl:call-template name="build-anchor">
+							<xsl:with-param name="a.value"><div class="icon-title"><xsl:value-of select="$community_title"/></div></xsl:with-param>
+							<xsl:with-param name="a.href"><xsl:value-of select="$community_document/mets:METS/@OBJID"/></xsl:with-param>
+							<xsl:with-param name="img.src"><xsl:value-of select="$community_logo/mets:file/mets:FLocat/@xlink:href"/></xsl:with-param>
+						</xsl:call-template>
+					</li>
+				</xsl:if>
+			</xsl:for-each>
+		  </ul>
+		
+		  <div id="launcher-right">
+			<h1>Autoarchivo</h1>
+			<xsl:call-template name="build-anchor">
+				<xsl:with-param name="a.value"></xsl:with-param>
+				<xsl:with-param name="a.href">/handle/123456789/78</xsl:with-param>
+				<xsl:with-param name="img.src">/images/autoarchivo.png</xsl:with-param>
+				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
+			</xsl:call-template>
+			<object width="276" height="207">
+				<param name="movie" value="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX"></param>
+				<param name="allowFullScreen" value="true"></param>
+				<param name="allowscriptaccess" value="always"></param>
+				<embed src="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX" type="application/x-shockwave-flash" width="276" height="207" allowscriptaccess="always" allowfullscreen="true"></embed>
+			</object>
+		</div>
+	</xsl:template>
 
 </xsl:stylesheet>
 

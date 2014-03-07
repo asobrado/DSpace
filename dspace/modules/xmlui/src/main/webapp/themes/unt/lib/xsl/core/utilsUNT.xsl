@@ -15,17 +15,33 @@
    <!-- Imprime la ruta absoluta al recurso indicado con el parámetro path -->
    	<xsl:template name="print-path">
    		<xsl:param name="path">/</xsl:param>
-		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
-		<xsl:text>/</xsl:text>
+		<xsl:variable name="context-path" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
+		<xsl:if test="not(starts-with($path, $context-path))">
+			<!-- Imprimo el context path si la URL no es absolta -->
+			<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
+			<xsl:if test="not(starts-with($path, '/'))">
+				<xsl:text>/</xsl:text>
+			</xsl:if>
+		</xsl:if>
+		
 		<xsl:value-of select="$path" />
 	</xsl:template>
 	
 	<!-- Imprime la ruta absoluta al recurso indicado con el parámetro path -->   
    <xsl:template name="print-theme-path">
 		<xsl:param name="path">/</xsl:param>
-		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
-		<xsl:text>/themes/</xsl:text>
-		<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme' and @qualifier='path']" />
+		<xsl:variable name="theme-path" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme' and @qualifier='path']" />
+		<xsl:variable name="context-path" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
+		
+		<xsl:if test="not(starts-with($path, $context-path))">
+			<!-- Imprimo el context path si la URL no es absolta -->
+			<xsl:value-of select="$context-path" />
+			<xsl:text>/themes/</xsl:text>
+			<xsl:value-of select="$theme-path" />
+			<xsl:if test="not(starts-with($path, '/'))">
+				<xsl:text>/</xsl:text>
+			</xsl:if>
+		</xsl:if>
 		<xsl:value-of select="$path" />
 	</xsl:template>
 	
@@ -51,7 +67,7 @@
 					<xsl:with-param name="img.alt" select="$img.alt"/>
 				</xsl:call-template>
 			</xsl:if>
-			<xsl:if test="not($img.src)">
+			<xsl:if test="not($img.src) or ($a.value != $a.href)">
 				<xsl:copy-of select="$a.value"/>
 			</xsl:if>
 		</a>
