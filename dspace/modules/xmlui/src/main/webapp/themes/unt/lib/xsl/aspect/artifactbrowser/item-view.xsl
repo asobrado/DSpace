@@ -314,7 +314,7 @@
 
 
 
-<xsl:apply-templates select="." mode="generate-bitstream"/>
+<!-- <xsl:apply-templates select="." mode="generate-bitstream"/>  -->
 	<!-- unt.identifier.other row -->
 		<xsl:call-template name="render-normal-field">
 					<xsl:with-param name="name" select="'identifier-other'"/>
@@ -346,7 +346,7 @@
 		<!-- dcterms.description row -->
 		<xsl:call-template name="render-normal-field">
 			<xsl:with-param name="name" select="'description'"/>
-			<xsl:with-param name="elements" select="dim:field[@element='description'] "/>
+			<xsl:with-param name="elements" select="dim:field[@element='description' and not(@qualifier)] "/>
 		</xsl:call-template>
 		
 		

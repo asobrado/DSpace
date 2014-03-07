@@ -209,6 +209,7 @@
          <hint>Ingresar la materia</hint>
          <required></required>
          <visibility>workflow</visibility>
+          <vocabulary>unesco</vocabulary>
        </field>
        
        
@@ -638,6 +639,7 @@
          <input-type>onebox</input-type>
          <hint>Ingresar la materia</hint>
          <required></required>
+          <vocabulary>unesco</vocabulary>
        </field>
        
        
