@@ -33,8 +33,8 @@
 		<xsl:variable name="theme-path" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme' and @qualifier='path']" />
 		<xsl:variable name="context-path" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
 		
-		<xsl:if test="not(starts-with($path, $context-path))">
-			<!-- Imprimo el context path si la URL no es absolta -->
+		<xsl:if test="not(starts-with($path, '/'))">
+			<!-- Imprimo el context path si la URL no es absoluta -->
 			<xsl:value-of select="$context-path" />
 			<xsl:text>/themes/</xsl:text>
 			<xsl:value-of select="$theme-path" />

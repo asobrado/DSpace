@@ -116,7 +116,7 @@ placeholders for header images -->
             <div id="ds-header" class="clearfix">
 				<div id="ds-header-logo-link">
 					<xsl:call-template name="build-anchor">
-						<xsl:with-param name="img.src">/images/marca.png</xsl:with-param>
+						<xsl:with-param name="img.src">images/marca.png</xsl:with-param>
 						<xsl:with-param name="img.alt">RIUNT</xsl:with-param>
 						<xsl:with-param name="a.href">/</xsl:with-param>
 					</xsl:call-template>
@@ -149,12 +149,12 @@ placeholders for header images -->
 	 <xsl:template name="languageSelection">
 				<xsl:call-template name="build-anchor">
 					<xsl:with-param name="a.href">/?locale-attribute=es</xsl:with-param>
-					<xsl:with-param name="img.src">/images/esp.png</xsl:with-param>
+					<xsl:with-param name="img.src">images/esp.png</xsl:with-param>
 					<xsl:with-param name="img.alt">Español</xsl:with-param>
 				</xsl:call-template>
 				<xsl:call-template name="build-anchor">
 					<xsl:with-param name="a.href">/?locale-attribute=en</xsl:with-param>
-					<xsl:with-param name="img.src">/images/eng.png</xsl:with-param>
+					<xsl:with-param name="img.src">images/eng.png</xsl:with-param>
 					<xsl:with-param name="img.alt">English</xsl:with-param>
 				</xsl:call-template>
 	 </xsl:template>
@@ -348,17 +348,17 @@ placeholders for header images -->
 								
 					<xsl:call-template name="build-anchor">
 						<xsl:with-param name="a.href">http://www.dspace.org/</xsl:with-param>
-						<xsl:with-param name="img.src">/images/dspace_footer.png</xsl:with-param>
+						<xsl:with-param name="img.src">images/dspace_footer.png</xsl:with-param>
 						<xsl:with-param name="img.alt">DSpace</xsl:with-param>
 					</xsl:call-template>
 					<xsl:call-template name="build-anchor">
 						<xsl:with-param name="a.href">http://sedici.unlp.edu.ar/</xsl:with-param>
-						<xsl:with-param name="img.src">/images/sedici_footer.png</xsl:with-param>
+						<xsl:with-param name="img.src">images/sedici_footer.png</xsl:with-param>
 						<xsl:with-param name="img.alt">SEDICI</xsl:with-param>
 					</xsl:call-template>
 					<xsl:call-template name="build-anchor">
 						<xsl:with-param name="a.href">http://www.facet.unt.edu.ar/</xsl:with-param>
-						<xsl:with-param name="img.src">/images/facet_footer.png</xsl:with-param>
+						<xsl:with-param name="img.src">images/facet_footer.png</xsl:with-param>
 						<xsl:with-param name="img.alt">FACET</xsl:with-param>
 					</xsl:call-template>
 								
@@ -580,8 +580,8 @@ from ideal as well-->
 			<h1>Autoarchivo</h1>
 			<xsl:call-template name="build-anchor">
 				<xsl:with-param name="a.value"></xsl:with-param>
-				<xsl:with-param name="a.href">/handle/123456789/78</xsl:with-param>
-				<xsl:with-param name="img.src">/images/autoarchivo.png</xsl:with-param>
+				<xsl:with-param name="a.href">/handle/11327/78</xsl:with-param>
+				<xsl:with-param name="img.src">images/autoarchivo.png</xsl:with-param>
 				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
 			</xsl:call-template>
 			<object width="276" height="207">

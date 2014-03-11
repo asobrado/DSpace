@@ -32,6 +32,7 @@
      <xsl:import href="lib/xsl/core/page-structure.xsl"/>
      <xsl:import href="lib/xsl/core/body.xsl"/>
      <xsl:import href="lib/xsl/core/utilsUNT.xsl"/>
+	 <xsl:import href="lib/xsl/aspect/artifactbrowser/container-view.xsl"/>
 	 <xsl:import href="lib/xsl/aspect/artifactbrowser/item-view.xsl"/>
 	 
 
