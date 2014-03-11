@@ -232,7 +232,6 @@
       
 	  <step id="init"/>
       <step id="describe"/>
-      <step id="access"/>
       <step id="upload-files"/>
       <step id="select-cc-license"/>
       
@@ -242,7 +241,6 @@
    <submission-process name="autoarchivo">
      
       <step id="init"/>
-      
       <step id="describe"/>
       <step id="upload-files"/>
       <step id="review-submission"/>

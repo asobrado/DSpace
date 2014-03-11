@@ -148,6 +148,7 @@
 			</div>
 		</xsl:if>
 		
+		
 		<!-- date.issued row -->
 		<!-- date.exposure/date.issued : extraemos el año solamente -->
 		<xsl:choose>
@@ -313,8 +314,9 @@
 		</xsl:call-template>
 
 
+	<xsl:apply-templates select="/mets:METS" mode="generate-bitstream"/>
 
-<!-- <xsl:apply-templates select="." mode="generate-bitstream"/>  -->
+
 	<!-- unt.identifier.other row -->
 		<xsl:call-template name="render-normal-field">
 					<xsl:with-param name="name" select="'identifier-other'"/>
@@ -459,19 +461,8 @@
 							<xsl:if test="@authority">
 								<xsl:attribute name="class"><xsl:text>ds-dc_contributor_author-authority</xsl:text></xsl:attribute>
 							</xsl:if>	
-								
-							<a>
-								<xsl:attribute name="href">
-									<xsl:call-template name="filterLink">
-										<xsl:with-param name="filter">author_filter</xsl:with-param>
-										<xsl:with-param name="value" select="."/>
-									</xsl:call-template>
-								</xsl:attribute>
-								<xsl:copy-of select="node()" />
-							</a>
-							<xsl:if test="position() != last()">
-								<xsl:text> | </xsl:text>
-							</xsl:if>
+								<xsl:value-of  select="."/>
+							
 						</span>
 					</xsl:for-each>
 				</div>
@@ -571,15 +562,10 @@
 			</span>
 		</div>
 	</xsl:template>
-
-
-
-
 	<xsl:template match="mets:METS" mode="generate-bitstream">
 
 		<!-- Generate the bitstream information from the file section -->
 		<div id="item-file-section">
-			<h2><i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-head</i18n:text></h2>
 			<xsl:choose>
 				<xsl:when test="./mets:fileSec/mets:fileGrp[@USE='CONTENT' or @USE='ORIGINAL' or @USE='ORE'] or ./mets:dmdSec/mets:mdWrap[@OTHERMDTYPE='DIM']/mets:xmlData/dim:dim/dim:field[@element='identifier' and @qualifier='uri' and @mdschema='sedici']">
 					<xsl:if test="./mets:fileSec/mets:fileGrp[@USE='CONTENT' or @USE='ORIGINAL']">
@@ -606,385 +592,12 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="mets:fileGrp[@USE='CONTENT']">
-		<xsl:param name="context"/>
-		<xsl:param name="primaryBitstream" select="-1"/>
-
-		<div class="file-list">
-			<xsl:choose>
-				<!-- If one exists and it's of text/html MIME type, only display the primary bitstream -->
-				<xsl:when test="mets:file[@ID=$primaryBitstream]/@MIMETYPE='text/html'">
-					<xsl:apply-templates select="mets:file[@ID=$primaryBitstream]">
-						<xsl:with-param name="context" select="$context"/>
-					</xsl:apply-templates>
-				</xsl:when>
-				<!-- Otherwise, iterate over and display all of them -->
-				<xsl:otherwise>
-					<xsl:apply-templates select="mets:file">
-						<!--Do not sort any more bitstream order can be changed -->
-						<!--<xsl:sort data-type="number" select="boolean(./@ID=$primaryBitstream)" order="descending"/> -->
-						<!--<xsl:sort select="mets:FLocat[@LOCTYPE='URL']/@xlink:title"/> -->
-						<xsl:with-param name="context" select="$context"/>
-					</xsl:apply-templates>
-				</xsl:otherwise>
-			</xsl:choose>
-		</div>
-	</xsl:template>
-
-	<xsl:template match="mets:file">
-		<xsl:param name="context" select="."/>
-
-		<!-- nuevo nombre para el documento a descargar -->
-		<xsl:variable name="documentTitle">
-			<xsl:choose>
-				<xsl:when test="mets:FLocat[@LOCTYPE='URL']/@xlink:label">
-					<xsl:value-of select="(string(mets:FLocat[@LOCTYPE='URL']/@xlink:label))"/>
-				</xsl:when>
-				<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='title'][@mdschema='dc']">
-					<xsl:value-of select="(string($context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='title'][@mdschema='dc']))"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<i18n:text>xmlui.bitstream.downloadName</i18n:text>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-
-		<xsl:variable name="extension" select="substring-after(mets:FLocat[@LOCTYPE='URL']/@xlink:title, '.')"/>
-		<xsl:variable name="sequence" select="substring-after(mets:FLocat[@LOCTYPE='URL']/@xlink:href, '?')"/>
-
-		<xsl:variable name="link"> 
-           <xsl:value-of select="substring-before(mets:FLocat[@LOCTYPE='URL']/@xlink:href, substring-after($context/@ID, ':'))"/><xsl:value-of select="substring-after($context/@ID, ':')"/>/<xsl:value-of select="$documentTitle"/>.<xsl:value-of select="$extension"/>?<xsl:value-of select="$sequence"/>
-        </xsl:variable>
-
-		<div class="file-wrapper clearfix">
-			<div class="thumbnail-wrapper">
-				<xsl:choose>
-             	<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='embargo' and @qualifier='liftDate']">
-	              <i18n:text>sedici.comunidades.tesis.embargo</i18n:text>
-						<br />
-						<span>
-							<xsl:choose>
-	                        <xsl:when test="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]">
-	                            <img alt="Thumbnail">
-										<xsl:attribute name="src">
-	                                    <xsl:value-of select="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]/mets:FLocat[@LOCTYPE='URL']/@xlink:href"/>
-	                                </xsl:attribute>
-									</img>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:variable name="file_type" select="substring-before(@MIMETYPE, '/')"/>
-									<xsl:variable name="file_subtype" select="substring-after(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="img_path">
-										<xsl:choose>
-		                        		<xsl:when test="$file_type = 'image'">mime_img.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'pdf'">mime_pdf.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'msword'">mime_msword.png</xsl:when>
-		                        		<xsl:otherwise>mime.png</xsl:otherwise>
-		                        	</xsl:choose>
-									</xsl:variable>
-									<img alt="Icon" src="{concat($theme-path, '/images/',$img_path)}"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</span>
-
-					</xsl:when>
-					<xsl:otherwise>
-						<a class="image-link" target="_blank">
-							<xsl:attribute name="href">
-	                        <xsl:value-of select="$link"/>                        
-	                    </xsl:attribute>
-
-						 <xsl:choose>
-	                        <xsl:when test="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]">
-	                            <img alt="Thumbnail">
-	                                <xsl:attribute name="src">
-	                                    <xsl:value-of select="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]/mets:FLocat[@LOCTYPE='URL']/@xlink:href"/>
-	                                </xsl:attribute>
-	                            </img>
-	                        </xsl:when>
-	                        <xsl:otherwise>
-	                        	<xsl:variable name="file_type" select="substring-before(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="file_subtype" select="substring-after(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="img_path">
-		                        	<xsl:choose>
-		                        		<xsl:when test="$file_type = 'image'">mime_img.png</xsl:when>
-		                        		<xsl:when test="$file_type = 'audio'">mime_audio.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'pdf'">mime_pdf.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'msword'">mime_msword.png</xsl:when>
-		                        		<xsl:otherwise>mime.png</xsl:otherwise>
-		                        	</xsl:choose>
-	                        	</xsl:variable>
-	                            <img alt="Icon" src="{concat($theme-path, '/images/',$img_path)}"/>
-	                         </xsl:otherwise>
-	                         </xsl:choose>
-	                      </a>
-	                      </xsl:otherwise> 
-	                      </xsl:choose>
-	                      </div></div>  
-	    <!--  <xsl:template match="mets:METS" mode="generate-bitstream">  -->
-
-		<!-- Generate the bitstream information from the file section -->
-		<div id="item-file-section">
-			<h2><i18n:text>xmlui.dri2xhtml.METS-1.0.item-files-head</i18n:text></h2>
-			<xsl:choose>
-				<xsl:when test="./mets:fileSec/mets:fileGrp[@USE='CONTENT' or @USE='ORIGINAL' or @USE='ORE'] or ./mets:dmdSec/mets:mdWrap[@OTHERMDTYPE='DIM']/mets:xmlData/dim:dim/dim:field[@element='identifier' and @qualifier='uri' and @mdschema='sedici']">
-					<xsl:if test="./mets:fileSec/mets:fileGrp[@USE='CONTENT' or @USE='ORIGINAL']">
-						<xsl:apply-templates select="./mets:fileSec/mets:fileGrp[@USE='CONTENT' or @USE='ORIGINAL']">
-							<xsl:with-param name="context" select="."/>
-							<xsl:with-param name="primaryBitstream" select="./mets:structMap[@TYPE='LOGICAL']/mets:div[@TYPE='DSpace Item']/mets:fptr/@FILEID"/>
-						</xsl:apply-templates>
-					</xsl:if>
-
-					<!-- Special case for handling ORE resource maps stored as DSpace bitstreams -->
-					<xsl:if test="./mets:fileSec/mets:fileGrp[@USE='ORE']">
-						<xsl:apply-templates select="./mets:fileSec/mets:fileGrp[@USE='ORE'] "/>
-					</xsl:if>
-
-					<!-- Localizacion Electronica -->
-					<xsl:if test="./mets:dmdSec/mets:mdWrap[@OTHERMDTYPE='DIM']/mets:xmlData/dim:dim/dim:field[@element='identifier' and @qualifier='uri' and @mdschema='sedici']">
-						<xsl:apply-templates select="./mets:dmdSec/mets:mdWrap[@OTHERMDTYPE='DIM']/mets:xmlData/dim:dim/dim:field[@element='identifier' and @qualifier='uri' and @mdschema='sedici'] "/>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<p><i18n:text>xmlui.dri2xhtml.METS-1.0.item-no-files</i18n:text></p>
-				</xsl:otherwise>
-			</xsl:choose>
-		</div>
-	</xsl:template>
-
-	<xsl:template match="mets:fileGrp[@USE='CONTENT']">
-		<xsl:param name="context"/>
-		<xsl:param name="primaryBitstream" select="-1"/>
-
-		<div class="file-list">
-			<xsl:choose>
-				<!-- If one exists and it's of text/html MIME type, only display the primary bitstream -->
-				<xsl:when test="mets:file[@ID=$primaryBitstream]/@MIMETYPE='text/html'">
-					<xsl:apply-templates select="mets:file[@ID=$primaryBitstream]">
-						<xsl:with-param name="context" select="$context"/>
-					</xsl:apply-templates>
-				</xsl:when>
-				<!-- Otherwise, iterate over and display all of them -->
-				<xsl:otherwise>
-					<xsl:apply-templates select="mets:file">
-						<!--Do not sort any more bitstream order can be changed -->
-						<!--<xsl:sort data-type="number" select="boolean(./@ID=$primaryBitstream)" order="descending"/> -->
-						<!--<xsl:sort select="mets:FLocat[@LOCTYPE='URL']/@xlink:title"/> -->
-						<xsl:with-param name="context" select="$context"/>
-					</xsl:apply-templates>
-				</xsl:otherwise>
-			</xsl:choose>
-		</div>
-	</xsl:template>
-
-	<xsl:template match="mets:file">
-		<xsl:param name="context" select="."/>
-
-		<!-- nuevo nombre para el documento a descargar -->
-		<xsl:variable name="documentTitle">
-			<xsl:choose>
-				<xsl:when test="mets:FLocat[@LOCTYPE='URL']/@xlink:label">
-					<xsl:value-of select="(string(mets:FLocat[@LOCTYPE='URL']/@xlink:label))"/>
-				</xsl:when>
-				<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='title'][@mdschema='dc']">
-					<xsl:value-of select="(string($context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='title'][@mdschema='dc']))"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<i18n:text>xmlui.bitstream.downloadName</i18n:text>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-
-		<xsl:variable name="extension" select="substring-after(mets:FLocat[@LOCTYPE='URL']/@xlink:title, '.')"/>
-		<xsl:variable name="sequence" select="substring-after(mets:FLocat[@LOCTYPE='URL']/@xlink:href, '?')"/>
-
-		<xsl:variable name="link"> 
-           <xsl:value-of select="substring-before(mets:FLocat[@LOCTYPE='URL']/@xlink:href, substring-after($context/@ID, ':'))"/><xsl:value-of select="substring-after($context/@ID, ':')"/>/<xsl:value-of select="$documentTitle"/>.<xsl:value-of select="$extension"/>?<xsl:value-of select="$sequence"/>
-        </xsl:variable>
-
-		<div class="file-wrapper clearfix">
-			<div class="thumbnail-wrapper">
-				<xsl:choose>
-             	<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='embargo' and @qualifier='liftDate']">
-	              <i18n:text>sedici.comunidades.tesis.embargo</i18n:text>
-						<br />
-						<span>
-							<xsl:choose>
-	                        <xsl:when test="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]">
-	                            <img alt="Thumbnail">
-										<xsl:attribute name="src">
-	                                    <xsl:value-of select="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]/mets:FLocat[@LOCTYPE='URL']/@xlink:href"/>
-	                                </xsl:attribute>
-									</img>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:variable name="file_type" select="substring-before(@MIMETYPE, '/')"/>
-									<xsl:variable name="file_subtype" select="substring-after(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="img_path">
-										<xsl:choose>
-		                        		<xsl:when test="$file_type = 'image'">mime_img.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'pdf'">mime_pdf.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'msword'">mime_msword.png</xsl:when>
-		                        		<xsl:otherwise>mime.png</xsl:otherwise>
-		                        	</xsl:choose>
-									</xsl:variable>
-									<img alt="Icon" src="{concat($theme-path, '/images/',$img_path)}"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</span>
-
-					</xsl:when>
-					<xsl:otherwise>
-						<a class="image-link" target="_blank">
-							<xsl:attribute name="href">
-	                        <xsl:value-of select="$link"/>                        
-	                    </xsl:attribute>
-
-						 <xsl:choose>
-	                        <xsl:when test="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]">
-	                            <img alt="Thumbnail">
-	                                <xsl:attribute name="src">
-	                                    <xsl:value-of select="$context/mets:fileSec/mets:fileGrp[@USE='THUMBNAIL']/mets:file[@GROUPID=current()/@GROUPID]/mets:FLocat[@LOCTYPE='URL']/@xlink:href"/>
-	                                </xsl:attribute>
-	                            </img>
-	                        </xsl:when>
-	                        <xsl:otherwise>
-	                        	<xsl:variable name="file_type" select="substring-before(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="file_subtype" select="substring-after(@MIMETYPE, '/')"/>
-	                        	<xsl:variable name="img_path">
-		                        	<xsl:choose>
-		                        		<xsl:when test="$file_type = 'image'">mime_img.png</xsl:when>
-		                        		<xsl:when test="$file_type = 'audio'">mime_audio.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'pdf'">mime_pdf.png</xsl:when>
-		                        		<xsl:when test="$file_subtype = 'msword'">mime_msword.png</xsl:when>
-		                        		<xsl:otherwise>mime.png</xsl:otherwise>
-		                        	</xsl:choose>
-	                        	</xsl:variable>
-	                            <img alt="Icon" src="{concat($theme-path, '/images/',$img_path)}"/>
-	                         </xsl:otherwise>
-	                    </xsl:choose>
-                	</a>
-                </xsl:otherwise>
-             </xsl:choose>
-            </div>
-
-			<div class="file-metadata">
-				<xsl:choose>
-					<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='embargo' and @qualifier='liftDate']">
-						<xsl:value-of select="mets:FLocat[@LOCTYPE='URL']/@xlink:label" disable-output-escaping="yes"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:if test="mets:FLocat[@LOCTYPE='URL']/@xlink:label != ''">
-							<div>
-								<a class="image-link" target="_blank">
-									<xsl:attribute name="href">
-				                        <xsl:value-of select="$link"/>
-				                    </xsl:attribute>
-									<span><xsl:value-of select="mets:FLocat[@LOCTYPE='URL']/@xlink:label" disable-output-escaping="yes"/></span>
-								</a>
-							</div>
-						</xsl:if>
-					</xsl:otherwise>
-				</xsl:choose>
-				<div>
-					<span>
-						<xsl:choose>
-							<xsl:when test="@SIZE &lt; 1024">
-								<xsl:value-of select="@SIZE"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-bytes</i18n:text>
-							</xsl:when>
-							<xsl:when test="@SIZE &lt; 1024 * 1024">
-								<xsl:value-of select="substring(string(@SIZE div 1024),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-kilobytes</i18n:text>
-							</xsl:when>
-							<xsl:when test="@SIZE &lt; 1024 * 1024 * 1024">
-								<xsl:value-of select="substring(string(@SIZE div (1024 * 1024)),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-megabytes</i18n:text>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="substring(string(@SIZE div (1024 * 1024 * 1024)),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-gigabytes</i18n:text>
-							</xsl:otherwise>
-						</xsl:choose>
-					</span>
-					<xsl:text> - </xsl:text>
-	                <!-- Lookup File Type description in local messages.xml based on MIME Type.
-			         In the original DSpace, this would get resolved to an application via
-			         the Bitstream Registry, but we are constrained by the capabilities of METS
-			         and can't really pass that info through. -->
-                    <span>
-						<xsl:call-template name="getFileTypeDesc">
-							<xsl:with-param name="mimetype">
-								<xsl:value-of select="substring-before(@MIMETYPE,'/')"/>
-								<xsl:text>/</xsl:text>
-								<xsl:value-of select="substring-after(@MIMETYPE,'/')"/>
-							</xsl:with-param>
-						</xsl:call-template>
-					</span>
-				</div>
-			</div>
-
-		</div>              
-
-			<div class="file-metadata">
-				<xsl:choose>
-					<xsl:when test="$context/mets:dmdSec/mets:mdWrap/mets:xmlData/dim:dim/dim:field[@element='embargo' and @qualifier='liftDate']">
-						<xsl:value-of select="mets:FLocat[@LOCTYPE='URL']/@xlink:label" disable-output-escaping="yes"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:if test="mets:FLocat[@LOCTYPE='URL']/@xlink:label != ''">
-							<div>
-								<a class="image-link" target="_blank">
-									<xsl:attribute name="href">
-				                        <xsl:value-of select="$link"/>
-				                    </xsl:attribute>
-									<span><xsl:value-of select="mets:FLocat[@LOCTYPE='URL']/@xlink:label" disable-output-escaping="yes"/></span>
-								</a>
-							</div>
-						</xsl:if>
-					</xsl:otherwise>
-				</xsl:choose>
-				<div>
-					<span>
-						<xsl:choose>
-							<xsl:when test="@SIZE &lt; 1024">
-								<xsl:value-of select="@SIZE"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-bytes</i18n:text>
-							</xsl:when>
-							<xsl:when test="@SIZE &lt; 1024 * 1024">
-								<xsl:value-of select="substring(string(@SIZE div 1024),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-kilobytes</i18n:text>
-							</xsl:when>
-							<xsl:when test="@SIZE &lt; 1024 * 1024 * 1024">
-								<xsl:value-of select="substring(string(@SIZE div (1024 * 1024)),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-megabytes</i18n:text>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="substring(string(@SIZE div (1024 * 1024 * 1024)),1,5)"/>
-								<i18n:text>xmlui.dri2xhtml.METS-1.0.size-gigabytes</i18n:text>
-							</xsl:otherwise>
-						</xsl:choose>
-					</span>
-					<xsl:text> - </xsl:text>
-	                <!-- Lookup File Type description in local messages.xml based on MIME Type.
-			         In the original DSpace, this would get resolved to an application via
-			         the Bitstream Registry, but we are constrained by the capabilities of METS
-			         and can't really pass that info through. -->
-                    <span>
-						<xsl:call-template name="getFileTypeDesc">
-							<xsl:with-param name="mimetype">
-								<xsl:value-of select="substring-before(@MIMETYPE,'/')"/>
-								<xsl:text>/</xsl:text>
-								<xsl:value-of select="substring-after(@MIMETYPE,'/')"/>
-							</xsl:with-param>
-						</xsl:call-template>
-					</span>
-				</div>
-			</div>
 
 
 
-	</xsl:template>
+
+
+
 	
 
 	

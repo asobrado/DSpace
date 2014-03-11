@@ -59,7 +59,7 @@
 			<hint>Seleccione el tipo de artículo que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Articulo</type-bind>
-			<required></required>
+			
 		</field>
 		<field>
 			<dc-schema>unt</dc-schema>
@@ -69,7 +69,7 @@
 			<hint>Seleccione el tipo de patente que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Patente</type-bind>
-			<required></required>
+			
 		</field>
 		
 		<field>
@@ -80,7 +80,7 @@
 			<hint>Seleccione el tipo de tesis que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Tesis</type-bind>
-			<required></required>
+			
 		</field>
      	<field>
 		  <dc-schema>unt</dc-schema>
@@ -90,7 +90,7 @@
 		  <hint>Seleccione el tipo de libro que desea cargar</hint>
 		  <required>Debe seleccionar un subtipo de documento</required>
 		  <type-bind>Libro</type-bind>
-		  <required></required>
+		 
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -100,7 +100,7 @@
 		<hint>Seleccione el tipo de objeto de aprendizaje que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de objeto de aprendizaje</required>
 		<type-bind>Objeto de aprendizaje</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -110,7 +110,7 @@
 		<hint>Seleccione el tipo de objeto de conferencia que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Objeto de conferencia</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -120,7 +120,7 @@
 		<hint>Seleccione el tipo de documento institucional que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Documento institucional</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -130,7 +130,7 @@
 		<hint>Seleccione el tipo de imagen que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Imagen</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -140,7 +140,7 @@
 		<hint>Seleccione el tipo de audio que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Audio</type-bind>
-		<required></required>
+		
 	</field>
 
 				<!-- /////////////////// FIN DE LOS TYPES Y SUBTYPES /////////////////// -->
@@ -340,17 +340,6 @@
 	     	<required></required>
        </field>
 		<field>
-	    	<dc-schema>dc</dc-schema>
-	        <dc-element>date</dc-element>
-	        <dc-qualifier>available</dc-qualifier>
-	        <repeatable>false</repeatable>
-	        <label>Fecha de disponibilidad</label>
-	        <input-type>date</input-type>
-	        <hint>Fecha de publicación, distribución o exposición. En caso de no haber difundido nunca su obra por ningún medio, indique la fecha de hoy como fecha de publicación.</hint>
-	     	<required></required>
-       </field>       
-
-		<field>
 	    	<dc-schema>unt</dc-schema>
 	        <dc-element>creator</dc-element>
 	        <dc-qualifier>compilator</dc-qualifier>
@@ -491,7 +480,7 @@
 			<hint>Seleccione el tipo de artículo que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Articulo</type-bind>
-			<required></required>
+			
 		</field>
 		<field>
 			<dc-schema>unt</dc-schema>
@@ -501,7 +490,7 @@
 			<hint>Seleccione el tipo de patente que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Patente</type-bind>
-			<required></required>
+			
 		</field>
 		
 		<field>
@@ -512,7 +501,7 @@
 			<hint>Seleccione el tipo de tesis que desea cargar</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Tesis</type-bind>
-			<required></required>
+			
 		</field>
      	<field>
 		  <dc-schema>unt</dc-schema>
@@ -522,7 +511,7 @@
 		  <hint>Seleccione el tipo de libro que desea cargar</hint>
 		  <required>Debe seleccionar un subtipo de documento</required>
 		  <type-bind>Libro</type-bind>
-		  <required></required>
+		  
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -532,7 +521,7 @@
 		<hint>Seleccione el tipo de objeto de aprendizaje que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de objeto de aprendizaje</required>
 		<type-bind>Objeto de aprendizaje</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -542,7 +531,7 @@
 		<hint>Seleccione el tipo de objeto de conferencia que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Objeto de conferencia</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -552,7 +541,7 @@
 		<hint>Seleccione el tipo de documento institucional que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Documento institucional</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -562,7 +551,7 @@
 		<hint>Seleccione el tipo de imagen que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Imagen</type-bind>
-		<required></required>
+		
 	</field>
 	<field>
 		<dc-schema>unt</dc-schema>
@@ -572,7 +561,7 @@
 		<hint>Seleccione el tipo de audio que desea cargar</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Audio</type-bind>
-		<required></required>
+		
 	</field>
 
 				<!-- /////////////////// FIN DE LOS TYPES Y SUBTYPES /////////////////// -->
@@ -764,18 +753,7 @@
 	        <hint>Fecha de publicación, distribución o exposición. En caso de no haber difundido nunca su obra por ningún medio, indique la fecha de hoy como fecha de publicación.</hint>
 	     	<required></required>
        </field>
-		<field>
-	    	<dc-schema>dc</dc-schema>
-	        <dc-element>date</dc-element>
-	        <dc-qualifier>available</dc-qualifier>
-	        <repeatable>false</repeatable>
-	        <label>Fecha de disponibilidad</label>
-	        <input-type>date</input-type>
-	        <hint>Fecha de publicación, distribución o exposición. En caso de no haber difundido nunca su obra por ningún medio, indique la fecha de hoy como fecha de publicación.</hint>
-	     	<required></required>
-       </field>       
-
-		<field>
+				<field>
 	    	<dc-schema>unt</dc-schema>
 	        <dc-element>creator</dc-element>
 	        <dc-qualifier>compilator</dc-qualifier>
@@ -953,10 +931,6 @@
 				<stored-value></stored-value>
 			</pair>
 			<pair>
-				<displayed-value>1 Mes</displayed-value>
-				<stored-value>30</stored-value>
-			</pair>
-			<pair>
 				<displayed-value>3 Meses</displayed-value>
 				<stored-value>90</stored-value>
 			</pair>
@@ -965,15 +939,11 @@
 				<stored-value>180</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>12 meses</displayed-value>
+				<displayed-value>1 año</displayed-value>
 				<stored-value>365</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>18 Meses</displayed-value>
-				<stored-value>545</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>24 meses</displayed-value>
+				<displayed-value>2 años</displayed-value>
 				<stored-value>730</stored-value>
 			</pair>
 		</value-pairs>
