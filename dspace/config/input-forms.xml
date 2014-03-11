@@ -48,7 +48,7 @@
          	<repeatable>true</repeatable>
          	<label>Tipo</label>
          	<input-type value-pairs-name="common_types">dropdown</input-type>
-         	<hint>Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
+         	<hint>Tipo de documento (artículo, tesis, libro, etc.)</hint>
          	<required></required>
        </field>
 	   <field>
@@ -56,7 +56,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Artículo (*)</label>
 			<input-type value-pairs-name="common_subtypes_articulo">dropdown</input-type>
-			<hint>Seleccione el tipo de artículo que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Articulo</type-bind>
 			
@@ -66,7 +66,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Patente (*)</label>
 			<input-type value-pairs-name="common_subtypes_patente">dropdown</input-type>
-			<hint>Seleccione el tipo de patente que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Patente</type-bind>
 			
@@ -77,7 +77,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Tesis (*)</label>
 			<input-type value-pairs-name="common_subtypes_tesis">dropdown</input-type>
-			<hint>Seleccione el tipo de tesis que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Tesis</type-bind>
 			
@@ -87,7 +87,7 @@
 		  <dc-element>subtype</dc-element>
 		  <label>Especifique el tipo de Libro (*)</label>
 		  <input-type value-pairs-name="common_subtypes_libro">dropdown</input-type>
-		  <hint>Seleccione el tipo de libro que desea cargar</hint>
+		  <hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		  <required>Debe seleccionar un subtipo de documento</required>
 		  <type-bind>Libro</type-bind>
 		 
@@ -97,7 +97,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Objeto de Aprendizaje (*)</label>
 		<input-type value-pairs-name="common_subtypes_objeto_de_aprendizaje">dropdown</input-type>
-		<hint>Seleccione el tipo de objeto de aprendizaje que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de objeto de aprendizaje</required>
 		<type-bind>Objeto de aprendizaje</type-bind>
 		
@@ -107,7 +107,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Objeto de Conferencia (*)</label>
 		<input-type value-pairs-name="common_subtypes_objeto_conferencia">dropdown</input-type>
-		<hint>Seleccione el tipo de objeto de conferencia que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Objeto de conferencia</type-bind>
 		
@@ -117,7 +117,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Documento Institucional (*)</label>
 		<input-type value-pairs-name="common_subtypes_documento_institucional">dropdown</input-type>
-		<hint>Seleccione el tipo de documento institucional que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Documento institucional</type-bind>
 		
@@ -127,7 +127,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Imagen(*)</label>
 		<input-type value-pairs-name="common_subtypes_imagen">dropdown</input-type>
-		<hint>Seleccione el tipo de imagen que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Imagen</type-bind>
 		
@@ -137,7 +137,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Audio (*)</label>
 		<input-type value-pairs-name="common_subtypes_audio">dropdown</input-type>
-		<hint>Seleccione el tipo de audio que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Audio</type-bind>
 		
@@ -152,7 +152,7 @@
          <repeatable>false</repeatable>
          <label>Titulo</label>
          <input-type>onebox</input-type>
-         <hint>Enter the main title of the item.</hint>
+         <hint>Título del documento</hint>
          <required>You must enter a main title for this item.</required>
        </field>
 	<field>
@@ -162,7 +162,7 @@
          <repeatable>true</repeatable>
          <label>Resumen</label>
          <input-type>textarea</input-type>
-         <hint>Enter the abstract of the item below. </hint>
+         <hint>Resumen de la obra</hint>
          <required></required>
        </field>
        
@@ -173,7 +173,7 @@
          <repeatable>true</repeatable>
          <label>Autor</label>
          <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
+         <hint>Persona física o institucional creadora del contenido intelectual de la obra</hint>
          <required></required>
        </field>
        
@@ -184,7 +184,7 @@
          <repeatable>true</repeatable>
          <label>Colaborador</label>
          <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
+         <hint>Persona física que colabora en otros sentidos en la realización de la obra (por ejemplo, asesor)</hint>
          <required></required>
        </field>
        <field>
@@ -194,7 +194,7 @@
          <repeatable>false</repeatable>
          <label>Institucion de origen</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la institucion de origen</hint>
+         <hint>Institucion, departamento y/o unidad de origen del material</hint>
          <required></required>
          <visibility>workflow</visibility>
        </field>
@@ -206,7 +206,7 @@
          <repeatable>false</repeatable>
          <label>Tema/Materia</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la materia</hint>
+         <hint>Materia (en sentido amplio) a que se refiere el item (ejemplo: Física)</hint>
          <required></required>
          <visibility>workflow</visibility>
           <vocabulary>unesco</vocabulary>
@@ -220,7 +220,7 @@
          <repeatable>true</repeatable>
          <label>Palabras clave</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Palabras clave</hint>
+         <hint>Términos libres que describen el contenido de la obra</hint>
          <required></required>
        </field>
        <field>
@@ -230,7 +230,7 @@
          <repeatable>true</repeatable>
          <label>Idioma</label>
          <input-type value-pairs-name="common_languages">dropdown</input-type>
-         <hint>Ingresar el Idioma</hint>
+         <hint>Lenguaje principal del item</hint>
          <required></required>
          <visibility>workflow</visibility>
        </field>
@@ -242,7 +242,7 @@
          <repeatable>false</repeatable>
          <label>Extensión</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Extensión</hint>
+         <hint>Tamaño, duración o cantidad de páginas del recurso</hint>
          <required></required>
          <visibility>workflow</visibility>
        </field>
@@ -254,7 +254,7 @@
          <repeatable>false</repeatable>
          <label>Editorial</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Editorial</hint>
+         <hint>Entidad responsable de la publicación de un item </hint>
          <required></required>
          <visibility>workflow</visibility>
        </field>
@@ -267,7 +267,7 @@
 	   			    <repeatable>false</repeatable>
          			<label>Período de Embargo</label>
 					<input-type value-pairs-name="embargo_periods">dropdown</input-type>
-					<hint>Seleccione el período de embargo que se aplicará sobre la obra</hint>
+					<hint>Período de tiempo en el que el archivo de un item estará oculto por razones de confidencialidad o similares.</hint>
 				</field>
        
     
@@ -282,7 +282,7 @@
          <repeatable>true</repeatable>
          <label>Localización electrónica</label>
          <input-type>onebox</input-type>
-         <hint>Localización del recurso en la WEB</hint>
+         <hint>Dirección del recurso en la web (puede ser otro repositorio, página, sitio, revista, etc.)</hint>
          <required></required>
        </field>
        <field>
@@ -292,7 +292,7 @@
          <repeatable>false</repeatable>
          <label>ISSN</label>
          <input-type>onebox</input-type>
-         <hint></hint>
+         <hint>Número de ISSN de la publicación</hint>
          <type-bind>Articulo</type-bind>
          
        </field>
@@ -303,7 +303,7 @@
 	         <repeatable>false</repeatable>
 	         <label>ISBN</label>
 	         <input-type>onebox</input-type>
-	         <hint></hint>
+	         <hint>Número de ISBN del libro</hint>
 	         <type-bind>Libro</type-bind>
 	       
        </field>
@@ -315,7 +315,7 @@
 	         <repeatable>false</repeatable>
 	         <label>Otros identificadores</label>
 	         <input-type>onebox</input-type>
-	         <hint>Otros identifidadores del recursos. Por ejemplo doi, handle, Nro de expediente, etc. </hint>
+	         <hint>Incluye otros identificadores del recurso como DOI, handle, etc.</hint>
 	      		<visibility>workflow</visibility>
        </field>
    
@@ -326,7 +326,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Fecha de exposición</label>
 	        <input-type>date</input-type>
-	        <hint>Fecha de presentación, primera exposición</hint>
+	        <hint>Fecha de presentación (en el caso de tesis, es la fecha de defensa; en el caso de objetos de conferencia, es la fecha en que fueron leídos públicamente)</hint>
 	     	<type-bind>Tesis,Objeto de conferencia</type-bind>
        </field>
    		<field>
@@ -346,7 +346,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Compilador</label>
 	        <input-type>name</input-type>
-	        <hint></hint>
+	        <hint>Persona física responsable de compilar, reunir o antologar materiales de la obra</hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
 	     	<visibility>workflow</visibility>
@@ -358,7 +358,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Editor</label>
 	        <input-type>name</input-type>
-	        <hint></hint>
+	        <hint>Persona física o institucional responsable de realizar tareas de edición sobre los contenidos de la obra</hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
 	     	<visibility>workflow</visibility>
@@ -370,7 +370,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Director de tesis</label>
 	        <input-type>name</input-type>
-	        <hint></hint>
+	        <hint>Persona que dirige la realización de la tesis</hint>
 	     	<type-bind>Tesis</type-bind>
        </field>
        	<field>
@@ -380,7 +380,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Jurado de tesis</label>
 	        <input-type>name</input-type>
-	        <hint></hint>
+	        <hint>Miembros del jurado revisor de la tesis</hint>
 	     	<type-bind>Tesis</type-bind>
       	 </field>
        <field>
@@ -390,7 +390,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Grado alcanzado</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Grado al que se aspira con el trabajo de tesis realizado</hint>
 	     	<type-bind>Tesis</type-bind>
 	     	<required></required>
       	 </field>
@@ -402,7 +402,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Emisor del título</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Insitución que otorga el título</hint>
 	     	<type-bind>Tesis</type-bind>
 	     	<required></required>
       	 </field>
@@ -413,7 +413,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Evento</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Nombre del evento (congreso, seminario, jornada, etc.) en el que este item fue leído/presentado</hint>
 	     	<type-bind>Objeto de conferencia</type-bind>
 	     	<required></required>
 	     	<visibility>workflow</visibility>
@@ -425,7 +425,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Serie</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Nombre de la publicación (revista) en la que este item fue publicado</hint>
 	     	<type-bind>Articulo</type-bind>
 	     	<required></required>
 	     	<visibility>workflow</visibility>
@@ -438,7 +438,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Volumen/Número</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Número, volumen y/o tomo de de la revista en la que este ítem fue publicado</hint>
 	     	<type-bind>Articulo</type-bind>
 	     	<required></required>
 	     	<visibility>workflow</visibility>
@@ -450,7 +450,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Notas</label>
 	        <input-type>textarea</input-type>
-	        <hint> An account of the resource.</hint>
+	        <hint>Toda otra aclaración que resulte pertinente para la mejor catalogación y recuperación de la obra</hint>
 	        <visibility>workflow</visibility>
 	    
       	 </field>
@@ -469,7 +469,7 @@
          	<repeatable>true</repeatable>
          	<label>Tipo</label>
          	<input-type value-pairs-name="common_types">dropdown</input-type>
-         	<hint>Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>
+         	<hint>Tipo de documento (artículo, tesis, libro, etc.)</hint>
          	<required></required>
        </field>
 	   <field>
@@ -477,7 +477,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Artículo (*)</label>
 			<input-type value-pairs-name="common_subtypes_articulo">dropdown</input-type>
-			<hint>Seleccione el tipo de artículo que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Articulo</type-bind>
 			
@@ -487,7 +487,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Patente (*)</label>
 			<input-type value-pairs-name="common_subtypes_patente">dropdown</input-type>
-			<hint>Seleccione el tipo de patente que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Patente</type-bind>
 			
@@ -498,7 +498,7 @@
 			<dc-element>subtype</dc-element>
 			<label>Especifique el tipo de Tesis (*)</label>
 			<input-type value-pairs-name="common_subtypes_tesis">dropdown</input-type>
-			<hint>Seleccione el tipo de tesis que desea cargar</hint>
+			<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 			<required>Debe seleccionar un subtipo de documento</required>
 			<type-bind>Tesis</type-bind>
 			
@@ -508,7 +508,7 @@
 		  <dc-element>subtype</dc-element>
 		  <label>Especifique el tipo de Libro (*)</label>
 		  <input-type value-pairs-name="common_subtypes_libro">dropdown</input-type>
-		  <hint>Seleccione el tipo de libro que desea cargar</hint>
+		  <hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		  <required>Debe seleccionar un subtipo de documento</required>
 		  <type-bind>Libro</type-bind>
 		  
@@ -518,7 +518,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Objeto de Aprendizaje (*)</label>
 		<input-type value-pairs-name="common_subtypes_objeto_de_aprendizaje">dropdown</input-type>
-		<hint>Seleccione el tipo de objeto de aprendizaje que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de objeto de aprendizaje</required>
 		<type-bind>Objeto de aprendizaje</type-bind>
 		
@@ -528,7 +528,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Objeto de Conferencia (*)</label>
 		<input-type value-pairs-name="common_subtypes_objeto_conferencia">dropdown</input-type>
-		<hint>Seleccione el tipo de objeto de conferencia que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Objeto de conferencia</type-bind>
 		
@@ -538,7 +538,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Documento Institucional (*)</label>
 		<input-type value-pairs-name="common_subtypes_documento_institucional">dropdown</input-type>
-		<hint>Seleccione el tipo de documento institucional que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Documento institucional</type-bind>
 		
@@ -548,7 +548,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Imagen(*)</label>
 		<input-type value-pairs-name="common_subtypes_imagen">dropdown</input-type>
-		<hint>Seleccione el tipo de imagen que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Imagen</type-bind>
 		
@@ -558,7 +558,7 @@
 		<dc-element>subtype</dc-element>
 		<label>Especifique el tipo de Audio (*)</label>
 		<input-type value-pairs-name="common_subtypes_audio">dropdown</input-type>
-		<hint>Seleccione el tipo de audio que desea cargar</hint>
+		<hint>Subtipo de documento (comunicación, tesis de maestría, capítulo de libro)</hint>
 		<required>Debe seleccionar un subtipo de documento</required>
 		<type-bind>Audio</type-bind>
 		
@@ -573,7 +573,7 @@
          <repeatable>false</repeatable>
          <label>Titulo</label>
          <input-type>onebox</input-type>
-         <hint>Enter the main title of the item.</hint>
+         <hint>Título del documento</hint>
          <required>You must enter a main title for this item.</required>
        </field>
 	<field>
@@ -583,7 +583,7 @@
          <repeatable>true</repeatable>
          <label>Resumen</label>
          <input-type>textarea</input-type>
-         <hint>Enter the abstract of the item below. </hint>
+         <hint>Resumen de la obra</hint>
          <required></required>
        </field>
        
@@ -594,7 +594,7 @@
          <repeatable>true</repeatable>
          <label>Autor</label>
          <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
+         <hint>Persona física o institucional creadora del contenido intelectual de la obra</hint>
          <required></required>
        </field>
        
@@ -605,7 +605,7 @@
          <repeatable>true</repeatable>
          <label>Colaborador</label>
          <input-type>name</input-type>
-         <hint>Enter the names of the authors of this item below.</hint>
+         <hint>Persona física que colabora en otros sentidos en la realización de la obra (por ejemplo, asesor)</hint>
          <required></required>
        </field>
        <field>
@@ -615,7 +615,7 @@
          <repeatable>false</repeatable>
          <label>Institucion de origen</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la institucion de origen</hint>
+         <hint>Institucion, departamento y/o unidad de origen del material</hint>
          <required></required>
        </field>
        
@@ -626,7 +626,7 @@
          <repeatable>false</repeatable>
          <label>Tema/Materia</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la materia</hint>
+         <hint>Materia (en sentido amplio) a que se refiere el item (ejemplo: Física)</hint>
          <required></required>
           <vocabulary>unesco</vocabulary>
        </field>
@@ -639,7 +639,7 @@
          <repeatable>true</repeatable>
          <label>Palabras clave</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Palabras clave</hint>
+         <hint>Términos libres que describen el contenido de la obra</hint>
          <required></required>
        </field>
        <field>
@@ -649,7 +649,7 @@
          <repeatable>true</repeatable>
          <label>Idioma</label>
          <input-type value-pairs-name="common_languages">dropdown</input-type>
-         <hint>Ingresar el Idioma</hint>
+         <hint>Lenguaje principal del item</hint>
          <required></required>
        </field>
        
@@ -660,7 +660,7 @@
          <repeatable>false</repeatable>
          <label>Extensión</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Extensión</hint>
+         <hint>Tamaño, duración o cantidad de páginas del recurso</hint>
          <required></required>
        </field>
        
@@ -671,7 +671,7 @@
          <repeatable>false</repeatable>
          <label>Editorial</label>
          <input-type>onebox</input-type>
-         <hint>Ingresar la Editorial</hint>
+         <hint>Entidad responsable de la publicación de un item </hint>
          <required></required>
        </field>
           <!-- Período de embargo -->
@@ -682,7 +682,7 @@
 	   			    <repeatable>false</repeatable>
          			<label>Período de Embargo</label>
 					<input-type value-pairs-name="embargo_periods">dropdown</input-type>
-					<hint>Seleccione el período de embargo que se aplicará sobre la obra</hint>
+					<hint>Período de tiempo en el que el archivo de un item estará oculto por razones de confidencialidad o similares.</hint>
 				</field>
     
     <!-- Formulario nuevo fin  -->   
@@ -696,7 +696,7 @@
          <repeatable>true</repeatable>
          <label>Localización electrónica</label>
          <input-type>onebox</input-type>
-         <hint>Localización del recurso en la WEB</hint>
+         <hint>Dirección del recurso en la web (puede ser otro repositorio, página, sitio, revista, etc.)</hint>
          <required></required>
        </field>
        <field>
@@ -706,7 +706,7 @@
          <repeatable>false</repeatable>
          <label>ISSN</label>
          <input-type>onebox</input-type>
-         <hint></hint>
+         <hint>Número de ISSN de la publicación</hint>
          <type-bind>Articulo</type-bind>
          
        </field>
@@ -717,7 +717,7 @@
 	         <repeatable>false</repeatable>
 	         <label>ISBN</label>
 	         <input-type>onebox</input-type>
-	         <hint></hint>
+	         <hint>Número de ISBN del libro</hint>
 	         <type-bind>Libro</type-bind>
 	       
        </field>
@@ -729,7 +729,7 @@
 	         <repeatable>false</repeatable>
 	         <label>Otros identificadores</label>
 	         <input-type>onebox</input-type>
-	         <hint>Otros identifidadores del recursos. Por ejemplo doi, handle, Nro de expediente, etc. </hint>
+	         <hint>Incluye otros identificadores del recurso como DOI, handle, etc.</hint>
 	      
        </field>
    
@@ -740,7 +740,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Fecha de exposición</label>
 	        <input-type>date</input-type>
-	        <hint>Fecha de presentación, primera exposición</hint>
+	        <hint>Fecha de presentación (en el caso de tesis, es la fecha de defensa; en el caso de objetos de conferencia, es la fecha en que fueron leídos públicamente)</hint>
 	     	<type-bind>Tesis,Objeto de conferencia</type-bind>
        </field>
    		<field>
@@ -760,7 +760,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Compilador</label>
 	        <input-type>date</input-type>
-	        <hint></hint>
+	        <hint>Persona física responsable de compilar, reunir o antologar materiales de la obra</hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
        </field> 
@@ -771,7 +771,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Editor</label>
 	        <input-type>date</input-type>
-	        <hint></hint>
+	        <hint>Persona física o institucional responsable de realizar tareas de edición sobre los contenidos de la obra</hint>
 	     	<required></required>
 	     	<type-bind>Libro</type-bind>
        </field> 
@@ -782,7 +782,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Director de tesis</label>
 	        <input-type>date</input-type>
-	        <hint></hint>
+	        <hint>Persona que dirige la realización de la tesis</hint>
 	     	<type-bind>Tesis</type-bind>
        </field>
        	<field>
@@ -792,7 +792,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Jurado de tesis</label>
 	        <input-type>name</input-type>
-	        <hint></hint>
+	        <hint>Miembros del jurado revisor de la tesis</hint>
 	     	<type-bind>Tesis</type-bind>
       	 </field>
        <field>
@@ -802,7 +802,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Grado alcanzado</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Grado al que se aspira con el trabajo de tesis realizado</hint>
 	     	<type-bind>Tesis</type-bind>
 	     	<required></required>
       	 </field>
@@ -814,7 +814,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Emisor del título</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Insitución que otorga el título</hint>
 	     	<type-bind>Tesis</type-bind>
 	     	<required></required>
       	 </field>
@@ -825,7 +825,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Evento</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Nombre del evento (congreso, seminario, jornada, etc.) en el que este item fue leído/presentado</hint>
 	     	<type-bind>Objeto de conferencia</type-bind>
 	     	<required></required>
       	 </field>
@@ -836,7 +836,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Serie</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Nombre de la publicación (revista) en la que este item fue publicado</hint>
 	     	<type-bind>Articulo</type-bind>
 	     	<required></required>
       	 </field>
@@ -848,7 +848,7 @@
 	        <repeatable>false</repeatable>
 	        <label>Volumen/Número</label>
 	        <input-type>onebox</input-type>
-	        <hint></hint>
+	        <hint>Número, volumen y/o tomo de de la revista en la que este ítem fue publicado</hint>
 	     	<type-bind>Articulo</type-bind>
 	     	<required></required>
       	 </field>
@@ -859,7 +859,7 @@
 	        <repeatable>true</repeatable>
 	        <label>Notas</label>
 	        <input-type>textarea</input-type>
-	        <hint> An account of the resource.</hint>
+	        <hint>Toda otra aclaración que resulte pertinente para la mejor catalogación y recuperación de la obra</hint>
 	    
       	 </field>
      </page>
