@@ -128,8 +128,10 @@
                     <map:parameter name="stylesheet.screen#2" value="../Mirage/lib/css/base.css"/>
                     <map:parameter name="stylesheet.screen#3" value="../Mirage/lib/css/helper.css"/>
                     <map:parameter name="stylesheet.screen#4" value="../Mirage/lib/css/jquery-ui-1.8.15.custom.css"/>
-                    <map:parameter name="stylesheet.screen#5" value="lib/css/style.css"/>
-                    <map:parameter name="stylesheet.screen#6" value="../Mirage/lib/css/authority-control.css"/>
+                    <map:parameter name="stylesheet.screen#5" value="../Mirage/lib/css/style.css"/>
+                    
+                    <map:parameter name="stylesheet.screen#6" value="lib/css/style.css"/>
+                    <map:parameter name="stylesheet.screen#7" value="../Mirage/lib/css/authority-control.css"/>
                 </map:transform>
 
                 <map:transform type="IncludePageMeta">
