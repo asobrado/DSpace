@@ -34,6 +34,7 @@
      <xsl:import href="lib/xsl/core/utilsUNT.xsl"/>
 	 <xsl:import href="lib/xsl/aspect/artifactbrowser/container-view.xsl"/>
 	 <xsl:import href="lib/xsl/aspect/artifactbrowser/item-view.xsl"/>
+	 <xsl:import href="lib/xsl/aspect/artifactbrowser/community-list.xsl"/>
 	 
 
      

@@ -94,9 +94,6 @@
 <message key="xmlui.ArtifactBrowser.AbstractSearch.no_results">La búsqueda no produjo resultados</message>
 <message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">Todo el repositorio</message>
 
-<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">título</message>
-<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">fecha de publicación</message>
-<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">fecha de envío</message>
 <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.relevance">pertinencia</message>
 <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by">Ordenar ítems por</message>
 <message key="xmlui.ArtifactBrowser.AbstractSearch.order">en orden</message>
@@ -113,26 +110,6 @@
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.conjunction">Conjunción</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.search_type">Tipo de búsqueda</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.search_for">Buscar por</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_author">Autor</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_title">Título</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Materia</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_abstract">Resumen</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">Serie</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Patrocinador</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identificador</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Idioma (ISO)</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palabra clave</message>
-
-   <!--  some common other possibilities for Advanced Search Fields -->
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Contribuidor/a</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Creador/a</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Materia</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_description">Descripción</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_relation">Relación</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_mime">Tipo MIME</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_other">Otro/a colaborador/a</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_advisor">Asesor/a</message>
-<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_department">Departamento</message>
 
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ANY">Texto completo</message>
 <message key="xmlui.ArtifactBrowser.AdvancedSearch.and">Y</message>
@@ -254,11 +231,6 @@
 <message key="xmlui.ArtifactBrowser.Navigation.head_browse">Explorar</message>
 <message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">Todo el repositorio</message>
 <message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Comunidades &amp; colecciones</message>
-<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Títulos</message>
-<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Autores</message>
-<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">Materias</message>
-<message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Por fecha de publicación</message>
-<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">Por fecha de envío</message>
 <message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">Esta colección</message>
 <message key="xmlui.ArtifactBrowser.Navigation.head_this_community">Esta comunidad</message>
 
@@ -1974,6 +1946,7 @@ Para más infomación, visite
 
 <message key="xmlui.dri2xhtml.structural.pagination-previous">Página anterior</message>
 <message key="xmlui.dri2xhtml.structural.pagination-info">Mostrando ítems {0}-{1} de {2}</message>
+<message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Mostrando items {0}-{1}</message>
 <message key="xmlui.dri2xhtml.structural.pagination-next">Página siguiente</message>
 
 <message key="xmlui.dri2xhtml.structural.link_cc">Creative Commons</message>
@@ -2289,84 +2262,122 @@ Cuando se usa QDC para los elementos de DSpace se recomienda el uso de crosswalk
     <!-- End Versioning -->     
 
 
-	
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.contributor.author_filter">Autor</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.subject_filter">Materia</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.type_filter">Tipo de contenido</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.date.issued">Fecha de publicación</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Fecha de publicación</message>
-	<!-- Site Leve Recently Added Content -->
-	<message key="xmlui.ArtifactBrowser.SiteViewer.head_recent_submissions">Documentos recientes</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type_filter">Tipo</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_publisher_filter">Editorial</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.ispartof">Es parte de</message>
+
+	<!-- TRADUCCIONES AGREGADAS -->
+
+    <!-- xmlui.ArtifactBrowser -->
+    <message key="xmlui.ArtifactBrowser.SiteViewer.head_recent_submissions">Documentos recientes</message>
+    <message key="xmlui.ArtifactBrowser.AbstractRecentSubmissionTransformer.recent_submissions_more">Ver más</message>
+    
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.group_by">Resultados agrupados por</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.none">Ninguno</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.publication_grp">Publicación</message>
+	<!--<message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.publication_grp">Publication</message> -->
+    
+<!--     SimpleSearch -->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Filtros aplicados</message>
+    
+    
+
+	<!-- AdvancedSearch -->
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_location.comm">Comunidad</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_location.coll">Colección</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dc.relation.ispartofseries_filter">Series</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.contributor.author_browse">Explorando por: Autor</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.title_browse">Explorando por: Título</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.subject_browse">Explorando por: Materia</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dc.description.abstract_browse">Explorando por: Resumen</message>
 	
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_series_browse">Explorando por: Series</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_sponsor_browse">Explorando por: Patrocinador</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_identifier_browse">Explorando por: Identificador</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_language_browse">Explorando por: Idioma (ISO)</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_keyword_browse">Explorando por: Palabra clave</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_taxon_browse">Explorando por: Nombre científico</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_contributor_browse">Explorando por: Contributor</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_creator_browse">Explorando por: Autor</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_subject_browse">Explorando por: Materia</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_description_browse">Explorando por: Descripción</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_relation_browse">Explorando por: Relación</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_mime_browse">Explorando por: Formato de archivo</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_other_browse">Explorando por: Co-director de tesis</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_advisor_browse">Explorando por: Director de tesis</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_department_browse">Explorando por: Departamento</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateissued_dt_browse">Explorando por: Fecha de publicación</message> -->
+
+    <message key="xmlui.Discovery.RecentSubmissions.RecentSubmissionTransformer.head">{0}: documentos recientes</message>
+    <message key="xmlui.Discovery.RecentSubmissions.RecentSubmissionTransformer.trail">Documentos recientes</message>
+    <message key="xmlui.Discovery.RecentSubmissions.RecentSubmissionTransformer.recent.head">Recientemente agregados</message>
 	
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Autor</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Título</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Materia</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Fecha de publicación</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.persona">Personas</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.institucion">Institución</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subtipo">Subtipo</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.descriptor">Descriptor</message> -->
-	
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.selected">Filtros aplicados</message>
-	<message key="xmlui.dri2xhtml.structural.pagination-info.nototal">Mostrando items {0}-{1}</message>
-<!-- 	<message key="xmlui.Discovery.AbstractSearch.type_author">Filtrado por: Autor</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author">Autor</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type_filter">Tipo de documento</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_filter">Autor</message> -->
-<!-- 	<message key="xmlui.Discovery.AbstractSearch.type_subject">Filtrado por: Materia</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Materia</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject_filter">Materia</message> -->
-<!-- 	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued.year">Fecha de publicación</message> -->
-	<message key="xmlui.Discovery.AbstractSearch.startswith">Empieza con</message>
+	<!-- AbstractSearch -->
+    <message key="xmlui.Discovery.AbstractSearch.startswith">Empieza con</message>
 	<message key="xmlui.Discovery.AbstractSearch.startswith.help">O ingrese las primeras letras:</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort">Título</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Fecha de publicación</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.accessioned_dt">Fecha de carga</message>
-	<message key="xmlui.discovery.SearchFacetFilter.no-results">No se encontarron valores acordes a los filtros.</message>
+
+    <message key="xmlui.Discovery.AbstractSearch.sort_by.head">Ordenamiento:</message>
+    <message key="xmlui.Discovery.AbstractSearch.sort_by.relevance">Relevancia</message>
+
+    <message key="xmlui.Discovery.AbstractSearch.rpp">Resultados por página:</message>
+
+    <message key="xmlui.Discovery.AbstractSearch.filters.controls.add-filter">Agregar filtro</message>
+    <message key="xmlui.Discovery.AbstractSearch.filters.controls.apply-filters">Aplicar</message>
+    <message key="xmlui.Discovery.AbstractSearch.filters.controls.remove-filter">Qutar</message>
+    <message key="xmlui.Discovery.AbstractSearch.filters.controls.new-filters.head">Nuevo Filtro:</message>
+    <message key="xmlui.Discovery.AbstractSearch.filters.controls.current-filters.head">Filtros actuales:</message>
+    <message key="xmlui.Discovery.AbstractSearch.filters.display">Add filters</message>
+
+    <message key="xmlui.discovery.SearchFacetFilter.no-results">No se encontarron valores acordes a los filtros.</message>
+    
 	<message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Refine su busqueda</message>
 	<message key="xmlui.discovery.AbstractFiltersTransformer.filters.head_collection">Contenido de la colección</message>
 	<message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">Ver más</message>
-	<message key="xmlui.discovery.SimpleSearch.search_label">Buscar</message>
+
+    <message key="xmlui.Discovery.SimpleSearch.search_scope">Search</message>
+    <message key="xmlui.discovery.SimpleSearch.search_label">Buscar</message>
 	<message key="xmlui.Discovery.SimpleSearch.filter_head">Filtros</message>
 	<message key="xmlui.Discovery.SimpleSearch.filter_add">Agregar</message>
 	<message key="xmlui.Discovery.SimpleSearch.filter_help">Use los filtros para acotar la búsqueda.</message>
 	<message key="xmlui.Discovery.SimpleSearch.filter_apply">Actualizar filtros</message>
-	<message key="xmlui.Discovery.SimpleSearch.sort_head">Opciones de ordenación</message>
+	
+    <message key="xmlui.Discovery.SimpleSearch.filter.contains">Contiene</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter.equals">Es igual</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter.authority">ID</message>
+	<message key="xmlui.Discovery.SimpleSearch.filter.notcontains">No contiene</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter.notequals">Es distinto</message>
+    <message key="xmlui.Discovery.SimpleSearch.filter.notauthority">Sin ID</message>
+    
+    <message key="xmlui.Discovery.SimpleSearch.sort_head">Opciones de ordenación</message>
 	<message key="xmlui.Discovery.SimpleSearch.sort_apply">Aplicar</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.filter.keywords_filter">Palabra clave</message>
-	<message key="xmlui.Discovery.AbstractSearch.type_type">Filtrado por: Tipos de documento</message>
-	<message key="xmlui.Discovery.AbstractSearch.type_keywords">Filtrado por: Palabras clave</message>
+    
+    <message key="xmlui.Discovery.RelatedItems.head">Recursos relacionados</message>
+    <message key="xmlui.Discovery.RelatedItems.help">Mostrando recursos relacionados por título, autor y materia.</message>
 
+    <message key="xmlui.Discovery.AbstractSearch.head1_community">Mostrando {0} de {1} resultados para la comunidad: {2}. <span class="searchTime">({3} segundos)</span></message>
+   	<message key="xmlui.Discovery.AbstractSearch.head1_collection">Mostrando {0} de {1} resultados para la colección: {2}. <span class="searchTime">({3} segundos)</span></message>
+   	<message key="xmlui.Discovery.AbstractSearch.head1_none">Mostrando {0} de {1} resultados <span class="searchTime">({2} segundos)</span></message>
+
+    <message key="xmlui.Discovery.AbstractSearch.head2">Comunidades o colecciones que coinciden con su consulta</message>
+   	<message key="xmlui.Discovery.AbstractSearch.head3">Recursos que coinciden con su consulta</message>
+
+   	<message key="xmlui.Discovery.SimpleSearch.did_you_mean">Usted quiso decir: </message>
+
+
+
+    <!-- Messages dspace para configuracipn propia de UNT -->
+	    
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Títulos</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Autores</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">Materias</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Por fecha de publicación</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">Por fecha de envío</message>
+
+	<!-- Una key <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.${$field_name}"></message> para cada FILTER declarado en config/spring/api/discover.xml -->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.creator">Autor</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.type">Tipo</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.contributor">Colaborador</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.subject">Tema</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.keyword">Palabra Clave</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateIssued">Fecha de publicación</message>
+                        
+    <!-- Una key <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.${$field_fqn}_sort_asc"></message> para cada SORT declarado en config/spring/api/discover.xml -->
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort_asc">Título Asc</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt_asc">Publicación Asc</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.accessioned_dt_asc">Incorporación Asc</message>
+	
+    <!-- Una key <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.${$field_fqn}_sort_desc"></message> para cada SORT declarado en config/spring/api/discover.xml -->
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort_desc">Título Desc</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt_desc">Publicación Desc</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.accessioned_dt_desc">Incorporación Desc</message>
+	
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Autor</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_creator_browse">Explorando por: Creator</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_type">Tipo</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_type_browse">Explorando por: Tipo</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Colaborador</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_contributor_browse">Explorando por: Colaborador</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Tema</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_subject_browse">Explorando por: Tema</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palabra Clave</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_keyword_browse">Explorando por: Palabra Clave</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Fecha de publicación</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.type_dateIssued_browse">Explorando por: Fecha de publicación</message>
 	<!-- Messages propios de UNT -->
 
 	<message key="unt.ayuda.header">Ayuda</message>

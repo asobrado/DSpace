@@ -1,3 +1,22 @@
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+<!--
+    Rendering of a community or collection
+	
+	BASED ON THEME MIRAGE FROM @mire http://atmire.com/
+	
+	Author: Ariel Lira - alira at sedici.unlp.edu.ar
+	Author: Ariel Sobrado - asobrado at sedici.unlp.edu.ar
+
+-->
+
 <xsl:stylesheet xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
 	xmlns:dri="http://di.tamu.edu/DRI/1.0/"
 	xmlns:mets="http://www.loc.gov/METS/"
@@ -12,9 +31,6 @@
 
     <xsl:output indent="yes"/>
 
-	   
-	   
-	
 <!-- 	   @id='aspect.artifactbrowser.CommunityViewer.div.community-home' and -->
 	   <xsl:template match="dri:div[@n='community-home' or @n='collection-home']">
 <!-- 	   		<h1 class="ds-div-head"><xsl:value-of select="head"/></h1> -->
