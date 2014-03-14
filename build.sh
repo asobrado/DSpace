@@ -1,23 +1,25 @@
 #!/bin/bash
 set -e
 
-echo "dspace ALL= NOPASSWD: /etc/init.d/tomcat6" > /etc/sudoers.d/dspace
-
+JAVA_OPTS="-Xmx512m"
+# -Dhttp.proxyHost=10.1.0.27 -Dhttp.proxyPort=3128 -Dhttps.proxyHost=10.1.0.27 -Dhttps.proxyPort=3128"
 
 cwd=`pwd`
 DSPACE_SRC=/opt/dspace/source
 DSPACE_DIR=/opt/dspace/install
 
 #Funcion No probada
-createdb(){
+createdb()
+{
+	#echo "dspace ALL= NOPASSWD: /etc/init.d/tomcat6" > /etc/sudoers.d/dspace
 
 	#dropdb dspace4
 	#createdb -U dspace4 -E UNICODE dspace4 -h localhost
-
+	
 	#cd $DSPACE_DIR
 	#./bin/dspace  dsrun org.dspace.administer.MetadataImporter -f config/registries/unt-types.xml
-
-	#echo -e "Instalando XMLWorkflow"
+	
+	echo -e "Instalando XMLWorkflow"
         #WORKFLOW_SCRIPTS="$INSTALL_DIR/etc/postgres/xmlworkflow"
         #./bin/dspace dsrun org.dspace.storage.rdbms.InitializeDatabase $WORKFLOW_SCRIPTS/xml_workflow.sql
 
@@ -33,6 +35,7 @@ show_message()
    echo "#################################################################################################"
 }
 
+show_message "Actualizando la instalació de DSpace. Esta operación suele demorar un par de minutos."
 
 show_message "Actualizamos el código fuente de github"
 cd $DSPACE_SRC
@@ -40,14 +43,20 @@ git stash && git pull && git rebase && git stash pop
 
 show_message "Empaquetamos dspace"
 cd dspace 
-mvn package -q
+MAVEN_OPTS=$JAVA_OPTS mvn package -q 
 
 show_message "Paramos el tomcat"
 sudo /etc/init.d/tomcat6 stop
 
 show_message "actualizamos los sources"
 cd target/dspace-*
-ant update -q
+ANT_OPTS=$JAVA_OPTS ant update -q 
+
+show_message "eliminamos directorios de bkp viejos"
+ant clean_backups -Ddspace.dir=$DSPACE_DIR
+#rm -r $DSPACE_DIR/bin.bak-* $DSPACE_DIR/etc.bak-* $DSPACE_DIR/lib.bak-* $DSPACE_DIR/webapps.bak-*
+cd $DSPACE_SRC
+MAVEN_OPTS=$JAVA_OPTS mvn clean -q 
 
 show_message "iniciamos tomcat"
 sudo /etc/init.d/tomcat6 start
