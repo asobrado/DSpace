@@ -2116,7 +2116,7 @@
 <!-- Agregado para el nuevo item view -->
 <message key="xmlui.dri2xhtml.METS-1.0.item-subtype">Tipo de documento</message>
 <message key="xmlui.dri2xhtml.METS-1.0.general-info">Información general</message>
-<message key="xmlui.dri2xhtml.METS-1.0.item-date-issued">Fecha de publicación<</message>
+<message key="xmlui.dri2xhtml.METS-1.0.item-date-issued">Fecha de publicación</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-identifier-other">Otros Identificadores</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-identifier-issn">ISSN</message>
 <message key="xmlui.dri2xhtml.METS-1.0.item-date-accessioned">Creado el</message>

@@ -37,14 +37,51 @@
 		<map:pipeline>
 			<!-- Allow the browser to cache static content for an hour -->
 			<map:parameter name="expires" value="access plus 1 hours"/>
+            
+			<!-- Redirigimos las solicitudes a js de Mirage -->
+			<map:match pattern="themes/unt/lib/js/*.js">
+                    <map:read type="ConcatenationReader" src="../Mirage/lib/js/{1}.js">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match> 
 
+			<!-- Redirigimos las solicitudes a images de Mirage -->
+			<map:match pattern="themes/unt/lib/js/*.js">
+                    <map:read type="ConcatenationReader" src="../Mirage/lib/js/{1}.js">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match> 
 
-            <!-- handle static js and css -->
+            <map:match pattern="themes/unt/images/authority_control/*">
+                    <map:read type="ConcatenationReader" src="../Mirage/images/authority_control/{1}">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match>
+            
+            <map:match pattern="themes/unt/images/controlledvocabulary/*">
+                    <map:read type="ConcatenationReader" src="../Mirage/images/controlledvocabulary/{1}">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match>
+            
+            <map:match pattern="themes/unt/images/creativecommons/*">
+                    <map:read type="ConcatenationReader" src="../Mirage/images/creativecommons/{1}">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match>
+            
+            <map:match pattern="themes/unt/images/jquery_ui/*">
+                    <map:read type="ConcatenationReader" src="../Mirage/images/jquery_ui/{1}">
+                        <map:parameter name="requestQueryString" value="{request:queryString}"/>
+                    </map:read>
+            </map:match>
+            
+            <!-- handle static js and css-->
             <map:match pattern="themes/*/**.js">
                     <map:read type="ConcatenationReader" src="{2}.js">
                         <map:parameter name="requestQueryString" value="{request:queryString}"/>
                     </map:read>
-            </map:match>
+            </map:match> 
             <map:match pattern="themes/*/**.css">
                     <map:read type="ConcatenationReader" src="{2}.css">
                         <map:parameter name="requestQueryString" value="{request:queryString}"/>
@@ -55,7 +92,7 @@
                         <map:parameter name="requestQueryString" value="{request:queryString}"/>
                     </map:read>
             </map:match>
-
+             
 			<!-- Static content -->
 			<map:match pattern="themes/*/**">
 				<map:read src="{2}"/>

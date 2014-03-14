@@ -112,7 +112,7 @@ overriding the dri:document template.
         <!-- The HTML head element contains references to CSS as well as embedded JavaScript code. Most of this
         information is either user-provided bits of post-processing (as in the case of the JavaScript), or
         references to stylesheets pulled directly from the pageMeta element. -->
-    <xsl:template name="buildHead">
+    <xsl:template name="buildHea2d">
         <head>
 
 			<xsl:call-template name="buildLinkAndMeta" />
