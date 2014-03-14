@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<node id="UNESCO" label="UNESCO Thesaurus (top level)">
+<node id="unesco" label="UNESCO Thesaurus">
 	<isComposedBy>
-
 		<node id="1" label="Educación">
 			<isComposedBy>
 				<node id="1.05" label="Ciencias de la educación y ambiente educacional" />

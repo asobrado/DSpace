@@ -203,9 +203,9 @@
          <dc-schema>unt</dc-schema>
          <dc-element>subject</dc-element>
          <dc-qualifier>materia</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Tema/Materia</label>
-         <input-type>onebox</input-type>
+         <input-type>twobox</input-type>
          <hint>Materia (en sentido amplio) a que se refiere el item (ejemplo: Física)</hint>
          <required></required>
          <visibility>workflow</visibility>
@@ -623,9 +623,9 @@
          <dc-schema>unt</dc-schema>
          <dc-element>subject</dc-element>
          <dc-qualifier>materia</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Tema/Materia</label>
-         <input-type>onebox</input-type>
+         <input-type>twobox</input-type>
          <hint>Materia (en sentido amplio) a que se refiere el item (ejemplo: Física)</hint>
          <required></required>
           <vocabulary>unesco</vocabulary>
