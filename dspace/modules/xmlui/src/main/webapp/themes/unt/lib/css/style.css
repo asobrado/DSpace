@@ -157,6 +157,21 @@ BODY{
 
 /*##################################################################*/
 
+#ds-feed-option ul{
+	padding: 0;
+	margin: 0;
+}
+#ds-feed-option li{
+	display:inline;
+	padding: 0;
+	margin: 0;
+	
+}
+#ds-feed-option li > a {
+	padding: 0px 0px 2px 9px;
+}
+
+
 .ds-list-head{
 	clear: both;
 }
@@ -204,7 +219,8 @@ BODY{
 }
 
 #launcher-right > * {
-	width: 276px;
+/* 	width: 276px; */
+	width: 309px;
 	float: left;
 	clear: both;
 	text-align: center;
@@ -215,6 +231,18 @@ BODY{
 	margin-right: 10px;
 }
 
+#home-videos li{
+	background-image: url('../../images/icon_play.png');
+	background-position: 0px 5px;
+	padding-left: 15px;
+	background-repeat: no-repeat;
+	text-align: left;
+}
+#home-videos a, #home-videos a:VISITED, #home-videos a:HOVER{
+/* 	color:red; */
+	font-size:13pt;
+	text-decoration: none;
+}
 
 /*##################################################################*/
 

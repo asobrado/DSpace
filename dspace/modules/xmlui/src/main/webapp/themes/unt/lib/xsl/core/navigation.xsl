@@ -36,8 +36,8 @@
 				<xsl:call-template name="addSearchBox" />
 				
 				<xsl:apply-templates />
-<!-- 				<xsl:call-template name="addSocialBox" /> -->
 				<xsl:call-template name="addHelpBox" />	
+				<xsl:call-template name="addSocialBox" />
 			</div>
 		</div>
 	</xsl:template>
@@ -113,30 +113,35 @@
 			</h1>
 			<div id="ds-feed-option" class="ds-option-set">
 				<ul>
-					<xsl:for-each
-						select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
-						<li>
-							<a>
-								<xsl:attribute name="href">
-                        			<xsl:value-of select="." />
-			                    </xsl:attribute>
-								<xsl:attribute name="style">
-			                        <xsl:text>background: url(</xsl:text>
-			                        <xsl:value-of select="$context-path" />
-			                        <xsl:text>/static/icons/feed.png) no-repeat</xsl:text>
-			                    </xsl:attribute>
-
-								<xsl:choose>
-									<xsl:when test="contains(., 'atom_1.0')">
-										<xsl:text>Atom</xsl:text>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:value-of select="@qualifier" />
-									</xsl:otherwise>
-								</xsl:choose>
-							</a>
-						</li>
-					</xsl:for-each>
+					<li>
+						<xsl:call-template name="build-anchor">
+							<xsl:with-param name="a.href">http://twitter.com/sedici_unlp</xsl:with-param>
+							<xsl:with-param name="img.src">images/icon_TW.png</xsl:with-param>
+							<xsl:with-param name="img.alt">twitter</xsl:with-param>
+						</xsl:call-template>
+					</li>
+					<li>
+						<xsl:call-template name="build-anchor">
+							<xsl:with-param name="a.href">http://www.facebook.com/sedici.unlp</xsl:with-param>
+							<xsl:with-param name="img.src">images/icon_FW.png</xsl:with-param>
+							<xsl:with-param name="img.alt">facebook</xsl:with-param>
+						</xsl:call-template>
+					</li>
+					<li>
+						<xsl:call-template name="build-anchor">
+							<xsl:with-param name="a.href">/feedback</xsl:with-param>
+							<xsl:with-param name="img.src">images/icon_MAIL.png</xsl:with-param>
+							<xsl:with-param name="img.alt">Contacto</xsl:with-param>
+						</xsl:call-template>
+					</li>				
+				
+					<li>
+						<xsl:call-template name="build-anchor">
+							<xsl:with-param name="a.href">/feed/atom_1.0/site</xsl:with-param>
+							<xsl:with-param name="img.src">images/icon_ATOM.png</xsl:with-param>
+							<xsl:with-param name="img.alt">Novedades</xsl:with-param>
+						</xsl:call-template>
+					</li>				
 				</ul>
 			</div>
 		</xsl:if>
@@ -226,27 +231,4 @@
 	</xsl:template>
 
 
-<!-- 	<list id="aspect.viewArtifacts.Navigation.list.account" n="account"> -->
-<!-- <head> -->
-<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.my_account</i18n:text> -->
-<!-- </head> -->
-<!-- <item> -->
-<!-- <xref target="/xmlui/logout"> -->
-<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.logout</i18n:text> -->
-<!-- </xref> -->
-<!-- </item> -->
-<!-- <item> -->
-<!-- <xref target="/xmlui/profile"> -->
-<!-- <i18n:translate> -->
-<!-- <i18n:text catalogue="default">xmlui.EPerson.Navigation.profile</i18n:text> -->
-<!-- <i18n:param>Ariel Lira</i18n:param> -->
-<!-- </i18n:translate> -->
-<!-- </xref> -->
-<!-- </item> -->
-<!-- <item> -->
-<!-- <xref target="/xmlui/submissions"> -->
-<!-- <i18n:text catalogue="default">xmlui.Submission.Navigation.submissions</i18n:text> -->
-<!-- </xref> -->
-<!-- </item> -->
-<!-- </list> -->
 </xsl:stylesheet>

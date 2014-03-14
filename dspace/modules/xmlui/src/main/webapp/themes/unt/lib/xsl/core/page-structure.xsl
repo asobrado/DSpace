@@ -476,12 +476,41 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 				<xsl:with-param name="img.src">images/autoarchivo.png</xsl:with-param>
 				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
 			</xsl:call-template>
-			<object width="276" height="207">
-				<param name="movie" value="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX"></param>
-				<param name="allowFullScreen" value="true"></param>
-				<param name="allowscriptaccess" value="always"></param>
-				<embed src="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX" type="application/x-shockwave-flash" width="276" height="207" allowscriptaccess="always" allowfullscreen="true"></embed>
-			</object>
+			
+			<xsl:call-template name="build-anchor">
+				<xsl:with-param name="a.value"></xsl:with-param>
+				<xsl:with-param name="a.href">/pages/autoarchivo</xsl:with-param>
+				<xsl:with-param name="img.src">images/video.png</xsl:with-param>
+				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
+			</xsl:call-template>
+			
+			<ul id="home-videos">
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Qué es el RIUNT?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/acerca-de</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Cómo deposito mis publicaciones?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/autoarchivo</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Cuáles son mis derechos de autor?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/derechos-de-autor</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">Si publico en RIUNT, ¿mis obras estarán protegidas?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/licencias</xsl:with-param>
+					</xsl:call-template>
+				</li>
+			</ul>
+			
 		</div>
 	</xsl:template>
 
