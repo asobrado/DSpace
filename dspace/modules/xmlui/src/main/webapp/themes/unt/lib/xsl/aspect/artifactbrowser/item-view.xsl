@@ -10,10 +10,10 @@
 <!--
     Rendering specific to the item display page.
 
-    Author: art.lowel at atmire.com
-    Author: lieven.droogmans at atmire.com
-    Author: ben at atmire.com
-    Author: Alexey Maslov
+	BASED ON THEME MIRAGE FROM @mire http://atmire.com/
+	
+	Author: Ariel Lira - alira at sedici.unlp.edu.ar
+	Author: Ariel Sobrado - asobrado at sedici.unlp.edu.ar
 
 -->
 

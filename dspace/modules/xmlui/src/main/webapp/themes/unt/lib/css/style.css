@@ -207,6 +207,8 @@ BODY{
 	width: 276px;
 	float: left;
 	clear: both;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
 }
 .ds-logo-wrapper{
 	float: left;
@@ -219,23 +221,6 @@ BODY{
 #ds-content-wrapper  #ds-body {
 	width: 700px;
 }
-/* .objeto .icon { */
-/* 	height: 95px; */
-/* 	width: 80px; */
-/* 	float: left; */
-/* } */
-/* .objeto .title { */
-/* 	float: left; */
-/* 	width: 100px; */
-/* 	height: 63px; */
-/* 	padding-top: 20px; */
-/* 	padding-left: 20px; */
-/* } */
-/* .objeto { */
-/* 	width: 219px; */
-/* 	height: 95px; */
-/* 	font-family: "Times New Roman", Times, serif; */
-/* } */
 
 #right-body {
 	float:left;
@@ -313,6 +298,11 @@ div.ds-option-set ul.sublist{
 	margin-left: 0px;
 	padding: 2px;
 }
+
+#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser ul{
+	margin-left:30px;
+}
+
 
 
 /* NO borrar, es para detectar errores de css*/
