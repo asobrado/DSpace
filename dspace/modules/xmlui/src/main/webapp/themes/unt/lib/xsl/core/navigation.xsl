@@ -106,8 +106,6 @@
 	<!-- Add each RSS feed from meta to a list -->
 	<xsl:template name="addSocialBox">
 		
-		<xsl:if
-			test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']) != 0">
 			<h1 id="ds-feed-option-head" class="ds-option-set-head">
 				<i18n:text>xmlui.feed.header</i18n:text>
 			</h1>
@@ -144,8 +142,6 @@
 					</li>				
 				</ul>
 			</div>
-		</xsl:if>
-
 	</xsl:template>
 
 
