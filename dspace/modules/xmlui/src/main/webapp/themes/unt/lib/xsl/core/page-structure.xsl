@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
 The contents of this file are subject to the license and copyright
@@ -106,8 +107,150 @@ overriding the dri:document template.
             <xsl:text disable-output-escaping="yes">&lt;/body&gt;</xsl:text>
         </html>
     </xsl:template>
+    
+    
+        <!-- The HTML head element contains references to CSS as well as embedded JavaScript code. Most of this
+        information is either user-provided bits of post-processing (as in the case of the JavaScript), or
+        references to stylesheets pulled directly from the pageMeta element. -->
+    <xsl:template name="buildHead">
+        <head>
 
+			<xsl:call-template name="buildLinkAndMeta" />
+			
+            <!-- Modernizr enables HTML5 elements & feature detects -->
+            <script type="text/javascript">
+                <xsl:attribute name="src">
+		            <xsl:call-template name="print-path">
+			            <xsl:with-param name="path">/themes/Mirage/lib/js/modernizr-1.7.min.js</xsl:with-param>
+			        </xsl:call-template>
+                </xsl:attribute>&#160;
+            </script>
 
+            <!-- Add the title in -->
+            
+            <title>
+	            <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />    
+	            <xsl:choose>
+                        <xsl:when test="starts-with($request-uri, 'page/about')">
+                                <xsl:text>About This Repository</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="not($page_title)">
+                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                        </xsl:when>
+                        <xsl:when test="$page_title = ''">
+                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-title</i18n:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                                <xsl:copy-of select="$page_title/node()" />
+                        </xsl:otherwise>
+                </xsl:choose>
+            </title>
+
+            <!-- Head metadata in item pages -->
+            <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']">
+                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']"
+                              disable-output-escaping="yes"/>
+            </xsl:if>
+
+        </head>
+    </xsl:template>
+    
+
+    <xsl:template name="buildLinkAndMeta">
+			
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+            <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+            <!--  Mobile Viewport Fix
+                  j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+            device-width : Occupy full width of the screen in its current orientation
+            initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+            maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+            -->
+            <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+
+            <link rel="shortcut icon">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                    <xsl:text>/themes/</xsl:text>
+                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                    <xsl:text>/images/favicon.ico</xsl:text>
+                </xsl:attribute>
+            </link>
+            <link rel="apple-touch-icon">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                    <xsl:text>/themes/</xsl:text>
+                    <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                    <xsl:text>/images/apple-touch-icon.png</xsl:text>
+                </xsl:attribute>
+            </link>
+
+            <meta name="Generator">
+              <xsl:attribute name="content">
+                <xsl:text>DSpace</xsl:text>
+                <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='dspace'][@qualifier='version']">
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='dspace'][@qualifier='version']"/>
+                </xsl:if>
+              </xsl:attribute>
+            </meta>
+            <!-- Add stylesheets -->
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='stylesheet']">
+                <link rel="stylesheet" type="text/css">
+                    <xsl:attribute name="media">
+                        <xsl:value-of select="@qualifier"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                        <xsl:text>/themes/</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="."/>
+                    </xsl:attribute>
+                </link>
+            </xsl:for-each>
+
+            <!-- Add syndication feeds -->
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
+                <link rel="alternate" type="application">
+                    <xsl:attribute name="type">
+                        <xsl:text>application/</xsl:text>
+                        <xsl:value-of select="@qualifier"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="."/>
+                    </xsl:attribute>
+                </link>
+            </xsl:for-each>
+
+            <!--  Add OpenSearch auto-discovery link -->
+            <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='shortName']">
+                <link rel="search" type="application/opensearchdescription+xml">
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='scheme']"/>
+                        <xsl:text>://</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='serverName']"/>
+                        <xsl:text>:</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='serverPort']"/>
+                        <xsl:value-of select="$context-path"/>
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='autolink']"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="title" >
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='opensearch'][@qualifier='shortName']"/>
+                    </xsl:attribute>
+                </link>
+            </xsl:if>
+
+            <!-- Add all Google Scholar Metadata values -->
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
+                <meta name="{@element}" content="{.}"></meta>
+            </xsl:for-each>
+    </xsl:template>
+    
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
 placeholders for header images -->
     <xsl:template name="buildHeader">
@@ -333,12 +476,41 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 				<xsl:with-param name="img.src">images/autoarchivo.png</xsl:with-param>
 				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
 			</xsl:call-template>
-			<object width="276" height="207">
-				<param name="movie" value="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX"></param>
-				<param name="allowFullScreen" value="true"></param>
-				<param name="allowscriptaccess" value="always"></param>
-				<embed src="//www.youtube.com/v/umLtdb5i2LE?hl=es_MX" type="application/x-shockwave-flash" width="276" height="207" allowscriptaccess="always" allowfullscreen="true"></embed>
-			</object>
+			
+			<xsl:call-template name="build-anchor">
+				<xsl:with-param name="a.value"></xsl:with-param>
+				<xsl:with-param name="a.href">/pages/autoarchivo</xsl:with-param>
+				<xsl:with-param name="img.src">images/video.png</xsl:with-param>
+				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
+			</xsl:call-template>
+			
+			<ul id="home-videos">
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Qué es el RIUNT?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/acerca-de</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Cómo deposito mis publicaciones?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/autoarchivo</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">¿Cuáles son mis derechos de autor?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/derechos-de-autor</xsl:with-param>
+					</xsl:call-template>
+				</li>
+				<li>
+					<xsl:call-template name="build-anchor">
+						<xsl:with-param name="a.value">Si publico en RIUNT, ¿mis obras estarán protegidas?</xsl:with-param>
+						<xsl:with-param name="a.href">/page/licencias</xsl:with-param>
+					</xsl:call-template>
+				</li>
+			</ul>
+			
 		</div>
 	</xsl:template>
 
