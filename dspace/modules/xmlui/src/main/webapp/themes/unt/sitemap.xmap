@@ -142,7 +142,7 @@
                 <map:transform type="IncludePageMeta">
                     <map:parameter name="stylesheet.all" value="../Mirage/lib/css/media.css"/>
                     <map:parameter name="javascript" value="../Mirage/lib/js/jquery-ui-1.8.15.custom.min.js"/>
-                    <map:parameter name="theme.path" value="{global:theme-path}"/>
+                   <map:parameter name="theme.path" value="{global:theme-path}"/>
                     <map:parameter name="theme.name" value="{global:theme-name}"/>
                 </map:transform>
 
