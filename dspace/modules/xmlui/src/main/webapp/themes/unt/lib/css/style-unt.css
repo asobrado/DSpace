@@ -333,6 +333,10 @@ div.ds-option-set ul.sublist{
 	margin-left:30px;
 }
 
+/* ocultamos los titulos de colecciones y comunidades en summaryList que tienen el class hide-container*/
+div.hide-container + ul, div.hide-container {
+	display:none;
+}
 
 
 /* NO borrar, es para detectar errores de css*/
