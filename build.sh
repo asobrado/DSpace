@@ -48,6 +48,9 @@ MAVEN_OPTS=$JAVA_OPTS mvn package -q
 show_message "Paramos el tomcat"
 sudo /etc/init.d/tomcat6 stop
 
+#sudo rm /var/lib/tomcat6/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.data
+#sudo rm /var/lib/tomcat6/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.index
+
 show_message "actualizamos los sources"
 cd target/dspace-*
 ANT_OPTS=$JAVA_OPTS ant update -q 
