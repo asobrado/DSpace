@@ -479,7 +479,7 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 			
 			<xsl:call-template name="build-anchor">
 				<xsl:with-param name="a.value"></xsl:with-param>
-				<xsl:with-param name="a.href">/pages/autoarchivo</xsl:with-param>
+				<xsl:with-param name="a.href">/page/autoarchivo</xsl:with-param>
 				<xsl:with-param name="img.src">images/video.png</xsl:with-param>
 				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
 			</xsl:call-template>
