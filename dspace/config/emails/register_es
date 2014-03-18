@@ -1,0 +1,17 @@
+# E-mail sent to DSpace users when they register for an account
+#
+# Parameters: {0} is expanded to a special registration URL
+#
+# See org.dspace.core.Email for information on the format of this file.
+#
+Subject: Repositorio UNT - Alta de usuario 
+
+Para completar el proceso de registro en UNT y activar su cuenta, por favor haga click en el siguiente enlace:
+  {0}
+
+Si lo desea, una vez que haya activado su cuenta, podrá incorporar materiales generados en la Universidad Nacional de Tucuman  al respositorio RIUNT desde http://www.repositorio.unt.edu.ar/
+ 
+Si necesita ayuda con su cuenta, por favor envíe un e-mail a unt.proyectopicto@gmail.com.
+
+Muchas gracias. 
+Cordialmente,
