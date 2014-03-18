@@ -47,7 +47,7 @@
         <div class="artifact-description">
         
 	        <xsl:if test="starts-with($communityTitle, '.')">
-	        	<xsl:attribute name="style">display:none;</xsl:attribute>
+	        	<xsl:attribute name="class">hide-container</xsl:attribute>
 	        </xsl:if>
 
 	        <div class="artifact-title">

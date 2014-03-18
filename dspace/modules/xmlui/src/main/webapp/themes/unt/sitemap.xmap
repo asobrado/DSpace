@@ -45,6 +45,7 @@
                     </map:read>
             </map:match> 
 
+            <!-- handle static js-->
 			<!-- Redirigimos las solicitudes a images de Mirage -->
 			<map:match pattern="themes/unt/lib/js/*.js">
                     <map:read type="ConcatenationReader" src="../Mirage/lib/js/{1}.js">
@@ -76,12 +77,13 @@
                     </map:read>
             </map:match>
             
-            <!-- handle static js and css-->
             <map:match pattern="themes/*/**.js">
                     <map:read type="ConcatenationReader" src="{2}.js">
                         <map:parameter name="requestQueryString" value="{request:queryString}"/>
                     </map:read>
             </map:match> 
+
+            <!-- handle static css-->
             <map:match pattern="themes/*/**.css">
                     <map:read type="ConcatenationReader" src="{2}.css">
                         <map:parameter name="requestQueryString" value="{request:queryString}"/>
@@ -167,7 +169,7 @@
                     <map:parameter name="stylesheet.screen#4" value="../Mirage/lib/css/jquery-ui-1.8.15.custom.css"/>
                     <map:parameter name="stylesheet.screen#5" value="../Mirage/lib/css/style.css"/>
                     
-                    <map:parameter name="stylesheet.screen#6" value="lib/css/style.css"/>
+                    <map:parameter name="stylesheet.screen#6" value="lib/css/style-unt.css"/>
                     <map:parameter name="stylesheet.screen#7" value="../Mirage/lib/css/authority-control.css"/>
                 </map:transform>
 
