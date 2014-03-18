@@ -18,10 +18,9 @@ JAVA_OPTS="-Xmx1024M -Xms256M -Dfile.encoding=UTF-8"
 # (Recommended to be run once per day. Feel free to tweak the scheduled times below.)
 #----------------
  
-# Update the OAI-PMH index with the newest content (and re-optimize that index) at midnight every day
-# NOTE: ONLY NECESSARY IF YOU ARE RUNNING OAI-PMH
+# Update the OAI-PMH index with the newest content (and re-optimize that index) fout times a day
 # (This ensures new content is available via OAI-PMH and ensures the OAI-PMH index is optimized for better performance)
-0 0 * * * $DSPACE/bin/dspace oai import -o > /dev/null
+0 9,12,15,19 * * * $DSPACE/bin/dspace oai import -o > /dev/null
  
 # Clean and Update the Discovery indexes at midnight every day
 # (This ensures that any deleted documents are cleaned from the Discovery search/browse index)
@@ -87,21 +86,17 @@ JAVA_OPTS="-Xmx1024M -Xms256M -Dfile.encoding=UTF-8"
 0 2 1 1 * $DSPACE/bin/dspace stats-util -s
 
 #----------------#----------------#----------------#----------------#----------------#----------------#----------------
-# Otros no indicados por DSpace
-
-#actualizo el indice de xoai 4veces al dia
-1 9,12,15,19 * * *  /var/dspace/bin/dspace xoai import > /dev/null
-0 3 * * * $DSPACE/bin/dspace oai import > /dev/null
+# Otros no indicados por la wiki de DSpace4.
 
 #Check for pendign embargoes
-1 6 * * *  /var/dspace/bin/dspace embargo-lifter 
+1 6 * * *  $DSPACE/bin/dspace embargo-lifter 
 
 #GZip de logs viejos los lunes a las 5AM
 #mkdir /var/log/tomcat6/old-logs/
 #mkdir /var/log/dspace/old-logs/
 0 5 * * mon find /var/log/tomcat6 -maxdepth 1 -name "catalina.*" -type f -mtime +5 -exec gzip {} \; -exec mv {}.gz /var/log/tomcat6/old-logs/ \;
 2 5 * * mon find /var/log/tomcat6 -maxdepth 1 -name "localhost.*" -type f -mtime +5 -exec gzip {} \; -exec mv {}.gz /var/log/tomcat6/old-logs/ \;
-5 5 * * mon find /var/dspace/log -maxdepth 1 -name "dspace.log.*" -type f -mtime +30 -exec gzip {} \; -exec mv {}.gz /var/dspace/log/old-logs/ \;
+5 5 * * mon find $DSPACE/log -maxdepth 1 -name "dspace.log.*" -type f -mtime +30 -exec gzip {} \; -exec mv {}.gz $DSPACE/log/old-logs/ \;
 
 # ########## POSTGRES ######################
 # Clean up the database nightly at 4.20am
