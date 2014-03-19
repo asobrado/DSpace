@@ -41,6 +41,8 @@
 	  <xsl:variable name="imagen_fija">Imagen fija</xsl:variable>
 	  <xsl:variable name="objeto_fisico">Objeto Fisico</xsl:variable>
 	  <xsl:variable name="objeto_de_aprendizaje">Objeto de aprendizaje</xsl:variable>
-  
+	
+	  <xsl:variable name="autoarchivo_handle">11327/92</xsl:variable>
+	  <xsl:variable name="admin_group">RIUNT_ADMIN</xsl:variable>
 
 </xsl:stylesheet>

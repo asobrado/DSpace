@@ -272,6 +272,18 @@ placeholders for header images -->
     </xsl:template>
     <xsl:template name="buildUserBox">
 		<ul >
+			<xsl:if test="(//dri:userMeta/dri:metadata[@element='identifier' and @qualifier='group'] = $admin_group) or (//dri:userMeta/dri:metadata[@element='identifier' and @qualifier='group'] = 'Administrator')">
+				<li>
+				<xsl:call-template name="build-anchor">
+					<xsl:with-param name="a.href">
+						<xsl:value-of select="concat('/handle/', $autoarchivo_handle)"/>
+					</xsl:with-param>
+					<xsl:with-param name="a.value">
+						Autoarchivo
+					</xsl:with-param>
+				</xsl:call-template>
+				</li>
+			</xsl:if>
 			<xsl:for-each select="/dri:document/dri:options/dri:list[@n='account']/dri:item	">
 				<xsl:sort select="position()" data-type="number" order="descending"/>
         
@@ -472,7 +484,7 @@ templates of the body's child elements (which consists entirely of dri:div tags)
 		  <div id="launcher-right">
 			<xsl:call-template name="build-anchor">
 				<xsl:with-param name="a.value"></xsl:with-param>
-				<xsl:with-param name="a.href">/handle/11327/92/submit</xsl:with-param>
+				<xsl:with-param name="a.href"><xsl:value-of select="concat('/handle/',	$autoarchivo_handle,'/submit')"/></xsl:with-param>
 				<xsl:with-param name="img.src">images/autoarchivo.png</xsl:with-param>
 				<xsl:with-param name="img.alt">Autoarchivo</xsl:with-param>
 			</xsl:call-template>
