@@ -290,15 +290,21 @@ h1 {
 }
 #ds-main {
 	background-image: url(../../images/background.png);
+/* 	background-attachment: fixed; */
 	background-repeat: no-repeat;
-/* 	height: 500px; */
-	max-width: 1328px;
 	margin: auto;
 }
-#ds-main #wrapper {
-	margin: 0px 0px 0px 215px;
+#ds-main > *{
+	background-color:white;
+	max-width: 1113px;
+	margin: auto;
 }
 
+#ds-main #wrapper {
+	/* 	box-shadow: posH, posV, blur, spread,color; */
+	/* box-shadow: -10px -10px 54px -10px #d8e8eb */
+	box-shadow: -25px -15px 66px -24px rgba(156, 172, 175, 0.2);
+}
 
 /* input de busqueda del menu*/
 #ds-search-option input.ds-text-field {
