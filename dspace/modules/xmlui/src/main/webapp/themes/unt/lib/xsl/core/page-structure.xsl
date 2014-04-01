@@ -255,9 +255,9 @@ placeholders for header images -->
 						<xsl:with-param name="img.alt">SEDICI</xsl:with-param>
 					</xsl:call-template>
 					<xsl:call-template name="build-anchor">
-						<xsl:with-param name="a.href">http://www.facet.unt.edu.ar/</xsl:with-param>
-						<xsl:with-param name="img.src">images/facet_footer.png</xsl:with-param>
-						<xsl:with-param name="img.alt">FACET</xsl:with-param>
+						<xsl:with-param name="a.href">http://www.unt.edu.ar/</xsl:with-param>
+						<xsl:with-param name="img.src">images/UNT_sigla.png</xsl:with-param>
+						<xsl:with-param name="img.alt">UNT</xsl:with-param>
 					</xsl:call-template>
 								
 				</div>
