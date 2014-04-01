@@ -7,11 +7,12 @@ JAVA_OPTS="-Xmx512m"
 cwd=`pwd`
 DSPACE_SRC=/opt/dspace/source
 DSPACE_DIR=/opt/dspace/install
+TOMCAT="tomcat6"
 
 #Funcion No probada
 createdb()
 {
-	#echo "dspace ALL= NOPASSWD: /etc/init.d/tomcat6" > /etc/sudoers.d/dspace
+	#echo "dspace ALL= NOPASSWD: /etc/init.d/$TOMCAT" > /etc/sudoers.d/dspace
 
 	#dropdb dspace4
 	#createdb -U dspace4 -E UNICODE dspace4 -h localhost
@@ -46,10 +47,10 @@ cd dspace
 MAVEN_OPTS=$JAVA_OPTS mvn package -q 
 
 show_message "Paramos el tomcat"
-sudo /etc/init.d/tomcat6 stop
+sudo /etc/init.d/$TOMCAT stop
 
-#sudo rm /var/lib/tomcat6/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.data
-#sudo rm /var/lib/tomcat6/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.index
+#sudo rm /var/lib/$TOMCAT/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.data
+#sudo rm /var/lib/$TOMCAT/work/Catalina/localhost/_/cache-dir/cocoon-ehcache.index
 
 show_message "actualizamos los sources"
 cd target/dspace-*
@@ -62,7 +63,7 @@ cd $DSPACE_SRC
 MAVEN_OPTS=$JAVA_OPTS mvn clean -q 
 
 show_message "iniciamos tomcat"
-sudo /etc/init.d/tomcat6 start
+sudo /etc/init.d/$TOMCAT start
 
 show_message "Se hicieron los siguientes reemplazos en la configuración"
 find  $DSPACE_DIR/config/ -name "*.old"
