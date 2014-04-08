@@ -35,11 +35,11 @@
 		<xsl:if test="not(starts-with($path, $context-path))">
 			<!-- Imprimo el context path si la URL no es absolta -->
 			<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath']" />
-			<xsl:if test="not(starts-with($path, '/'))">
+			
+		</xsl:if>
+		<xsl:if test="not(starts-with($path, '/'))">
 				<xsl:text>/</xsl:text>
 			</xsl:if>
-		</xsl:if>
-		
 		<xsl:value-of select="$path" />
 	</xsl:template>
 	
