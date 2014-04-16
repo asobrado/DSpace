@@ -344,7 +344,17 @@ div.hide-container + ul, div.hide-container {
 	display:none;
 }
 
+ol {
+	margin: 25px;
+	margin-right: 0px;
+}
+ol>li{
+	list-style-type: decimal;
+}
 
+.center{
+	text-align: center;
+}
 /* NO borrar, es para detectar errores de css*/
 BODY{
 	background-color: white;
